@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  CURSOR — COMPLETE DEPLOY INSTRUCTIONS (read every word)                     ║
+║                                                                              ║
+║  PROJECT STRUCTURE — your folder must look exactly like this:                ║
+║                                                                              ║
+║  jennaleighwest-site/                                                        ║
+║  ├── index.html          ← this file                                         ║
+║  ├── package.json        ← from Claude output                                ║
+║  ├── vercel.json         ← from Claude output                                ║
+║  ├── api/                                                                    ║
+║  │   └── chat.js         ← from Claude output                                ║
+║  └── [images — copy ALL these from your "pics for my page" folder]:          ║
+║                                                                              ║
+║  USED ON THE SITE (copy these exactly, do NOT rename):                       ║
+║      cea5aa6fa03ddbf53a14724455dc8c62.JPEG  ← About page portrait (B&W hat) ║
+║      IMG_1093.jpeg                          ← Landing + Offerings bg (desert)║
+║      NFBUE5731.JPG                          ← Connect page portrait (beanie) ║
+║      QVZpclN1ZkVQZXRGM3hudXBoNXRoV2xM_Original.JPG  ← Credential bg (shelf)║
+║      2F3A8636-2141-4FD3-B1EC-829946AE2C87_1_201_a.jpeg  ← Landing bg (TN)  ║
+║      GVHAE0967.JPG                          ← (same TN mirror scene, backup) ║
+║      23BEA359-7408-4B3A-9B7F-C4AB9AFA1E5B_1_105_c.jpeg  ← Art gallery      ║
+║      EXNEE0144.JPG                          ← Art gallery (pink floral)      ║
+║      FNFZE3007.JPG                          ← Art gallery (cactus scene)     ║
+║      CGLYE7373.JPG                          ← Art gallery (colorful)         ║
+║      A3ABB88C-9D9E-4748-9DD1-85D0CE4C93B2_1_105_c.jpeg  ← Art gallery       ║
+║      RTCDE3221.JPG                          ← Art gallery (daisies)          ║
+║                                                                              ║
+║  ALSO COPY (in your folder, available for future use):                       ║
+║      AfA_e-EDC5jS3YOK2m-jcY_Original.JPG   (portrait with friend)           ║
+║      AfAwDXjQJS-qlhZAfSlXfnWxsY_8_Original.JPG  (portrait outdoor)          ║
+║      AfBCjy5Dh83daPtiYFG6bjXSgGaPdhvJZV4vHCbvOUel_Original.JPG  (polka dot)║
+║      AfBdXP3E98mthCPLXj-DacBUBkPXJmRZM_Original.JPG  (strawberry cake)      ║
+║      AfCH6JXQ8AbAy8ONTmiCKxEP6DF5ILC2zYP7thtM8_4_Original.JPG  (pink sky)  ║
+║      AfCm3lvdwaxualjSxc09aMA77NgtGsDY9O2yB3zol_Original.JPG  (curly white)  ║
+║      AfDAHn9DwFsIsKGXqJr_K7oVZCB3LXic2j-PDcrTqRuAI_Original.JPG  (jars)    ║
+║      AfDJ5QG7kKmYcZh_p46OQbL6LDdVe0Ow4OLKakzttE_Original.JPG  (strawberries)║
+║      IMG_1226.jpeg  (polka dot close portrait)                               ║
+║      IMG_1505.jpeg  (mother and baby)                                        ║
+║      IMG_3397.JPG   (red hair sunglasses)                                    ║
+║      IMG_4780.JPG   (blue tank portrait)                                     ║
+║      KMWDE9421.JPG  (floral food)                                            ║
+║      NIZJE4245.JPG  (hands)                                                  ║
+║      QKFCE3041.JPG  (lemons and spices)                                      ║
+║      4AC81458-7D48-47FB-B7C2-128749C8E9BD_1_105_c.jpeg  (fire hair)         ║
+║      6A309BA4-FA18-4A5A-BDBB-46EBD15AC57A_1_105_c.jpeg  (original B&W)      ║
+║      9B5139CB-DA1A-4226-B601-F668D19A1C83_1_105_c.jpeg  (art cactus)        ║
+║      B09099CC-0F5A-4F09-B899-50086EE69D19_1_201_a.jpeg  (original shelf)    ║
+║      C111DEAD-0088-4424-B7CE-22C0AC91FBA9_1_105_c.jpeg  (art wild)          ║
+║      D45C6E84-B353-4568-9058-815FF59B8D4D_1_105_c.jpeg  (art canvas)        ║
+║      E07AF5D6-390C-45CD-A54A-8869300C4FA3_1_105_c.jpeg  (art flowers 2)     ║
+║      E6F1F577-EFAA-4327-A426-C77986DBC564_1_105_c.jpeg  (original color)    ║
+║                                                                              ║
+║  DEPLOY STEPS:                                                               ║
+║                                                                              ║
+║  STEP 1 — Install dependencies                                               ║
+║    cd jennaleighwest-site                                                    ║
+║    npm install                                                               ║
+║                                                                              ║
+║  STEP 2 — Push to GitHub                                                     ║
+║    git init                                                                  ║
+║    git add .                                                                 ║
+║    git commit -m "Full site with chatbots"                                   ║
+║    Create repo: github.com → New → Name: jennaleighwest-site → Create        ║
+║    git remote add origin https://github.com/Jennaleighwilder/jennaleighwest-site.git
+║    git branch -M main                                                        ║
+║    git push -u origin main                                                   ║
+║                                                                              ║
+║  STEP 3 — Deploy to Vercel                                                   ║
+║    vercel --prod                                                             ║
+║    (or: vercel.com → New Project → Import from GitHub)                       ║
+║                                                                              ║
+║  STEP 4 — Add API key to Vercel (CRITICAL — chatbots won't work without it) ║
+║    Go to: vercel.com → Your Project → Settings → Environment Variables       ║
+║    Click "Add New"                                                           ║
+║    Name:  ANTHROPIC_API_KEY                                                  ║
+║    Value: your Anthropic API key (from console.anthropic.com)                ║
+║    Click Save                                                                ║
+║    Then: Vercel → Deployments → Redeploy (so it picks up the new variable)  ║
+║                                                                              ║
+║  STEP 5 — Connect jennaleighwest.com                                         ║
+║    Vercel → Project → Settings → Domains → Add jennaleighwest.com            ║
+║    GoDaddy DNS: A record @ → 76.76.21.21 / CNAME www → cname.vercel-dns.com ║
+║                                                                              ║
+║  IMAGES NOT LOADING? Check:                                                  ║
+║    1. Image files are in the ROOT folder (same level as index.html)          ║
+║    2. Filenames match EXACTLY — UUID format, no renaming                     ║
+║    3. In Vercel dashboard, confirm files are in the deployment output        ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jenna Leigh West — Systems Decoder</title>
+<meta name="description" content="Jenna Leigh West — Systems Decoder, consulting, coaching, and AI development. Appalachian roots. Neurodivergent wisdom. Guide for creative women in transition.">
+<meta name="keywords" content="systems decoder, consulting, coaching, AI development, neurodivergent, Appalachian, dream mapping, past life, women in transition">
+<meta property="og:title" content="Jenna Leigh West — Systems Decoder">
+<meta property="og:description" content="Consulting, coaching, AI tools, and digital products for creative women in transition.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ─── RESET ─── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;height:100%;overflow:hidden;background:#0c1109;}
+
+/* ─── PALETTE ─── */
+:root{
+  --void:  #0c1109; --deep:  #111a0d; --fern:  #1a2c14;
+  --forest:#1e3018; --bark:  #243b1a; --leaf:  #3a5828;
+  --sage:  #5a7a40; --sage-l:#7a9e58; --mint:  #9abe78;
+  --wine:  #3a0e1c; --plum:  #521430; --dust:  #8a3050;
+  --rose:  #a84868; --petal: #c87898;
+  --ivory: #f0ece2; --bone:  #d5cec0; --fog:   #9a9288;
+}
+body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
+
+/* ─── PAGE ENGINE ─── */
+.page{position:fixed;inset:0;z-index:1;opacity:0;pointer-events:none;transition:opacity 0.55s cubic-bezier(.4,0,.2,1);overflow:hidden;}
+.page.active{opacity:1;pointer-events:auto;z-index:10;}
+
+/* ─── NAV ─── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 2.5rem;}
+.nav-logo{font-family:'Playfair Display',serif;font-weight:500;font-size:0.95rem;letter-spacing:0.04em;color:rgba(240,236,226,.5);background:none;border:none;cursor:pointer;transition:color .3s;padding:0;}
+.nav-logo:hover{color:var(--ivory);}
+.nav-pills{display:flex;gap:.25rem;list-style:none;background:linear-gradient(180deg,rgba(12,17,9,.72),rgba(12,17,9,.45));backdrop-filter:blur(14px);padding:.45rem .55rem;border-radius:16px;border:1px solid rgba(240,236,226,.07);box-shadow:0 18px 40px rgba(0,0,0,.18);}
+.nav-pills button{background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.58rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,236,226,.35);transition:all .25s;padding:.38rem .75rem;border-radius:6px;}
+.nav-pills button:hover{color:var(--ivory);background:rgba(240,236,226,.05);}
+.nav-pills button.on{color:var(--ivory);background:rgba(240,236,226,.09);}
+.nav-tools-btn{color:var(--petal)!important;}
+
+/* ─── DOTS ─── */
+.dots{position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);z-index:900;display:flex;flex-direction:column;gap:7px;}
+.dot{width:4px;height:4px;border-radius:50%;background:rgba(240,236,226,.18);cursor:pointer;border:none;padding:0;transition:all .3s;}
+.dot.on{background:var(--mint);transform:scale(1.8);}
+
+/* ─── SHARED BUTTONS ─── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;padding:.9rem 2rem;border-radius:3px;transition:all .3s;text-decoration:none;white-space:nowrap;position:relative;overflow:hidden;}
+.btn::before{content:'';position:absolute;inset:1px;border:1px solid rgba(255,255,255,.06);pointer-events:none;}
+.btn-white{background:var(--ivory);color:var(--void);}
+.btn-white:hover{background:var(--bone);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.4);}
+.btn-outline{background:transparent;color:var(--ivory);border:1px solid rgba(240,236,226,.3);}
+.btn-outline:hover{background:rgba(240,236,226,.07);border-color:rgba(240,236,226,.65);transform:translateY(-2px);}
+.btn-moss{background:var(--leaf);color:var(--ivory);}
+.btn-moss:hover{background:var(--sage);transform:translateY(-2px);}
+.btn-rose{background:var(--dust);color:var(--ivory);}
+.btn-rose:hover{background:var(--rose);transform:translateY(-2px);}
+.btn-ghost{display:inline-flex;align-items:center;gap:.75rem;background:none;border:none;cursor:pointer;padding:0;font-family:'DM Sans',sans-serif;font-size:.62rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,236,226,.5);transition:all .3s;}
+.btn-ghost:hover{color:var(--ivory);gap:1.1rem;}
+.btn-ghost .dash{width:30px;height:1px;background:var(--sage);transition:width .3s;}
+.btn-ghost:hover .dash{width:44px;}
+.btn-ghost .tip{width:0;height:0;border-top:3px solid transparent;border-bottom:3px solid transparent;border-left:5px solid var(--sage);}
+
+/* ─── ANIMS ─── */
+@keyframes up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.page.active .u1{animation:up .8s .05s ease both}
+.page.active .u2{animation:up .8s .17s ease both}
+.page.active .u3{animation:up .8s .3s ease both}
+.page.active .u4{animation:up .8s .43s ease both}
+.page.active .u5{animation:up .8s .56s ease both}
+.page.active .f1{animation:fade 1.1s .08s ease both}
+.lbl{font-family:'DM Sans',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.38em;text-transform:uppercase;color:var(--sage);margin-bottom:1.1rem;display:block;}
+
+/* ═══════════════════════════════
+   P1 LANDING
+═══════════════════════════════ */
+#p1{background:var(--void);}
+.p1-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:#1a2c14;}
+.p1-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;filter:saturate(.5) contrast(1.1);}
+.p1-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(12,17,9,.15) 0%,rgba(12,17,9,.05) 30%,rgba(12,17,9,.55) 68%,rgba(12,17,9,.95) 100%),radial-gradient(ellipse 65% 65% at 25% 50%,rgba(26,44,20,.55) 0%,transparent 60%);}
+.p1-portrait{position:absolute;right:0;bottom:0;top:0;z-index:2;width:44%;background:#1a2c14 url('cea5aa6fa03ddbf53a14724455dc8c62.JPEG') center top/cover no-repeat;-webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.35) 25%,rgba(0,0,0,.55) 65%,rgba(0,0,0,.25) 100%);mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.35) 25%,rgba(0,0,0,.55) 65%,rgba(0,0,0,.25) 100%);mix-blend-mode:luminosity;opacity:.3;}
+.p1-content{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;justify-content:flex-end;padding:4rem 5vw 5.5rem;max-width:1180px;margin:0 auto;width:100%;}
+.p1-eye{font-family:'DM Sans',sans-serif;font-size:.6rem;font-weight:400;letter-spacing:.45em;text-transform:uppercase;color:var(--sage-l);margin-bottom:1.4rem;}
+.p1-name{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(4.5rem,10vw,10rem);line-height:.88;letter-spacing:-.02em;color:var(--ivory);max-width:780px;}
+.p1-name span{display:block;font-weight:400;color:var(--petal);}
+.p1-rule{width:48px;height:1px;background:var(--sage);margin:1.8rem 0;}
+.p1-sub{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:300;color:rgba(240,236,226,.52);line-height:1.78;max-width:420px;margin-bottom:2.5rem;}
+.p1-acts{display:flex;gap:.85rem;flex-wrap:wrap;margin-bottom:2rem;}
+.p1-proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;padding-top:1.5rem;border-top:1px solid rgba(240,236,226,.08);max-width:880px;}
+.p1-proof > div{padding:1rem 1rem 1.05rem;border:1px solid rgba(240,236,226,.07);background:linear-gradient(180deg,rgba(12,17,9,.36),rgba(12,17,9,.16));backdrop-filter:blur(6px);}
+.proof-num{font-size:1.4rem;font-weight:400;color:var(--ivory);line-height:1;font-family:'Playfair Display',serif;}
+.proof-lbl{font-size:.56rem;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:var(--fog);margin-top:.2rem;}
+
+/* ═══════════════════════════════
+   P2 ABOUT
+═══════════════════════════════ */
+#p2{background:var(--deep);}
+.p2-wrap{position:absolute;inset:0;display:grid;grid-template-columns:52% 1fr;max-width:1280px;margin:0 auto;}
+.p2-photo{position:relative;overflow:hidden;background:#1a2c14 url('cea5aa6fa03ddbf53a14724455dc8c62.JPEG') center top/cover no-repeat;}
+.p2-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+.p2-veil{position:absolute;inset:0;background:linear-gradient(to right,rgba(12,17,9,0) 55%,rgba(17,26,13,.9) 100%),linear-gradient(to bottom,rgba(12,17,9,.35) 0%,transparent 18%,transparent 78%,rgba(12,17,9,.65) 100%);}
+.p2-caption{position:absolute;bottom:3rem;left:2.5rem;right:2.5rem;z-index:2;}
+.p2-caption-lbl{font-family:'DM Sans',sans-serif;font-size:.57rem;font-weight:400;letter-spacing:.33em;text-transform:uppercase;color:var(--sage-l);margin-bottom:.55rem;}
+.p2-caption-line{font-family:'Playfair Display',serif;font-weight:400;font-size:1.4rem;color:var(--ivory);line-height:1.3;}
+.p2-txt{padding:7rem 3.5rem 3rem 3rem;display:flex;flex-direction:column;justify-content:center;overflow-y:auto;margin:4rem 3rem 4rem -4rem;background:linear-gradient(180deg,rgba(17,26,13,.86),rgba(17,26,13,.76));border:1px solid rgba(240,236,226,.08);box-shadow:0 24px 80px rgba(0,0,0,.28);}
+.p2-title{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.2rem,3.2vw,3rem);line-height:1.12;color:var(--ivory);margin-bottom:1.4rem;}
+.p2-rule{width:34px;height:1px;background:var(--leaf);margin-bottom:1.8rem;}
+.p2-body{font-family:'DM Sans',sans-serif;font-size:.93rem;font-weight:300;line-height:1.85;color:var(--bone);margin-bottom:1.4rem;}
+.p2-pull{border-left:2px solid var(--dust);padding:.55rem 0 .55rem 1.1rem;font-family:'Playfair Display',serif;font-weight:400;font-size:1.05rem;color:var(--petal);line-height:1.55;margin-bottom:1.8rem;}
+.p2-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:2.2rem;}
+.p2-tag{font-family:'DM Sans',sans-serif;font-size:.56rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;padding:.26rem .72rem;color:var(--sage-l);border:1px solid rgba(90,122,64,.28);border-radius:100px;}
+
+/* ═══════════════════════════════
+   P3 OFFERINGS
+═══════════════════════════════ */
+#p3{background:var(--wine);}
+.p3-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:#3a0e1c url('IMG_1093.jpeg') center top/cover no-repeat;filter:saturate(.28) contrast(1.2) brightness(.55);}
+.p3-bg img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.28) contrast(1.2) brightness(.55);}
+.p3-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(58,14,28,.92) 0%,rgba(58,14,28,.72) 42%,rgba(36,59,26,.58) 100%);}
+.p3-wrap{position:absolute;inset:0;z-index:2;display:grid;grid-template-columns:minmax(250px,.85fr) minmax(0,1.55fr);max-width:1200px;margin:0 auto;width:100%;padding:7rem 4rem 4rem;gap:4rem;align-items:center;}
+.p3-title{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.6rem,4.2vw,4rem);line-height:1.05;color:var(--ivory);margin-bottom:1.3rem;}
+.p3-sub{font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:300;color:rgba(240,236,226,.42);line-height:1.78;max-width:290px;margin-bottom:2.5rem;}
+.cards{display:flex;flex-direction:column;gap:1rem;background:none;}
+.card{background:rgba(12,17,9,.55);backdrop-filter:blur(8px);border-left:2px solid transparent;transition:all .4s;box-shadow:0 20px 50px rgba(0,0,0,.18);}
+.card:hover{background:rgba(12,17,9,.8);border-left-color:var(--rose);}
+.card-inner{display:grid;grid-template-columns:3.2rem 1fr;gap:1.3rem;padding:1.7rem 1.9rem;align-items:start;}
+.card:nth-child(2){margin-left:2.75rem;}
+.card:nth-child(3){margin-left:1.1rem;max-width:92%;}
+.card-num{font-family:'Playfair Display',serif;font-weight:400;font-size:2rem;color:rgba(240,236,226,.12);line-height:1;transition:color .3s;}
+.card:hover .card-num{color:var(--rose);}
+.card-name{font-family:'Playfair Display',serif;font-weight:500;font-size:1.38rem;color:var(--bone);line-height:1.15;margin-bottom:0;transition:color .3s;}
+.card:hover .card-name{color:var(--ivory);}
+.card-desc{font-family:'DM Sans',sans-serif;font-size:.83rem;font-weight:300;color:rgba(240,236,226,.42);line-height:1.78;max-height:0;overflow:hidden;transition:max-height .45s ease,margin .35s;}
+.card:hover .card-desc{max-height:90px;margin-top:.6rem;}
+
+/* ═══════════════════════════════
+   P4 SHOP
+═══════════════════════════════ */
+#p4{background:var(--void);}
+#p4::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 55% at 50% 50%,rgba(26,44,20,.35) 0%,transparent 65%);}
+.p4-wrap{position:absolute;inset:0;z-index:2;max-width:1200px;margin:0 auto;width:100%;padding:7rem 4rem 3rem;display:flex;flex-direction:column;overflow:hidden;}
+.p4-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2rem;flex-shrink:0;flex-wrap:wrap;gap:1rem;}
+.p4-title{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.8rem,5vw,4.5rem);line-height:.92;color:var(--ivory);}
+.p4-sub{font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:300;color:rgba(240,236,226,.38);line-height:1.75;max-width:280px;text-align:right;}
+.p4-free{background:rgba(90,122,64,.18);border:1px solid rgba(90,122,64,.3);border-radius:4px;padding:1.2rem 1.8rem;display:flex;align-items:center;justify-content:space-between;margin-bottom:1.8rem;flex-shrink:0;gap:1.5rem;flex-wrap:wrap;}
+.p4-free strong{display:block;font-size:.95rem;font-weight:500;color:var(--mint);margin-bottom:.2rem;}
+.p4-free span{font-size:.82rem;font-weight:300;color:rgba(240,236,226,.45);}
+.p4-products{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;background:none;flex:1;min-height:0;align-items:start;}
+.product{background:rgba(17,26,13,.7);display:flex;flex-direction:column;transition:background .3s;border:1px solid rgba(240,236,226,.06);box-shadow:0 18px 42px rgba(0,0,0,.18);}
+.product:hover{background:rgba(26,48,20,.9);}
+.product:nth-child(1){grid-column:span 4;margin-top:2rem;}
+.product:nth-child(2){grid-column:span 4;}
+.product:nth-child(3){grid-column:span 4;margin-top:3.5rem;}
+.product-top{flex:1;padding:2rem 2rem 1.2rem;border-bottom:1px solid rgba(240,236,226,.05);}
+.product-badge{display:inline-block;font-family:'DM Sans',sans-serif;font-size:.55rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:.22rem .7rem;border-radius:100px;background:rgba(90,122,64,.2);color:var(--sage-l);border:1px solid rgba(90,122,64,.25);margin-bottom:1rem;}
+.product-badge.hot{background:rgba(168,72,104,.2);color:var(--petal);border-color:rgba(168,72,104,.25);}
+.product-name{font-family:'Playfair Display',serif;font-weight:500;font-size:1.45rem;color:var(--ivory);margin-bottom:.7rem;line-height:1.15;}
+.product-desc{font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:300;color:rgba(240,236,226,.42);line-height:1.78;margin-bottom:.8rem;}
+.product-includes{list-style:none;}
+.product-includes li{font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:300;color:rgba(240,236,226,.35);line-height:1.6;padding-left:.85rem;position:relative;}
+.product-includes li::before{content:'—';position:absolute;left:0;color:var(--sage);}
+.product-bottom{padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.product-price{font-family:'Playfair Display',serif;font-weight:600;font-size:1.8rem;color:var(--ivory);line-height:1;}
+.product-price span{display:block;font-family:'DM Sans',sans-serif;font-size:.58rem;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--fog);margin-top:.15rem;}
+
+/* ═══════════════════════════════
+   P5 CREDENTIAL
+═══════════════════════════════ */
+#p5{background:var(--void);}
+.p5-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:#0c1109 url('QVZpclN1ZkVQZXRGM3hudXBoNXRoV2xM_Original.JPG') center/cover no-repeat;filter:saturate(.3) brightness(.38);}
+.p5-bg img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.3) brightness(.38);}
+.p5-wrap{position:absolute;inset:0;z-index:2;max-width:1100px;margin:0 auto;width:100%;padding:7rem 4rem 3rem;display:flex;flex-direction:column;justify-content:center;}
+.p5-title{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.2rem,3.8vw,3.8rem);line-height:1.08;color:var(--ivory);margin-bottom:.7rem;}
+.p5-sub{font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:300;color:rgba(240,236,226,.4);max-width:460px;line-height:1.78;margin-bottom:2.8rem;}
+.p5-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;border-top:none;}
+.p5-cell{padding:1.6rem 1.5rem 1.6rem 0;border-right:none;transition:background .3s;background:linear-gradient(180deg,rgba(17,26,13,.5),rgba(17,26,13,.12));border-top:1px solid rgba(240,236,226,.06);box-shadow:0 18px 44px rgba(0,0,0,.16);}
+.p5-cell:last-child{border-right:none;}
+.p5-cell:hover{background:rgba(30,48,24,.4);}
+.p5-cell:nth-child(1),.p5-cell:nth-child(4){grid-column:span 2;}
+.p5-cell:nth-child(2),.p5-cell:nth-child(5){grid-column:span 2;transform:translateY(2rem);}
+.p5-cell:nth-child(3),.p5-cell:nth-child(6){grid-column:span 2;}
+.p5-cname{font-family:'Playfair Display',serif;font-weight:500;font-size:1.1rem;color:var(--mint);margin-bottom:.4rem;line-height:1.2;}
+.p5-ctxt{font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:300;color:rgba(240,236,226,.36);line-height:1.7;}
+.p5-quote{margin-top:2.2rem;padding-top:2rem;border-top:1px solid rgba(240,236,226,.07);display:flex;align-items:flex-end;justify-content:space-between;gap:3rem;flex-wrap:wrap;}
+.p5-quote p{font-family:'Playfair Display',serif;font-weight:400;font-size:1.05rem;color:rgba(240,236,226,.48);line-height:1.82;max-width:620px;}
+
+/* ═══════════════════════════════
+   P6 ART
+═══════════════════════════════ */
+#p6{background:var(--deep);}
+.p6-wrap{position:absolute;inset:0;display:grid;grid-template-columns:310px 1fr;}
+.p6-txt{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:7rem 2.5rem 3.5rem 3rem;background:linear-gradient(to right,rgba(17,26,13,1) 55%,rgba(17,26,13,.75) 100%);}
+.p6-title{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.8rem,3.5vw,4rem);line-height:1.0;color:var(--ivory);margin-bottom:1.1rem;}
+.p6-body{font-family:'DM Sans',sans-serif;font-size:.87rem;font-weight:300;color:var(--fog);line-height:1.82;margin-bottom:2.5rem;max-width:250px;}
+.p6-photos{position:relative;overflow:hidden;}
+.p6-ph{position:absolute;overflow:hidden;background:var(--bark);box-shadow:0 14px 40px rgba(0,0,0,.65);transition:transform .6s ease;}
+.p6-ph img{width:100%;height:100%;object-fit:cover;display:block;}
+.p6-ph:hover{transform:scale(1.03) translateY(-4px)!important;z-index:6!important;}
+.ph1{top:7%;left:3%;width:38%;height:45%;z-index:1;}
+.ph2{top:3%;left:37%;width:27%;height:33%;z-index:2;}
+.ph3{top:5%;left:63%;width:34%;height:43%;z-index:1;}
+.ph4{top:46%;left:7%;width:30%;height:46%;z-index:3;}
+.ph5{top:35%;left:33%;width:40%;height:53%;z-index:2;}
+.ph6{top:44%;left:68%;width:29%;height:44%;z-index:2;}
+
+/* ═══════════════════════════════
+   P7 BUILDS
+═══════════════════════════════ */
+#p7{background:var(--fern);}
+#p7::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 45% at 100% 0%,rgba(58,14,28,.28) 0%,transparent 52%),radial-gradient(ellipse 45% 40% at 0% 100%,rgba(12,17,9,.55) 0%,transparent 50%);}
+.p7-wrap{position:absolute;inset:0;z-index:2;max-width:1200px;margin:0 auto;width:100%;padding:7rem 4rem 2rem;display:flex;flex-direction:column;}
+.p7-top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2rem;flex-shrink:0;flex-wrap:wrap;gap:1rem;}
+.p7-big{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(3.5rem,7vw,6.5rem);line-height:.85;color:var(--rose);}
+.p7-big-lbl{display:block;font-family:'DM Sans',sans-serif;font-size:.58rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--sage);margin-top:.45rem;}
+.p7-note{font-family:'DM Sans',sans-serif;font-size:.83rem;font-weight:300;color:rgba(240,236,226,.36);max-width:240px;text-align:right;line-height:1.72;}
+.p7-scroll{flex:1;overflow-y:auto;padding-right:.4rem;min-height:0;}
+.p7-scroll::-webkit-scrollbar{width:2px;}
+.p7-scroll::-webkit-scrollbar-thumb{background:var(--leaf);border-radius:2px;}
+.bld-sec{margin-bottom:1.7rem;padding:1.2rem 1.2rem 1.35rem;background:linear-gradient(180deg,rgba(17,26,13,.46),rgba(17,26,13,.18));border:1px solid rgba(240,236,226,.05);}
+.bld-sec:nth-child(2){margin-left:3.5rem;}
+.bld-sec:nth-child(3){margin-right:5rem;}
+.bld-sec-lbl{font-family:'DM Sans',sans-serif;font-size:.57rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--sage);padding-bottom:.5rem;margin-bottom:.65rem;border-bottom:1px solid rgba(240,236,226,.06);}
+.bld-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.8rem;background:none;}
+.bld{background:rgba(17,26,13,.6);padding:1rem 1.2rem;transition:background .25s;border:1px solid rgba(240,236,226,.05);}
+.bld:hover{background:rgba(30,48,24,.85);}
+.bld-name{font-family:'DM Sans',sans-serif;font-size:.81rem;font-weight:400;color:var(--bone);margin-bottom:.2rem;line-height:1.3;}
+.bld a{font-family:'DM Sans',sans-serif;font-size:.57rem;font-weight:300;color:var(--sage);text-decoration:none;letter-spacing:.06em;transition:color .25s;display:block;}
+.bld a::after{content:' ↗';}
+.bld:hover a{color:var(--mint);}
+.p7-foot{flex-shrink:0;padding-top:1.1rem;border-top:1px solid rgba(240,236,226,.06);display:flex;justify-content:flex-end;}
+
+/* ═══════════════════════════════
+   P8 CONNECT
+═══════════════════════════════ */
+#p8{background:var(--plum);}
+#p8::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 65% 75% at 100% 100%,rgba(12,17,9,.6) 0%,transparent 55%),radial-gradient(ellipse 50% 40% at 0% 0%,rgba(46,72,32,.28) 0%,transparent 50%);}
+.p8-wrap{position:absolute;inset:0;display:grid;grid-template-columns:1fr 42%;}
+.p8-left{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:7rem 4rem 4rem;overflow-y:auto;}
+.p8-title{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.6rem,4.5vw,4.5rem);line-height:1.0;color:var(--ivory);margin-bottom:1.1rem;}
+.p8-sub{font-family:'DM Sans',sans-serif;font-size:.93rem;font-weight:300;color:rgba(240,236,226,.44);line-height:1.82;max-width:390px;margin-bottom:2.5rem;}
+.email-form-lbl{font-family:'DM Sans',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--sage-l);margin-bottom:.7rem;display:block;}
+.email-row{display:flex;gap:0;margin-bottom:.5rem;}
+.email-input{flex:1;background:rgba(240,236,226,.07);border:1px solid rgba(240,236,226,.15);border-right:none;padding:.85rem 1.1rem;color:var(--ivory);font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:300;outline:none;transition:border-color .3s;border-radius:3px 0 0 3px;}
+.email-input::placeholder{color:rgba(240,236,226,.3);}
+.email-input:focus{border-color:rgba(240,236,226,.35);}
+.email-submit{background:var(--sage);color:var(--ivory);border:none;cursor:pointer;padding:.85rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:.65rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;transition:background .3s;border-radius:0 3px 3px 0;white-space:nowrap;}
+.email-submit:hover{background:var(--sage-l);}
+.email-note{font-family:'DM Sans',sans-serif;font-size:.62rem;font-weight:300;color:rgba(240,236,226,.28);}
+.p8-contact-lbl{font-family:'DM Sans',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--sage);margin-bottom:1rem;display:block;margin-top:1.8rem;}
+.p8-links{display:flex;flex-direction:column;gap:.65rem;margin-bottom:2rem;}
+.p8-link{font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:300;letter-spacing:.08em;color:rgba(240,236,226,.35);text-decoration:none;transition:color .3s;}
+.p8-link:hover{color:var(--ivory);}
+.p8-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.p8-copy{font-family:'DM Sans',sans-serif;font-size:.57rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,236,226,.18);line-height:1.9;}
+.p8-photo{position:relative;overflow:hidden;background:#521430 url('NFBUE5731.JPG') center top/cover no-repeat;}
+.p8-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+.p8-photo-veil{position:absolute;inset:0;background:linear-gradient(to left,transparent 55%,rgba(82,20,48,.72) 100%);}
+
+/* ═══════════════════════════════
+   P9 TOOLS — AI CHATBOTS
+═══════════════════════════════ */
+#p9{background:var(--void);}
+#p9::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 0% 100%,rgba(26,44,20,.3) 0%,transparent 55%),radial-gradient(ellipse 50% 45% at 100% 0%,rgba(58,14,28,.3) 0%,transparent 55%);}
+.tools-wrap{position:absolute;inset:0;z-index:2;max-width:1200px;margin:0 auto;width:100%;padding:7rem 4rem 2rem;display:grid;grid-template-columns:280px 1fr;gap:0;height:100%;}
+
+/* Tool selector sidebar */
+.tools-sidebar{border-right:1px solid rgba(240,236,226,.07);padding-right:2rem;display:flex;flex-direction:column;padding-top:1rem;}
+.tools-sidebar-lbl{margin-bottom:1.5rem;}
+.tools-heading{font-family:'Playfair Display',serif;font-weight:500;font-size:1.6rem;color:var(--ivory);margin-bottom:0.4rem;line-height:1.2;}
+.tools-sub{font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:300;color:var(--fog);line-height:1.7;}
+.tool-btns{display:flex;flex-direction:column;gap:.5rem;margin-top:1.5rem;}
+.tool-btn{
+  background:rgba(17,26,13,.5);border:1px solid rgba(240,236,226,.07);
+  padding:1rem 1.2rem;cursor:pointer;text-align:left;
+  transition:all .3s;border-radius:2px;
+}
+.tool-btn:hover{background:rgba(26,44,20,.7);border-color:rgba(90,122,64,.3);}
+.tool-btn.active{background:rgba(26,44,20,.9);border-color:var(--sage);border-left:2px solid var(--sage);}
+.tool-btn-name{font-family:'Playfair Display',serif;font-weight:500;font-size:.95rem;color:var(--bone);line-height:1.2;margin-bottom:.25rem;display:block;}
+.tool-btn.active .tool-btn-name{color:var(--ivory);}
+.tool-btn-desc{font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:300;color:rgba(240,236,226,.35);line-height:1.5;display:block;}
+.tools-note{margin-top:auto;padding-top:1.5rem;border-top:1px solid rgba(240,236,226,.06);}
+.tools-note p{font-family:'DM Sans',sans-serif;font-size:.6rem;font-weight:300;color:rgba(240,236,226,.25);line-height:1.7;}
+
+/* Chat panel */
+.chat-panel{padding-left:2.5rem;display:flex;flex-direction:column;height:100%;min-height:0;}
+.chat-header{padding-bottom:1rem;border-bottom:1px solid rgba(240,236,226,.07);flex-shrink:0;margin-bottom:1rem;}
+.chat-tool-name{font-family:'Playfair Display',serif;font-weight:500;font-size:1.4rem;color:var(--ivory);margin-bottom:.2rem;}
+.chat-tool-tagline{font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:300;color:var(--sage-l);}
+
+/* Messages */
+.chat-messages{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:1rem;padding-right:.5rem;min-height:0;}
+.chat-messages::-webkit-scrollbar{width:2px;}
+.chat-messages::-webkit-scrollbar-thumb{background:var(--leaf);}
+.msg{max-width:80%;display:flex;flex-direction:column;gap:.3rem;}
+.msg.user{align-self:flex-end;}
+.msg.ai{align-self:flex-start;}
+.msg-bubble{padding:.85rem 1.1rem;border-radius:3px;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:300;line-height:1.72;}
+.msg.user .msg-bubble{background:rgba(90,122,64,.25);color:var(--ivory);border:1px solid rgba(90,122,64,.25);}
+.msg.ai .msg-bubble{background:rgba(17,26,13,.8);color:var(--bone);border:1px solid rgba(240,236,226,.07);}
+.msg-role{font-family:'DM Sans',sans-serif;font-size:.57rem;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--fog);}
+
+/* Typing indicator */
+.typing{display:none;align-self:flex-start;}
+.typing.show{display:flex;}
+.typing-bubble{background:rgba(17,26,13,.8);border:1px solid rgba(240,236,226,.07);padding:.85rem 1.2rem;border-radius:3px;display:flex;gap:.4rem;align-items:center;}
+.typing-dot{width:5px;height:5px;border-radius:50%;background:var(--sage);animation:blink 1.2s infinite;}
+.typing-dot:nth-child(2){animation-delay:.2s;}
+.typing-dot:nth-child(3){animation-delay:.4s;}
+@keyframes blink{0%,100%{opacity:.25}50%{opacity:1}}
+
+/* Input row */
+.chat-input-row{display:flex;gap:0;padding-top:1rem;border-top:1px solid rgba(240,236,226,.07);flex-shrink:0;margin-top:.75rem;}
+.chat-input{flex:1;background:rgba(17,26,13,.6);border:1px solid rgba(240,236,226,.12);border-right:none;padding:.9rem 1.2rem;color:var(--ivory);font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:300;outline:none;transition:border-color .3s;resize:none;height:52px;border-radius:3px 0 0 3px;}
+.chat-input::placeholder{color:rgba(240,236,226,.28);}
+.chat-input:focus{border-color:rgba(90,122,64,.45);}
+.chat-send{background:var(--leaf);color:var(--ivory);border:none;cursor:pointer;padding:0 1.5rem;font-family:'DM Sans',sans-serif;font-size:.65rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;transition:background .3s;border-radius:0 3px 3px 0;height:52px;white-space:nowrap;}
+.chat-send:hover{background:var(--sage);}
+.chat-send:disabled{background:var(--bark);cursor:not-allowed;opacity:.5;}
+.chat-disclaimer{font-family:'DM Sans',sans-serif;font-size:.57rem;font-weight:300;color:rgba(240,236,226,.2);line-height:1.6;padding-top:.5rem;flex-shrink:0;}
+
+/* Welcome message */
+.chat-welcome{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;padding:2rem;}
+.chat-welcome h3{font-family:'Playfair Display',serif;font-weight:400;font-size:1.5rem;color:var(--bone);margin-bottom:.75rem;}
+.chat-welcome p{font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:300;color:var(--fog);line-height:1.75;max-width:380px;}
+.chat-starters{display:flex;flex-direction:column;gap:.5rem;margin-top:1.5rem;width:100%;max-width:440px;}
+.chat-starter{background:rgba(17,26,13,.7);border:1px solid rgba(240,236,226,.08);padding:.7rem 1rem;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:300;color:rgba(240,236,226,.5);transition:all .3s;text-align:left;}
+.chat-starter:hover{background:rgba(26,44,20,.8);color:var(--ivory);border-color:rgba(90,122,64,.3);}
+
+/* ─── STICKY CTA ─── */
+.sticky-cta{
+  position:fixed;bottom:1.5rem;right:1.5rem;z-index:800;
+  display:flex;flex-direction:column;gap:.5rem;align-items:flex-end;
+}
+.sticky-book{
+  background:var(--rose);color:var(--ivory);border:none;cursor:pointer;
+  padding:.75rem 1.4rem;border-radius:100px;
+  font-family:'DM Sans',sans-serif;font-size:.65rem;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;
+  box-shadow:0 4px 20px rgba(0,0,0,.4);
+  transition:all .3s;white-space:nowrap;
+}
+.sticky-book:hover{background:var(--petal);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.5);}
+.sticky-dismiss{background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.6rem;font-weight:300;color:rgba(240,236,226,.3);text-align:right;transition:color .3s;}
+.sticky-dismiss:hover{color:rgba(240,236,226,.6);}
+
+/* ─── NEW PAGE STYLES ─── */
+.std-wrap{position:absolute;inset:0;z-index:2;max-width:1100px;margin:0 auto;width:100%;padding:7rem 4rem 3rem;display:flex;flex-direction:column;justify-content:center;}
+.std-scroll{position:absolute;inset:0;z-index:2;max-width:1100px;margin:0 auto;width:100%;padding:7rem 4rem 3rem;overflow-y:auto;}
+
+/* PROCESS PAGE */
+#p10{background:var(--deep);}
+#p10::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 65% 55% at 0% 100%,rgba(26,44,20,.4) 0%,transparent 55%),radial-gradient(ellipse 50% 45% at 100% 0%,rgba(58,14,28,.25) 0%,transparent 55%);}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(240,236,226,.05);margin-top:2.5rem;}
+.process-step{background:rgba(17,26,13,.7);padding:2.2rem 2rem;transition:background .3s;position:relative;}
+.process-step:hover{background:rgba(26,44,20,.9);}
+.process-num{font-family:'Playfair Display',serif;font-weight:700;font-size:3rem;color:rgba(240,236,226,.08);line-height:1;margin-bottom:.5rem;}
+.process-name{font-family:'Playfair Display',serif;font-weight:500;font-size:1.2rem;color:var(--mint);margin-bottom:.6rem;}
+.process-desc{font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:300;color:rgba(240,236,226,.45);line-height:1.72;}
+.process-delivs{margin-top:.85rem;list-style:none;}
+.process-delivs li{font-family:'DM Sans',sans-serif;font-size:.73rem;font-weight:300;color:rgba(240,236,226,.32);line-height:1.65;padding-left:.8rem;position:relative;}
+.process-delivs li::before{content:'·';position:absolute;left:0;color:var(--sage);}
+.pricing-strip{margin-top:2.5rem;padding:2rem;background:rgba(90,122,64,.1);border:1px solid rgba(90,122,64,.2);border-radius:3px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background-color:rgba(90,122,64,.08);}
+.price-tier{padding:1.5rem 1.8rem;border-right:1px solid rgba(240,236,226,.07);}
+.price-tier:last-child{border-right:none;}
+.price-name{font-family:'DM Sans',sans-serif;font-size:.62rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin-bottom:.5rem;}
+.price-val{font-family:'Playfair Display',serif;font-weight:600;font-size:1.8rem;color:var(--ivory);line-height:1;margin-bottom:.3rem;}
+.price-note{font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:300;color:var(--fog);}
+
+/* CASE STUDIES PAGE */
+#p11{background:var(--void);}
+#p11::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(26,44,20,.25) 0%,transparent 60%);}
+.cases-wrap{position:absolute;inset:0;z-index:2;max-width:1200px;margin:0 auto;width:100%;padding:7rem 4rem 3rem;display:flex;flex-direction:column;}
+.cases-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;background:none;flex:1;min-height:0;align-items:start;}
+.case-card{background:rgba(12,17,9,.8);padding:2.2rem 2rem;display:flex;flex-direction:column;transition:background .3s;border:1px solid rgba(240,236,226,.06);box-shadow:0 18px 46px rgba(0,0,0,.18);}
+.case-card:hover{background:rgba(17,30,12,.95);}
+.case-card:nth-child(1){grid-column:span 5;}
+.case-card:nth-child(2){grid-column:span 3;margin-top:2rem;}
+.case-card:nth-child(3){grid-column:span 4;}
+.case-tag{font-family:'DM Sans',sans-serif;font-size:.55rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;padding:.22rem .7rem;border-radius:100px;display:inline-block;margin-bottom:1rem;}
+.case-tag.ai{background:rgba(90,122,64,.2);color:var(--sage-l);border:1px solid rgba(90,122,64,.25);}
+.case-tag.software{background:rgba(168,72,104,.2);color:var(--petal);border:1px solid rgba(168,72,104,.25);}
+.case-tag.research{background:rgba(46,74,168,.2);color:#8aabf8;border:1px solid rgba(46,74,168,.25);}
+.case-name{font-family:'Playfair Display',serif;font-weight:500;font-size:1.35rem;color:var(--ivory);margin-bottom:1rem;line-height:1.2;}
+.case-row{display:flex;gap:1rem;margin-bottom:.5rem;}
+.case-row-lbl{font-family:'DM Sans',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--sage);min-width:70px;padding-top:.1rem;}
+.case-row-val{font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:300;color:rgba(240,236,226,.55);line-height:1.6;}
+.case-result{margin-top:auto;padding-top:1.2rem;border-top:1px solid rgba(240,236,226,.07);}
+.case-result-lbl{font-family:'DM Sans',sans-serif;font-size:.58rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:.4rem;}
+.case-result-val{font-family:'Playfair Display',serif;font-weight:400;font-size:1rem;color:var(--mint);line-height:1.4;}
+.case-link{font-family:'DM Sans',sans-serif;font-size:.65rem;font-weight:400;letter-spacing:.1em;color:var(--sage);text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;margin-top:.75rem;transition:color .3s;}
+.case-link:hover{color:var(--mint);}
+.case-link::after{content:'↗';}
+
+/* TESTIMONIALS strip used on landing */
+.testi-strip{display:grid;grid-template-columns:1.25fr .9fr .95fr;gap:1rem;padding-top:2rem;border-top:1px solid rgba(240,236,226,.07);margin-top:2rem;max-width:980px;}
+.testi{background:rgba(26,44,20,.3);border:1px solid rgba(90,122,64,.15);border-radius:3px;padding:1rem 1.2rem;min-width:220px;box-shadow:0 18px 40px rgba(0,0,0,.16);}
+.testi:nth-child(1){transform:translateY(.6rem);}
+.testi:nth-child(2){transform:translateY(2rem);}
+.testi:nth-child(3){transform:translateY(-.25rem);}
+.testi-text{font-family:'Playfair Display',serif;font-weight:400;font-size:.9rem;color:rgba(240,236,226,.6);line-height:1.65;margin-bottom:.5rem;}
+.testi-by{font-family:'DM Sans',sans-serif;font-size:.6rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);}
+
+/* FAQ PAGE */
+#p12{background:var(--wine);}
+#p12::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(10,16,8,.55) 0%,transparent 65%);}
+.faq-wrap{position:absolute;inset:0;z-index:2;max-width:1100px;margin:0 auto;width:100%;padding:7rem 4rem 3rem;display:flex;flex-direction:column;}
+.faq-cols{display:grid;grid-template-columns:1fr 1fr;gap:0 3rem;flex:1;overflow-y:auto;}
+.faq-item{border-bottom:1px solid rgba(240,236,226,.07);padding:1.4rem 0;cursor:pointer;}
+.faq-item:first-child{border-top:1px solid rgba(240,236,226,.07);}
+.faq-q{font-family:'Playfair Display',serif;font-weight:500;font-size:1.05rem;color:var(--bone);line-height:1.3;display:flex;justify-content:space-between;align-items:start;gap:1rem;}
+.faq-q::after{content:'+';font-family:'DM Sans',sans-serif;font-weight:300;font-size:1.2rem;color:var(--sage);flex-shrink:0;transition:transform .3s;}
+.faq-item.open .faq-q::after{transform:rotate(45deg);}
+.faq-a{font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:300;color:rgba(240,236,226,.45);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .45s ease,margin .35s;}
+.faq-item.open .faq-a{max-height:200px;margin-top:.75rem;}
+
+/* LEAD FORM */
+.lead-form{display:flex;flex-direction:column;gap:.75rem;margin-top:1.5rem;}
+.lead-form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+.lead-input,.lead-select,.lead-textarea{background:rgba(240,236,226,.07);border:1px solid rgba(240,236,226,.12);padding:.8rem 1rem;color:var(--ivory);font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:300;outline:none;transition:border-color .3s;border-radius:2px;width:100%;}
+.lead-input::placeholder,.lead-textarea::placeholder{color:rgba(240,236,226,.28);}
+.lead-input:focus,.lead-select:focus,.lead-textarea:focus{border-color:rgba(90,122,64,.5);}
+.lead-select option{background:#1e3018;color:var(--ivory);}
+.lead-textarea{resize:none;height:80px;}
+
+/* ─── RESPONSIVE ─── */
+/* REPORTS PAGE */
+#p13{background:var(--void);}
+#p13::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 75% 60% at 50% 50%,rgba(20,36,16,.5) 0%,transparent 65%),
+             radial-gradient(ellipse 50% 40% at 0% 100%,rgba(58,14,28,.3) 0%,transparent 50%);}
+.reports-wrap{position:absolute;inset:0;z-index:2;max-width:1200px;margin:0 auto;width:100%;padding:7rem 4rem 2rem;display:flex;flex-direction:column;}
+.reports-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2rem;flex-shrink:0;flex-wrap:wrap;gap:1rem;}
+.reports-title{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.5rem,5vw,4rem);line-height:.92;color:var(--ivory);}
+.reports-sub{font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:300;color:rgba(240,236,226,.38);max-width:280px;text-align:right;line-height:1.75;}
+.reports-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;background:none;flex:1;min-height:0;overflow-y:auto;align-items:start;padding-bottom:.5rem;}
+.report-card{background:rgba(12,17,9,.75);padding:1.5rem 1.4rem;display:flex;flex-direction:column;transition:background .3s;position:relative;cursor:pointer;text-decoration:none;border:1px solid rgba(240,236,226,.06);box-shadow:0 18px 42px rgba(0,0,0,.16);min-height:220px;}
+.report-card:hover{background:rgba(20,36,16,.95);}
+.report-card:nth-child(6n+1),.report-card:nth-child(6n+4){grid-column:span 4;}
+.report-card:nth-child(6n+2),.report-card:nth-child(6n+5){grid-column:span 3;}
+.report-card:nth-child(6n+3),.report-card:nth-child(6n+6){grid-column:span 5;}
+.report-card:nth-child(3n+2){margin-top:2rem;}
+.report-card:nth-child(4n+3){margin-top:.75rem;}
+.report-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:transparent;transition:background .35s;}
+.report-card:hover::before{background:var(--sage);}
+.report-icon{font-family:'Playfair Display',serif;font-size:1.6rem;color:rgba(240,236,226,.15);line-height:1;margin-bottom:.8rem;transition:color .3s;}
+.report-card:hover .report-icon{color:var(--sage-l);}
+.report-name{font-family:'Playfair Display',serif;font-weight:500;font-size:1.1rem;color:var(--bone);margin-bottom:.4rem;line-height:1.2;transition:color .3s;}
+.report-card:hover .report-name{color:var(--ivory);}
+.report-desc{font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:300;color:rgba(240,236,226,.38);line-height:1.65;flex:1;}
+.report-price{font-family:'Playfair Display',serif;font-weight:600;font-size:1rem;color:var(--petal);margin-top:.85rem;}
+.report-free{font-family:'DM Sans',sans-serif;font-size:.6rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-top:.4rem;}
+.reports-note{flex-shrink:0;padding-top:1.2rem;border-top:1px solid rgba(240,236,226,.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.reports-note p{font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:300;color:rgba(240,236,226,.32);line-height:1.7;max-width:500px;}
+
+@media(max-width:900px){
+  .nav-pills{display:none;}
+  .p2-wrap,.p6-wrap,.p8-wrap{grid-template-columns:1fr;}
+  .p2-photo,.p6-photos,.p8-photo{display:none;}
+  .p2-txt,.p3-wrap,.p4-wrap,.p5-wrap,.p7-wrap,.p8-left{padding:5rem 2rem 3rem;}
+  .p2-txt{margin:0;background:none;border:none;box-shadow:none;}
+  .p4-products{grid-template-columns:1fr;}
+  .product:nth-child(1),.product:nth-child(2),.product:nth-child(3){grid-column:auto;margin-top:0;}
+  .p5-grid{grid-template-columns:1fr 1fr;}
+  .p5-cell:nth-child(1),.p5-cell:nth-child(2),.p5-cell:nth-child(3),.p5-cell:nth-child(4),.p5-cell:nth-child(5),.p5-cell:nth-child(6){grid-column:auto;transform:none;}
+  .p6-txt{padding:5rem 2rem 3rem;}
+  .p1-content{padding:4rem 2rem 5rem;}
+  .p1-proof{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none;}
+  .testi-strip{grid-template-columns:1fr;}
+  .testi:nth-child(1),.testi:nth-child(2),.testi:nth-child(3){transform:none;}
+  .tools-wrap{grid-template-columns:1fr;grid-template-rows:auto 1fr;}
+  .tools-sidebar{border-right:none;border-bottom:1px solid rgba(240,236,226,.07);padding-right:0;padding-bottom:1.5rem;padding-top:0;}
+  .tool-btns{flex-direction:row;flex-wrap:wrap;}
+  .tool-btn-desc{display:none;}
+  .card:nth-child(2),.card:nth-child(3){margin-left:0;max-width:none;}
+  .bld-sec:nth-child(2),.bld-sec:nth-child(3){margin-left:0;margin-right:0;}
+  .cases-grid,.reports-grid{grid-template-columns:1fr;}
+  .case-card:nth-child(1),.case-card:nth-child(2),.case-card:nth-child(3){grid-column:auto;margin-top:0;}
+  .report-card:nth-child(n){grid-column:auto;margin-top:0;min-height:unset;}
+  .chat-panel{padding-left:0;padding-top:1.5rem;}
+  .dots{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <button class="nav-logo" onclick="go(0)">Jenna Leigh West</button>
+  <ul class="nav-pills">
+    <li><button id="n1" onclick="go(1)">About</button></li>
+    <li><button id="n2" onclick="go(2)">Offerings</button></li>
+    <li><button id="n3" onclick="go(3)">Shop</button></li>
+    <li><button id="n4" onclick="go(4)">Credential</button></li>
+    <li><button id="n5" onclick="go(5)">Art</button></li>
+    <li><button id="n6" onclick="go(6)">Start Here</button></li>
+    <li><button id="n7" onclick="go(7)">Connect</button></li>
+    <li><button id="n8" onclick="go(8)" class="nav-tools-btn">Tools</button></li>
+    <li><button id="n9" onclick="go(9)">Process</button></li>
+    <li><button id="n10" onclick="go(10)">How I Help</button></li>
+    <li><button id="n11" onclick="go(11)">FAQ</button></li>
+    <li><button id="n12" onclick="go(12)" style="color:var(--mint)!important;">Reports</button></li>
+  </ul>
+</nav>
+
+<!-- DOTS -->
+<div class="dots">
+  <button class="dot on" onclick="go(0)"></button>
+  <button class="dot" onclick="go(1)"></button>
+  <button class="dot" onclick="go(2)"></button>
+  <button class="dot" onclick="go(3)"></button>
+  <button class="dot" onclick="go(4)"></button>
+  <button class="dot" onclick="go(5)"></button>
+  <button class="dot" onclick="go(6)"></button>
+  <button class="dot" onclick="go(7)"></button>
+  <button class="dot" onclick="go(8)"></button>
+  <button class="dot" onclick="go(9)"></button>
+  <button class="dot" onclick="go(10)"></button>
+  <button class="dot" onclick="go(11)"></button>
+  <button class="dot" onclick="go(12)"></button>
+</div>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="sticky-cta">
+  <button class="sticky-book" onclick="go(7);document.getElementById('sticky-cta').style.display='none'">Book a Consultation</button>
+  <button class="sticky-book" onclick="go(12);document.getElementById('sticky-cta').style.display='none'" style="background:var(--leaf);">Free Mini Report</button>
+  <button class="sticky-dismiss" onclick="document.getElementById('sticky-cta').style.display='none'">dismiss</button>
+</div>
+
+<!-- ═══ P1 LANDING ═══ -->
+<div class="page active" id="p1">
+  <div class="p1-bg f1"><img src="2F3A8636-2141-4FD3-B1EC-829946AE2C87_1_201_a.jpeg" alt="" onerror="this.style.display='none'"></div>
+  <div class="p1-veil"></div>
+  <div class="p1-portrait"></div>
+  <div class="p1-content">
+    <p class="p1-eye u1">Systems Decoder &nbsp;·&nbsp; Guide &nbsp;·&nbsp; Artist &nbsp;·&nbsp; Builder</p>
+    <h1 class="p1-name u2">JENNA<span>LEIGH WEST</span></h1>
+    <div class="p1-rule u3"></div>
+    <p class="p1-sub u3">Appalachian roots. Neurodivergent wisdom. A guide for women in transition, and a builder of tools, reports, and systems that help people see clearly.</p>
+    <div class="p1-acts u4">
+      <button class="btn btn-white" onclick="go(1)">Enter the Site</button>
+      <button class="btn btn-outline" onclick="go(3)">Shop Digital Products</button>
+      <button class="btn btn-rose" onclick="go(8)">Try the AI Tools</button>
+      <button class="btn btn-outline" onclick="go(12)">Free Mini Reports</button>
+    </div>
+    <div class="p1-proof u5">
+      <div><div class="proof-num">71+</div><div class="proof-lbl">Five-Star Reviews</div></div>
+      <div><div class="proof-num">100%</div><div class="proof-lbl">Recommend Rating</div></div>
+      <div><div class="proof-num">Real</div><div class="proof-lbl">Client Feedback</div></div>
+      <div><div class="proof-num">5th Gen</div><div class="proof-lbl">Appalachian</div></div>
+    </div>
+    <div class="testi-strip u5">
+      <div class="testi"><p class="testi-text">"It BLEW MY ABSOLUTE FRIGGIN MIND."</p><p class="testi-by">— Amanda Lezlea Rachwitz</p></div>
+      <div class="testi"><p class="testi-text">"The Mirror Protocol doesn't analyze you. It reveals you."</p><p class="testi-by">— Luis Fernando Mises</p></div>
+      <div class="testi"><p class="testi-text">"Nobody has ever EVER been able to help me understand my recurring dreams until this was done."</p><p class="testi-by">— White Moon Tarot</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ P2 ABOUT ═══ -->
+<div class="page" id="p2">
+  <div class="p2-wrap">
+    <div class="p2-photo f1">
+      <img src="cea5aa6fa03ddbf53a14724455dc8c62.JPEG" alt="Jenna Leigh West" onerror="this.style.display='none'">
+      <div class="p2-veil"></div>
+      <div class="p2-caption">
+        <p class="p2-caption-lbl">Fifth Generation Appalachian</p>
+        <p class="p2-caption-line">Where ancient knowing meets the modern edge</p>
+      </div>
+    </div>
+    <div class="p2-txt">
+      <span class="lbl u1">About</span>
+      <h2 class="p2-title u2">Guide. Decoder. Maker.</h2>
+      <div class="p2-rule u2"></div>
+      <p class="p2-body u3">Jenna Leigh West is a guide for creative women in transition — weaving neurodivergent wisdom and deep Appalachian roots into transformative consulting experiences.</p>
+      <div class="p2-pull u3">Her approach blends ancient tradition with modern technique, resulting in consulting experiences that are unlike anything else.</div>
+      <p class="p2-body u4">Founder of The Forgotten Code Research Institute. Holder of the Mirror Protocol (US Copyright No. 1-14949237971). Self-taught herbalist and systems decoder across every landscape — prep schools, public systems, high rises, off-grid homesteads.</p>
+      <div class="p2-tags u4">
+        <span class="p2-tag">Appalachian Heritage</span><span class="p2-tag">Neurodivergent Wisdom</span>
+        <span class="p2-tag">Botanical Practice</span><span class="p2-tag">Dream Work</span>
+        <span class="p2-tag">Mirror Protocol</span><span class="p2-tag">Forgotten Code Research Institute</span>
+      </div>
+      <div class="u5"><button class="btn-ghost" onclick="go(2)">Offerings <span class="dash"></span><span class="tip"></span></button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ P3 OFFERINGS ═══ -->
+<div class="page" id="p3">
+  <div class="p3-bg f1"><img src="IMG_1093.jpeg" alt="" onerror="this.style.display='none'"></div>
+  <div class="p3-veil"></div>
+  <div class="p3-wrap">
+    <div>
+      <span class="lbl u1" style="color:var(--petal);">The Work</span>
+      <h2 class="p3-title u2">Offerings for the Woman in Transition</h2>
+      <p class="p3-sub u3">Hover each offering to read more. No two engagements are the same.</p>
+      <div class="u4" style="margin-bottom:1.5rem;"><button class="btn btn-rose" onclick="go(3)">Shop Digital Products</button></div>
+      <div class="u5"><button class="btn-ghost" onclick="go(3)">The Store <span class="dash"></span><span class="tip"></span></button></div>
+    </div>
+    <div class="cards u3">
+      <div class="card"><div class="card-inner"><span class="card-num">01</span><div><h3 class="card-name">Consulting</h3><p class="card-desc">Direct, personalized consulting for women ready to move — through a transition, creative shift, new chapter, or system holding them back. Jenna meets you exactly where you are.</p></div></div></div>
+      <div class="card"><div class="card-inner"><span class="card-num">02</span><div><h3 class="card-name">Catalyst Change</h3><p class="card-desc">Not everyone needs a plan — some people need a spark. Jenna works as a catalyst, helping you break through stuck places and step into the version of yourself that has been waiting.</p></div></div></div>
+      <div class="card"><div class="card-inner"><span class="card-num">03</span><div><h3 class="card-name">Intake, Support and Navigation</h3><p class="card-desc">A guide for any and all systems you have to navigate — legal, creative, personal, institutional. Intake support, ongoing guidance, steady hands. No landscape too unfamiliar.</p></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ P4 SHOP ═══ -->
+<div class="page" id="p4">
+  <div class="p4-wrap">
+    <div class="p4-header u1">
+      <div><span class="lbl">Digital Products</span><h2 class="p4-title">The Shop</h2></div>
+      <p class="p4-sub">Instant download. Yours forever. Built from lived experience, not theory.</p>
+    </div>
+    <div class="p4-free u2">
+      <div><strong>Free Resource — The Systems Map</strong><span>A guide to identifying the invisible structures running your life.</span></div>
+      <a href="mailto:theforgottencode780@gmail.com?subject=Free Systems Map Request" class="btn btn-moss" style="flex-shrink:0;">Download Free</a>
+    </div>
+    <div class="p4-products u3">
+      <div class="product">
+        <div class="product-top">
+          <span class="product-badge">Digital Guide</span>
+          <h3 class="product-name">Bloodline Report</h3>
+          <p class="product-desc">A deeply personalized exploration of your ancestral code — the patterns, gifts, and stories carried in your blood. Delivered as a bespoke written report.</p>
+          <ul class="product-includes"><li>Personalized 20-30 page written report</li><li>Bloodline pattern analysis</li><li>Ancestral gift mapping</li><li>Appalachian heritage connection</li></ul>
+        </div>
+        <div class="product-bottom">
+          <div class="product-price">$97<span>One-time</span></div>
+          <!-- REPLACE href with your Stripe Payment Link -->
+          <a href="mailto:theforgottencode780@gmail.com?subject=Bloodline Report Purchase" class="btn btn-white">Buy Now</a>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-top">
+          <span class="product-badge hot">Most Popular</span>
+          <h3 class="product-name">Dream Mapping Session</h3>
+          <p class="product-desc">Your dreams are not noise — they are a navigation system. Jenna works with your dream landscape to surface symbols, themes, and guidance.</p>
+          <ul class="product-includes"><li>Full dream interpretation report</li><li>Symbol and pattern analysis</li><li>Navigation guidance and next steps</li><li>60-day follow-up support</li></ul>
+        </div>
+        <div class="product-bottom">
+          <div class="product-price">$147<span>One-time</span></div>
+          <!-- REPLACE href with your Stripe Payment Link -->
+          <a href="mailto:theforgottencode780@gmail.com?subject=Dream Mapping Purchase" class="btn btn-white">Buy Now</a>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-top">
+          <span class="product-badge">Course</span>
+          <h3 class="product-name">Blood Is Code — Full Course</h3>
+          <p class="product-desc">The complete 25-module menstrual cycle course. Understanding your body as a living system — the code that runs beneath everything.</p>
+          <ul class="product-includes"><li>25 complete modules</li><li>Cycle tracking system</li><li>Pattern recognition tools</li><li>Community access</li></ul>
+        </div>
+        <div class="product-bottom">
+          <div class="product-price">$197<span>One-time</span></div>
+          <!-- REPLACE href with your Stripe Payment Link -->
+          <a href="mailto:theforgottencode780@gmail.com?subject=Blood Is Code Purchase" class="btn btn-white">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ P5 CREDENTIAL ═══ -->
+<div class="page" id="p5">
+  <div class="p5-bg f1"><img src="QVZpclN1ZkVQZXRGM3hudXBoNXRoV2xM_Original.JPG" alt="" onerror="this.style.display='none'"></div>
+  <div class="p5-wrap">
+    <div>
+      <span class="lbl u1">The Credential</span>
+      <h2 class="p5-title u2">Not a Degree. A Life Lived Across Every Landscape.</h2>
+      <p class="p5-sub u2">From elite prep schools to public high rises to off-grid homesteads. She has learned to read every room she has ever walked into.</p>
+    </div>
+    <div class="p5-grid u3">
+      <div class="p5-cell"><p class="p5-cname">Herbalism</p><p class="p5-ctxt">Appalachian folk tradition. Preparation, formulation, the living knowledge of plants in body and home.</p></div>
+      <div class="p5-cell"><p class="p5-cname">Botany and Biology</p><p class="p5-ctxt">Working knowledge of plant science and biological systems — how things function, interact, respond.</p></div>
+      <div class="p5-cell"><p class="p5-cname">Art and Making</p><p class="p5-ctxt">Painter, sewer, maker across acrylic, watercolor, fabric, found materials. How she thinks and transmits.</p></div>
+      <div class="p5-cell"><p class="p5-cname">Systems Decoding</p><p class="p5-ctxt">Any system — legal, institutional, family, creative, digital — read its structure, find the leverage points.</p></div>
+      <div class="p5-cell"><p class="p5-cname">Sewing and Textile</p><p class="p5-ctxt">Garment construction, mending, textile as living practice. The precision of sewing shaped how she thinks.</p></div>
+      <div class="p5-cell" style="border-right:none;"><p class="p5-cname">Technical and Adaptive</p><p class="p5-ctxt">Self-taught across AI, digital tools, research. Prep schools to off-grid homesteads. Fluent everywhere.</p></div>
+    </div>
+    <div class="p5-quote u4">
+      <p>"I have traveled across prep schools, public systems, high rises, and off-grid homesteads. I decode systems — whatever system you are standing inside of. That is what I do."</p>
+      <button class="btn-ghost" onclick="go(5)" style="flex-shrink:0;">Art and Work <span class="dash"></span><span class="tip"></span></button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ P6 ART ═══ -->
+<div class="page" id="p6">
+  <div class="p6-wrap">
+    <div class="p6-txt">
+      <span class="lbl u1">Art and Vision</span>
+      <h2 class="p6-title u2">Made by Hand. By Heart.</h2>
+      <p class="p6-body u3">Acrylic, watercolor, found materials. The studio is where she thinks. The paintings are how she speaks.</p>
+      <div class="u4" style="margin-bottom:1.2rem;"><button class="btn btn-outline" onclick="go(6)">See Where to Start</button></div>
+      <div class="u5"><button class="btn-ghost" onclick="go(6)">Start Here <span class="dash"></span><span class="tip"></span></button></div>
+    </div>
+    <div class="p6-photos f1">
+      <div class="p6-ph ph1"><img src="23BEA359-7408-4B3A-9B7F-C4AB9AFA1E5B_1_105_c.jpeg" alt="" onerror="this.parentElement.style.background='#243b1a'"></div>
+      <div class="p6-ph ph2"><img src="EXNEE0144.JPG" alt="" onerror="this.parentElement.style.background='#1e3018'"></div>
+      <div class="p6-ph ph3"><img src="FNFZE3007.JPG" alt="" onerror="this.parentElement.style.background='#1a2c14'"></div>
+      <div class="p6-ph ph4"><img src="CGLYE7373.JPG" alt="" onerror="this.parentElement.style.background='#3a0e1c'"></div>
+      <div class="p6-ph ph5"><img src="A3ABB88C-9D9E-4748-9DD1-85D0CE4C93B2_1_105_c.jpeg" alt="" onerror="this.parentElement.style.background='#2e0a18'"></div>
+      <div class="p6-ph ph6"><img src="RTCDE3221.JPG" alt="" onerror="this.parentElement.style.background='#243b1a'"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ P7 START HERE ═══ -->
+<div class="page" id="p7">
+  <div class="p7-wrap">
+    <div class="p7-top u1">
+      <div><span class="lbl">Start Here</span><div class="p7-big">4<span class="p7-big-lbl">Ways In</span></div></div>
+      <p class="p7-note">No inflated portfolio wall. Just the live places you can actually go right now.</p>
+    </div>
+    <div class="p7-scroll u2">
+      <div class="bld-sec">
+        <p class="bld-sec-lbl">Mini Reports</p>
+        <div class="bld-grid">
+          <div class="bld"><p class="bld-name">Report Library</p><a href="https://intake-form-code.vercel.app/" target="_blank" rel="noopener">Browse the live intake site</a></div>
+          <div class="bld"><p class="bld-name">Dream Mapping Mini</p><a href="https://intake-form-code.vercel.app/dream" target="_blank" rel="noopener">Start the dream intake</a></div>
+          <div class="bld"><p class="bld-name">Lovers, Liars &amp; All Things Patterned</p><a href="https://intake-form-code.vercel.app/lovers" target="_blank" rel="noopener">Start the relationship intake</a></div>
+          <div class="bld"><p class="bld-name">Business &amp; Systems Mini</p><a href="https://intake-form-code.vercel.app/business" target="_blank" rel="noopener">Start the business intake</a></div>
+        </div>
+      </div>
+      <div class="bld-sec">
+        <p class="bld-sec-lbl">Ways to Work With Me</p>
+        <div class="bld-grid">
+          <div class="bld"><p class="bld-name">Book a Consultation</p><a href="#" onclick="go(7);return false;">Open the contact page</a></div>
+          <div class="bld"><p class="bld-name">Use the AI Tools</p><a href="#" onclick="go(8);return false;">Try the live tools here</a></div>
+          <div class="bld"><p class="bld-name">Shop Digital Products</p><a href="#" onclick="go(3);return false;">See reports, guides, and courses</a></div>
+          <div class="bld"><p class="bld-name">Read the Process</p><a href="#" onclick="go(9);return false;">How sessions and builds work</a></div>
+        </div>
+      </div>
+      <div class="bld-sec">
+        <p class="bld-sec-lbl">Inside This Site</p>
+        <div class="bld-grid">
+          <div class="bld"><p class="bld-name">About</p><a href="#" onclick="go(1);return false;">Read the story behind the work</a></div>
+          <div class="bld"><p class="bld-name">Art + Vision</p><a href="#" onclick="go(5);return false;">See the visual world</a></div>
+          <div class="bld"><p class="bld-name">FAQ</p><a href="#" onclick="go(11);return false;">Get the practical answers</a></div>
+          <div class="bld"><p class="bld-name">Connect</p><a href="#" onclick="go(7);return false;">Reach out directly</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="p7-foot u3"><button class="btn-ghost" onclick="go(7)">Connect <span class="dash"></span><span class="tip"></span></button></div>
+  </div>
+</div>
+
+<!-- ═══ P8 CONNECT ═══ -->
+<div class="page" id="p8">
+  <div class="p8-wrap">
+    <div class="p8-left">
+      <span class="lbl u1" style="color:var(--petal);">Begin Here</span>
+      <h2 class="p8-title u2">Ready to Decode Your Next Chapter?</h2>
+      <p class="p8-sub u3">Whether you need consulting, catalyst work, or a guide through any system — every journey begins with one message.</p>
+      <div class="u3">
+        <span class="email-form-lbl">Tell me what you need — I will respond within 24 hours</span>
+        <form class="lead-form" onsubmit="handleLead(event)">
+          <div class="lead-form-row">
+            <input type="text" class="lead-input" placeholder="Your name" required>
+            <input type="email" class="lead-input" placeholder="Email address" required>
+          </div>
+          <div class="lead-form-row">
+            <select class="lead-select" required>
+              <option value="" disabled selected>What do you need?</option>
+              <option>Consulting — I need a guide through a system</option>
+              <option>Catalyst Change — I need a spark</option>
+              <option>Navigation Support — I need steady hands</option>
+              <option>Software / AI Development</option>
+              <option>Digital Product — Bloodline Report</option>
+              <option>Digital Product — Dream Mapping</option>
+              <option>Digital Product — Blood Is Code Course</option>
+              <option>Just exploring</option>
+            </select>
+            <select class="lead-select">
+              <option value="" disabled selected>Timeline</option>
+              <option>Ready now</option>
+              <option>Within 1 month</option>
+              <option>Within 3 months</option>
+              <option>Just researching</option>
+            </select>
+          </div>
+          <textarea class="lead-textarea" placeholder="Briefly describe what you are trying to move through or build..."></textarea>
+          <button type="submit" class="btn btn-white">Send Message</button>
+        </form>
+      </div>
+      <div class="u3">
+        <span class="email-form-lbl">Join the List — Dispatches from the Field</span>
+        <form class="email-row" onsubmit="handleEmail(event)">
+          <input type="email" class="email-input" placeholder="your@email.com" required>
+          <button type="submit" class="email-submit">Subscribe</button>
+        </form>
+        <p class="email-note">No spam. Occasional dispatches. Unsubscribe any time.</p>
+      </div>
+      <span class="p8-contact-lbl u4">Direct Contact</span>
+      <div class="p8-links u4">
+        <a href="mailto:theforgottencode780@gmail.com" class="p8-link">theforgottencode780@gmail.com</a>
+        <a href="tel:4233888304" class="p8-link">423-388-8304</a>
+        <a href="https://jennaleighwilder.github.io/AI-Consulting-/" class="p8-link" target="_blank" rel="noopener">GitHub Portfolio</a>
+        <a href="https://substack.com/@wilderwanderings" class="p8-link" target="_blank" rel="noopener">Substack — Wilder Wanderings</a>
+      </div>
+      <div class="p8-actions u4">
+        <a href="mailto:theforgottencode780@gmail.com?subject=Consultation Request" class="btn btn-white">Request Consultation</a>
+        <button class="btn btn-outline" onclick="go(8)">Try AI Tools</button>
+      </div>
+      <div class="p8-copy u5">
+        © 2026 Jennifer Leigh West &nbsp;·&nbsp; The Forgotten Code Research Institute<br>
+        Mirror Protocol™ &nbsp;·&nbsp; US Copyright No. 1-14949237971<br>
+        Tennessee &nbsp;·&nbsp; Available Remotely &nbsp;·&nbsp; Real reviews available on request
+      </div>
+    </div>
+    <div class="p8-photo f1">
+      <img src="NFBUE5731.JPG" alt="Jenna Leigh West" onerror="this.style.display='none'">
+      <div class="p8-photo-veil"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ P9 TOOLS ═══ -->
+<div class="page" id="p9">
+  <div class="tools-wrap">
+
+    <!-- Sidebar: tool selector -->
+    <div class="tools-sidebar">
+      <div class="tools-sidebar-lbl">
+        <span class="lbl u1">AI Tools</span>
+        <h2 class="tools-heading u2">The Forgotten Code Instruments</h2>
+        <p class="tools-sub u3">Four live AI systems powered by your research. Each one uses a different lens.</p>
+      </div>
+      <div class="tool-btns u3">
+        <button class="tool-btn" onclick="selectTool('advisor')" id="tb-advisor" style="border-color:rgba(200,120,152,.3);">
+          <span class="tool-btn-name" style="color:var(--petal);">Service Advisor</span>
+          <span class="tool-btn-desc">Ask anything about working with Jenna. Services, pricing, process, booking.</span>
+        </button>
+        <button class="tool-btn active" onclick="selectTool('dream')" id="tb-dream">
+          <span class="tool-btn-name">Dream Decoder</span>
+          <span class="tool-btn-desc">Cross-cultural dream symbol analysis. The Forbidden Library framework.</span>
+        </button>
+        <button class="tool-btn" onclick="selectTool('pastlife')" id="tb-pastlife">
+          <span class="tool-btn-name">Past Life Reader</span>
+          <span class="tool-btn-desc">Soul cartography. Incarnation mapping. Karmic pattern analysis.</span>
+        </button>
+        <button class="tool-btn" onclick="selectTool('celestial')" id="tb-celestial">
+          <span class="tool-btn-name">Celestial Biophysics</span>
+          <span class="tool-btn-desc">Daily EM field forecast. UVRK-1 pattern engine. Schumann resonance.</span>
+        </button>
+        <button class="tool-btn" onclick="selectTool('dyad')" id="tb-dyad">
+          <span class="tool-btn-name">DYAD Engine</span>
+          <span class="tool-btn-desc">Relationship pattern forensics. Role locks. Attachment architecture.</span>
+        </button>
+      </div>
+      <div class="tools-note u4">
+        <p>These tools use your Mirror Protocol™ system prompts and run on Claude. For full written reports, book a session at theforgottencode780@gmail.com</p>
+      </div>
+    </div>
+
+    <!-- Chat panel -->
+    <div class="chat-panel">
+      <div class="chat-header u1">
+        <div class="chat-tool-name" id="chat-tool-name">Dream Decoder</div>
+        <div class="chat-tool-tagline" id="chat-tool-tagline">The Forbidden Library — cross-cultural dream symbol analysis</div>
+      </div>
+
+      <div class="chat-messages" id="chat-messages">
+        <div class="chat-welcome" id="chat-welcome">
+          <h3>Welcome to the Dream Decoder</h3>
+          <p>Tell me about a dream that has stayed with you — recurring, vivid, or strange. Describe what you saw, what you felt, and what has been happening in your waking life.</p>
+          <div class="chat-starters" id="chat-starters">
+            <button class="chat-starter" onclick="useStarter(this)">I keep dreaming about water — flooding, drowning, or being near the ocean</button>
+            <button class="chat-starter" onclick="useStarter(this)">I have a recurring dream about a house with rooms I have never seen before</button>
+            <button class="chat-starter" onclick="useStarter(this)">I dreamed about a snake and I cannot stop thinking about it</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="typing" id="typing">
+        <div class="typing-bubble">
+          <span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>
+        </div>
+      </div>
+
+      <div class="chat-input-row u5">
+        <textarea class="chat-input" id="chat-input" placeholder="Describe your dream or ask a question..." rows="1" onkeydown="handleKey(event)"></textarea>
+        <button class="chat-send" id="chat-send" onclick="sendMessage()">Send</button>
+      </div>
+      <p class="chat-disclaimer">For entertainment and educational purposes. Not a substitute for professional therapy or medical advice. Full written reports available at theforgottencode780@gmail.com</p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══ P10 PROCESS ═══ -->
+<div class="page" id="p10">
+  <div class="std-wrap">
+    <div>
+      <span class="lbl u1">How I Work</span>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.4rem,4vw,3.8rem);line-height:1.08;color:var(--ivory);margin-bottom:.6rem;" class="u2">The Process. The Philosophy. The Method.</h2>
+      <p style="font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:300;color:rgba(240,236,226,.4);max-width:520px;line-height:1.78;margin-bottom:0;" class="u2">Every engagement moves through the same architecture — whether it is a consulting session, a navigation intake, or a full software build. This is how the work happens.</p>
+    </div>
+    <div class="process-grid u3">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <p class="process-name">Discovery</p>
+        <p class="process-desc">We map the landscape you are standing in — the visible and the invisible systems at play. No assumptions. Just careful looking.</p>
+        <ul class="process-delivs"><li>Intake conversation</li><li>Pattern identification</li><li>System mapping</li><li>Clarity on the real problem</li></ul>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <p class="process-name">Strategy</p>
+        <p class="process-desc">We build the plan. Not generic advice — a specific, personalized path that accounts for your actual constraints, gifts, and terrain.</p>
+        <ul class="process-delivs"><li>Roadmap development</li><li>Leverage point identification</li><li>Decision framework</li><li>Next-step clarity</li></ul>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <p class="process-name">Build or Navigate</p>
+        <p class="process-desc">For software: we build it. For systems work: we move through it together. For catalyst work: we ignite it. The form changes. The precision does not.</p>
+        <ul class="process-delivs"><li>Hands-on implementation</li><li>Guided navigation</li><li>Real-time adjustment</li><li>Documentation</li></ul>
+      </div>
+      <div class="process-step">
+        <div class="process-num">04</div>
+        <p class="process-name">Integration</p>
+        <p class="process-desc">The work has to land in your real life. We make sure what was built or cleared actually holds — in your body, your workflow, your world.</p>
+        <ul class="process-delivs"><li>Activation protocols</li><li>Sustainability check</li><li>Pattern reinforcement</li><li>Follow-up support</li></ul>
+      </div>
+      <div class="process-step">
+        <div class="process-num">05</div>
+        <p class="process-name">Launch</p>
+        <p class="process-desc">Whether it is a product going live, a new chapter beginning, or a system finally working — we get it out into the world. Completely.</p>
+        <ul class="process-delivs"><li>Deployment support</li><li>Launch checklist</li><li>First-response handling</li><li>Go-live confirmation</li></ul>
+      </div>
+      <div class="process-step">
+        <div class="process-num">06</div>
+        <p class="process-name">Scale or Sustain</p>
+        <p class="process-desc">What was built must be able to grow. What was cleared must stay clear. We design for durability, not just the moment of breakthrough.</p>
+        <ul class="process-delivs"><li>Growth architecture</li><li>Maintenance planning</li><li>Ongoing advisory</li><li>System monitoring</li></ul>
+      </div>
+    </div>
+    <div class="pricing-strip u4">
+      <div class="price-tier">
+        <p class="price-name">Discovery Session</p>
+        <p class="price-val">$150</p>
+        <p class="price-note">60 min · single session · intake + map</p>
+      </div>
+      <div class="price-tier">
+        <p class="price-name">Full Engagement</p>
+        <p class="price-val">$400+</p>
+        <p class="price-note">Multi-session · strategy through integration</p>
+      </div>
+      <div class="price-tier">
+        <p class="price-name">Software / AI Build</p>
+        <p class="price-val">Custom</p>
+        <p class="price-note">Scoped per project · contact for estimate</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:.85rem;flex-wrap:wrap;margin-top:1.5rem;" class="u5">
+      <button class="btn btn-white" onclick="go(7)">Book a Session</button>
+      <button class="btn btn-outline" onclick="go(11)">Read the FAQ</button>
+      <button class="btn-ghost" onclick="go(10)">How I Help <span class="dash"></span><span class="tip"></span></button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ P11 HOW I HELP ═══ -->
+<div class="page" id="p11">
+  <div class="cases-wrap">
+    <div style="flex-shrink:0;margin-bottom:2rem;">
+      <span class="lbl u1">The Work</span>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.4rem,4vw,3.8rem);line-height:1.05;color:var(--ivory);" class="u2">Three honest ways I help.</h2>
+    </div>
+    <div class="cases-grid u3">
+
+      <div class="case-card">
+        <span class="case-tag ai">Reports + Readings</span>
+        <h3 class="case-name">Mini Intakes and Written Reports</h3>
+        <div class="case-row"><span class="case-row-lbl">For</span><span class="case-row-val">People who want insight before they commit to a full session.</span></div>
+        <div class="case-row"><span class="case-row-lbl">How it works</span><span class="case-row-val">You start with a short intake, receive a mini reading instantly, and can then choose whether to order the full written report.</span></div>
+        <div class="case-row"><span class="case-row-lbl">Best fit</span><span class="case-row-val">Dream work, bloodline patterns, relationship loops, calling, desire, and business systems.</span></div>
+        <div class="case-result"><p class="case-result-lbl">Start point</p><p class="case-result-val">The report library is live now and links cleanly to the intake site.</p></div>
+        <a href="https://intake-form-code.vercel.app/" target="_blank" rel="noopener" class="case-link">Open the report library</a>
+      </div>
+
+      <div class="case-card">
+        <span class="case-tag software">Consulting + Navigation</span>
+        <h3 class="case-name">Systems Support for Real Life</h3>
+        <div class="case-row"><span class="case-row-lbl">For</span><span class="case-row-val">People moving through a hard transition, a confusing system, or a season where everything feels tangled.</span></div>
+        <div class="case-row"><span class="case-row-lbl">How it works</span><span class="case-row-val">We map what is actually happening, identify pressure points, and create a way through that matches your life instead of a template.</span></div>
+        <div class="case-row"><span class="case-row-lbl">Best fit</span><span class="case-row-val">Personal crossroads, institutional navigation, creative direction, and support for neurodivergent clients.</span></div>
+        <div class="case-result"><p class="case-result-lbl">Start point</p><p class="case-result-val">Use the contact page if you want direct support and a scoped next step.</p></div>
+        <a href="#" onclick="go(7);return false;" class="case-link">Go to Connect</a>
+      </div>
+
+      <div class="case-card">
+        <span class="case-tag research">Software + AI Builds</span>
+        <h3 class="case-name">Custom Digital Tools</h3>
+        <div class="case-row"><span class="case-row-lbl">For</span><span class="case-row-val">Founders, practitioners, and small businesses who need a tool, intake flow, or simple AI layer that actually fits the work.</span></div>
+        <div class="case-row"><span class="case-row-lbl">How it works</span><span class="case-row-val">We scope the need first, then decide whether the right answer is a landing page, intake system, chatbot, or a fuller custom build.</span></div>
+        <div class="case-row"><span class="case-row-lbl">Best fit</span><span class="case-row-val">Service businesses, report workflows, client onboarding, and experimental AI-powered experiences.</span></div>
+        <div class="case-result"><p class="case-result-lbl">Start point</p><p class="case-result-val">Use the Service Advisor or reach out directly if you want help defining the build.</p></div>
+        <a href="#" onclick="go(8);return false;" class="case-link">Open the tools</a>
+      </div>
+
+    </div>
+    <div style="display:flex;gap:.85rem;flex-wrap:wrap;padding-top:1.5rem;flex-shrink:0;" class="u4">
+      <button class="btn btn-white" onclick="go(6)">Start Here</button>
+      <button class="btn btn-outline" onclick="go(7)">Start a Conversation</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ P12 FAQ ═══ -->
+<div class="page" id="p12">
+  <div class="faq-wrap">
+    <div style="flex-shrink:0;margin-bottom:2rem;">
+      <span class="lbl u1">Questions</span>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.4rem,4vw,3.8rem);line-height:1.05;color:var(--ivory);margin-bottom:.4rem;" class="u2">Frequently Asked</h2>
+      <p style="font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:300;color:rgba(240,236,226,.38);line-height:1.7;" class="u2">Click any question to open the answer.</p>
+    </div>
+    <div class="faq-cols u3">
+      <div>
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <p class="faq-q">What kind of consulting do you offer?</p>
+          <p class="faq-a">I offer direct systems consulting — meaning I help you map, understand, and navigate whatever system you are stuck inside. That could be a legal system, a family system, a business system, a creative block, or an institutional process. I also offer software and AI development consulting for founders and builders.</p>
+        </div>
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <p class="faq-q">How long does a software build take?</p>
+          <p class="faq-a">Simple landing pages and intake tools can move quickly. More custom software or AI builds take longer and depend on scope, revisions, and integrations. Every build starts with a scoping conversation so we can decide what is actually needed before naming a timeline.</p>
+        </div>
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <p class="faq-q">How much does consulting cost?</p>
+          <p class="faq-a">A single Discovery Session is $150 for 60 minutes and gives you a full map with next steps. Full engagements start at $400 and are scoped to your situation. Software builds are quoted per project after an initial conversation. Digital products and reports are listed in the Shop and the Reports page.</p>
+        </div>
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <p class="faq-q">Do you work with neurodivergent clients?</p>
+          <p class="faq-a">Yes — intentionally and specifically. I am neurodivergent myself. I work in a way that honors non-linear thinking, pattern recognition, and the kind of knowing that does not fit standard frameworks. If you have been told your mind works wrong, it probably works differently. That is not the same thing.</p>
+        </div>
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <p class="faq-q">What is the Mirror Protocol?</p>
+          <p class="faq-a">The Mirror Protocol is the name I use for my pattern-reading framework. It shapes how I ask questions, track repeating themes, and build reflective tools that help people see themselves more clearly. On this site, it shows up most directly in the AI tools and in the way I structure reports.</p>
+        </div>
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <p class="faq-q">Do you sign NDAs?</p>
+          <p class="faq-a">Yes. I sign NDAs for all software development and sensitive consulting work. Confidentiality is standard, not an add-on. What you share with me stays with me.</p>
+        </div>
+      </div>
+      <div>
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <p class="faq-q">What does the Bloodline Report include?</p>
+          <p class="faq-a">A personalized 20-30 page written report exploring your ancestral patterns — the gifts, wounds, and recurring themes carried in your bloodline. I draw from Appalachian heritage wisdom, cross-cultural tradition, and your intake answers. It is specific to you, not a template. Delivered within 7-10 days of your intake form submission.</p>
+        </div>
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <p class="faq-q">Can you build AI-powered applications?</p>
+          <p class="faq-a">Yes — AI integration is a core part of my software work. I have built systems powered by Claude, OpenAI, and custom prompt architectures. From simple chatbots to complex multi-modal research engines, I build AI tools that actually do something specific rather than just existing.</p>
+        </div>
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <p class="faq-q">Do you offer ongoing support after a project?</p>
+          <p class="faq-a">Yes. For software: I offer ongoing maintenance, updates, and support packages. For consulting: I offer follow-up sessions and check-ins. Nothing I build is meant to be handed off and forgotten — it is meant to work, and if it stops working, I want to know.</p>
+        </div>
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <p class="faq-q">Where are you based? Do you work remotely?</p>
+          <p class="faq-a">I am based in rural Tennessee — fifth generation Appalachian. I work entirely remotely and serve clients across the US and internationally. Time zones are not a barrier. I respond within 24 hours on business days.</p>
+        </div>
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <p class="faq-q">What systems do you decode — what does that mean exactly?</p>
+          <p class="faq-a">Any system — legal, medical, educational, financial, family, institutional, creative, spiritual, digital. A system is any set of rules, relationships, and pressures that shapes what you can and cannot do. I have traveled across prep schools, public housing, off-grid homesteads, and corporate institutions. I know how to read a room — and a system is just a room with rules written in invisible ink.</p>
+        </div>
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <p class="faq-q">How do I get started?</p>
+          <p class="faq-a">Fill out the contact form on the Connect page, or email theforgottencode780@gmail.com directly. Tell me your name, what you are trying to move through or build, and your timeline. I will respond within 24 hours with next steps. If you are not sure what you need, the AI Tools page has a Service Advisor that can help you figure it out.</p>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:1.5rem;flex-shrink:0;" class="u5">
+      <button class="btn btn-white" onclick="go(7)">Still have questions — contact me</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ P13 REPORTS ═══ -->
+<div class="page" id="p13">
+  <div class="reports-wrap">
+    <div class="reports-header u1">
+      <div>
+        <span class="lbl">Mini Intakes + Free Reports</span>
+        <h2 class="reports-title">The Report Library</h2>
+      </div>
+      <p class="reports-sub">Each card opens the intake site for a free mini reading. The intake build stays separate on purpose, and every link below takes you there directly.</p>
+    </div>
+    <div class="reports-grid u2">
+
+      <a href="https://intake-form-code.vercel.app/bloodline" target="_blank" rel="noopener" class="report-card">
+        <div class="report-icon">✦</div>
+        <p class="report-name">Bloodline</p>
+        <p class="report-desc">Map the patterns, gifts, and wounds carried in your ancestral line. Who were they? What did they leave you?</p>
+        <p class="report-price">$97</p>
+        <p class="report-free">Free mini · 5 questions</p>
+      </a>
+
+      <a href="https://intake-form-code.vercel.app/dream" target="_blank" rel="noopener" class="report-card">
+        <div class="report-icon">☽</div>
+        <p class="report-name">Dream Mapping</p>
+        <p class="report-desc">Your dream language decoded. Symbols, themes, and the message your unconscious has been trying to send.</p>
+        <p class="report-price">$147</p>
+        <p class="report-free">Free mini · 5 questions</p>
+      </a>
+
+      <a href="https://intake-form-code.vercel.app/lovers" target="_blank" rel="noopener" class="report-card">
+        <div class="report-icon">⚭</div>
+        <p class="report-name">Lovers, Liars &amp; All Things Patterned</p>
+        <p class="report-desc">Forensic-level relationship pattern analysis. Role locks, attachment architecture, and the loop you keep running.</p>
+        <p class="report-price">$127</p>
+        <p class="report-free">Free mini · 6 questions</p>
+      </a>
+
+      <a href="https://intake-form-code.vercel.app/attachment" target="_blank" rel="noopener" class="report-card">
+        <div class="report-icon">⛓</div>
+        <p class="report-name">Attachment Bonds</p>
+        <p class="report-desc">How you attach, why you chose them, and what the bond is actually built on beneath what you can see.</p>
+        <p class="report-price">$97</p>
+        <p class="report-free">Free mini · 5 questions</p>
+      </a>
+
+      <a href="https://intake-form-code.vercel.app/financial" target="_blank" rel="noopener" class="report-card">
+        <div class="report-icon">◈</div>
+        <p class="report-name">Financial Identity Map</p>
+        <p class="report-desc">The story your money tells about you. Wealth patterns across your lineage and what they predict about your future.</p>
+        <p class="report-price">$127</p>
+        <p class="report-free">Free mini · 5 questions</p>
+      </a>
+
+      <a href="https://intake-form-code.vercel.app/soulmap" target="_blank" rel="noopener" class="report-card">
+        <div class="report-icon">◉</div>
+        <p class="report-name">Soul Map of Past Lives</p>
+        <p class="report-desc">5-7 detailed past life incarnations. Who you were, what you carried forward, and what karma remains unfinished.</p>
+        <p class="report-price">$197</p>
+        <p class="report-free">Free mini · 7 questions</p>
+      </a>
+
+      <a href="https://intake-form-code.vercel.app/calling" target="_blank" rel="noopener" class="report-card">
+        <div class="report-icon">⬡</div>
+        <p class="report-name">The Calling</p>
+        <p class="report-desc">What you were built for. The work that lights you up and why you keep moving away from it.</p>
+        <p class="report-price">$97</p>
+        <p class="report-free">Free mini · 5 questions</p>
+      </a>
+
+      <a href="https://intake-form-code.vercel.app/business" target="_blank" rel="noopener" class="report-card">
+        <div class="report-icon">▲</div>
+        <p class="report-name">Business &amp; Systems</p>
+        <p class="report-desc">Your business decoded as a living system. What is running beneath the surface and where the leverage is.</p>
+        <p class="report-price">$147</p>
+        <p class="report-free">Free mini · 6 questions</p>
+      </a>
+
+      <a href="https://intake-form-code.vercel.app/desire" target="_blank" rel="noopener" class="report-card">
+        <div class="report-icon">❧</div>
+        <p class="report-name">Desire</p>
+        <p class="report-desc">What you actually want — beneath the versions you perform. Your desire map and what it says about your soul.</p>
+        <p class="report-price">$97</p>
+        <p class="report-free">Free mini · 5 questions</p>
+      </a>
+
+      <a href="https://intake-form-code.vercel.app/rage" target="_blank" rel="noopener" class="report-card">
+        <div class="report-icon">◭</div>
+        <p class="report-name">Rage</p>
+        <p class="report-desc">The anger you carry and what it is protecting. Rage decoded as sacred information — not pathology.</p>
+        <p class="report-price">$97</p>
+        <p class="report-free">Free mini · 5 questions</p>
+      </a>
+
+      <a href="https://intake-form-code.vercel.app/sirens" target="_blank" rel="noopener" class="report-card">
+        <div class="report-icon">☊</div>
+        <p class="report-name">Siren's Call</p>
+        <p class="report-desc">The pattern of seduction and self-sabotage. What draws you in, what you destroy, and why it keeps happening.</p>
+        <p class="report-price">$127</p>
+        <p class="report-free">Free mini · 6 questions</p>
+      </a>
+
+      <a href="https://intake-form-code.vercel.app/spiritualentrepreneur" target="_blank" rel="noopener" class="report-card">
+        <div class="report-icon">✧</div>
+        <p class="report-name">Spiritual Entrepreneur</p>
+        <p class="report-desc">For the builder who cannot separate their calling from their commerce. Your sacred business architecture.</p>
+        <p class="report-price">$147</p>
+        <p class="report-free">Free mini · 6 questions</p>
+      </a>
+
+    </div>
+    <div class="reports-note u3">
+      <p>Every report begins with a free 5-7 question intake. You receive an AI-generated mini reading instantly. Unlock the full written report — delivered personally by Jenna within 7-10 days.</p>
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+        <a href="https://intake-form-code.vercel.app/" target="_blank" rel="noopener" class="btn btn-white">Enter the Report Library →</a>
+        <button class="btn btn-outline" onclick="go(3)">Shop All Products</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ─── PAGE NAVIGATION ─── */
+const PGS  = ['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10','p11','p12','p13'];
+const NAVS = ['','n1','n2','n3','n4','n5','n6','n7','n8','n9','n10','n11','n12'];
+let cur = 0;
+function go(n) {
+  document.getElementById(PGS[cur]).classList.remove('active');
+  document.querySelectorAll('.dot')[cur].classList.remove('on');
+  if(NAVS[cur]) document.getElementById(NAVS[cur]).classList.remove('on');
+  cur = n;
+  document.getElementById(PGS[cur]).classList.add('active');
+  document.querySelectorAll('.dot')[cur].classList.add('on');
+  if(NAVS[cur]) document.getElementById(NAVS[cur]).classList.add('on');
+}
+document.addEventListener('keydown', e => {
+  if(e.key==='ArrowRight'||e.key==='ArrowDown') go(Math.min(cur+1,PGS.length-1));
+  if(e.key==='ArrowLeft' ||e.key==='ArrowUp')   go(Math.max(cur-1,0));
+});
+let tx=0,ty=0;
+document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
+document.addEventListener('touchend',e=>{
+  const dy=ty-e.changedTouches[0].clientY,dx=tx-e.changedTouches[0].clientX;
+  if(Math.abs(dy)>Math.abs(dx)){
+    if(dy>60)go(Math.min(cur+1,PGS.length-1));
+    if(dy<-60)go(Math.max(cur-1,0));
+  }
+},{passive:true});
+
+/* ─── EMAIL ─── */
+function handleEmail(e) {
+  e.preventDefault();
+  const email = e.target.querySelector('input').value;
+  window.location.href = 'mailto:theforgottencode780@gmail.com?subject=Subscribe: ' + email;
+}
+
+/* ─── CHATBOT ─── */
+const TOOL_META = {
+  advisor: { name: 'Service Advisor',     tagline: 'Ask anything about working with Jenna — services, pricing, process, booking',
+             starters: ['What services do you offer and which is right for me?', 'How much does a consulting session cost?', 'I have an idea for a software build — can you scope it with me?'] },
+  dream:     { name: 'Dream Decoder',       tagline: 'The Forbidden Library — cross-cultural dream symbol analysis',
+               starters: ['I keep dreaming about water — flooding, drowning, or being near the ocean', 'I have a recurring dream about a house with rooms I have never seen before', 'I dreamed about a snake and I cannot stop thinking about it'] },
+  pastlife:  { name: 'Past Life Reader',    tagline: 'Soul cartography — incarnation mapping and karmic pattern analysis',
+               starters: ['I feel a strong pull toward ancient Egypt and do not know why', 'I have an unexplained fear of fire that has been with me my whole life', 'I want to understand my relationship with a person who feels like I have known them forever'] },
+  celestial: { name: 'Celestial Biophysics',tagline: 'Daily electromagnetic field forecast powered by the UVRK-1 engine',
+               starters: ['I want my daily celestial forecast — my birthday is March 15, 1983', 'I am highly sensitive to full moons and want to understand why', 'What are today\'s electromagnetic conditions and how do they affect focus?'] },
+  dyad:      { name: 'DYAD Engine',         tagline: 'Relationship pattern forensics — role locks, attachment, karmic architecture',
+               starters: ['My partner and I keep having the same fight over and over — I pursue, they withdraw', 'I fall in love fast and then the person becomes distant — why does this keep happening?', 'I want to understand the pattern in my relationship — I will describe it to you'] }
+};
+
+let activeTool = 'dream';
+Object.assign(TOOL_META, {advisor: TOOL_META.advisor}); // ensure advisor is loaded
+let chatHistory = {};
+Object.keys(TOOL_META).forEach(t => chatHistory[t] = []);
+
+function selectTool(tool) {
+  activeTool = tool;
+  // Update button states
+  document.querySelectorAll('.tool-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tb-'+tool).classList.add('active');
+  // Update header
+  document.getElementById('chat-tool-name').textContent = TOOL_META[tool].name;
+  document.getElementById('chat-tool-tagline').textContent = TOOL_META[tool].tagline;
+  // Rebuild messages
+  rebuildMessages();
+}
+
+function rebuildMessages() {
+  const container = document.getElementById('chat-messages');
+  const history = chatHistory[activeTool];
+  if (history.length === 0) {
+    const meta = TOOL_META[activeTool];
+    container.innerHTML = `
+      <div class="chat-welcome" id="chat-welcome">
+        <h3>Welcome to the ${meta.name}</h3>
+        <p>${meta.name === 'Dream Decoder' ? 'Tell me about a dream that has stayed with you.' : meta.name === 'Past Life Reader' ? 'Tell me your name, birth date, and what keeps recurring in your life.' : meta.name === 'Celestial Biophysics' ? 'Share your birth date and location for a personalized forecast.' : 'Describe your relationship pattern and I will map the architecture.'}</p>
+        <div class="chat-starters">${meta.starters.map(s => `<button class="chat-starter" onclick="useStarter(this)">${s}</button>`).join('')}</div>
+      </div>`;
+  } else {
+    container.innerHTML = history.map(m => `
+      <div class="msg ${m.role}">
+        <span class="msg-role">${m.role === 'user' ? 'You' : TOOL_META[activeTool].name}</span>
+        <div class="msg-bubble">${m.content.replace(/\n/g,'<br>')}</div>
+      </div>`).join('');
+    container.scrollTop = container.scrollHeight;
+  }
+}
+
+function appendMessage(role, content) {
+  const welcome = document.getElementById('chat-welcome');
+  if (welcome) welcome.remove();
+  const container = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.className = `msg ${role}`;
+  div.innerHTML = `<span class="msg-role">${role === 'user' ? 'You' : TOOL_META[activeTool].name}</span><div class="msg-bubble">${content.replace(/\n/g,'<br>')}</div>`;
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+}
+
+function useStarter(btn) {
+  document.getElementById('chat-input').value = btn.textContent;
+  sendMessage();
+}
+
+function handleKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+}
+
+async function sendMessage() {
+  const input = document.getElementById('chat-input');
+  const sendBtn = document.getElementById('chat-send');
+  const text = input.value.trim();
+  if (!text) return;
+
+  input.value = '';
+  sendBtn.disabled = true;
+
+  // Add user message
+  chatHistory[activeTool].push({ role: 'user', content: text });
+  appendMessage('user', text);
+
+  // Show typing
+  const typing = document.getElementById('typing');
+  typing.classList.add('show');
+  document.getElementById('chat-messages').scrollTop = 99999;
+
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        tool: activeTool,
+        messages: chatHistory[activeTool].map(m => ({ role: m.role, content: m.content }))
+      })
+    });
+    const data = await res.json();
+    if (data.error) throw new Error(data.error);
+    chatHistory[activeTool].push({ role: 'assistant', content: data.content });
+    typing.classList.remove('show');
+    appendMessage('ai', data.content);
+  } catch(err) {
+    typing.classList.remove('show');
+    let errMsg = 'Something went wrong. ';
+    if (err.message.includes('API key')) {
+      errMsg = 'The AI tools are not yet configured. If you are deploying this site, add your ANTHROPIC_API_KEY to Vercel environment variables.';
+    } else {
+      errMsg += err.message;
+    }
+    appendMessage('ai', errMsg);
+  }
+
+  sendBtn.disabled = false;
+  input.focus();
+}
+
+function handleLead(e) {
+  e.preventDefault();
+  const name = e.target.querySelector('input[type=text]').value;
+  const email = e.target.querySelector('input[type=email]').value;
+  const need = e.target.querySelectorAll('select')[0].value;
+  const timeline = e.target.querySelectorAll('select')[1].value;
+  const msg = e.target.querySelector('textarea').value;
+  window.location.href = 'mailto:theforgottencode780@gmail.com?subject=New Inquiry from ' + encodeURIComponent(name) + '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nNeeds: ' + need + '\nTimeline: ' + timeline + '\n\n' + msg);
+}
+
+function toggleFAQ(el) {
+  const item = el.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>

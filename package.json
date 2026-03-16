@@ -1,0 +1,17 @@
+{
+  "name": "jennaleighwest-site",
+  "version": "1.0.0",
+  "description": "Jenna Leigh West — Systems Decoder",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
