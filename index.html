@@ -444,6 +444,8 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 .sticky-book:hover{background:var(--petal);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.5);}
 .sticky-dismiss{background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:400;color:rgba(240,236,226,.5);text-align:right;transition:color .3s;}
 .sticky-dismiss:hover{color:rgba(240,236,226,.6);}
+.mobile-home-links{display:none;}
+.mobile-tools-help{display:none;}
 
 /* ─── NEW PAGE STYLES ─── */
 .std-wrap{position:absolute;inset:0;z-index:2;max-width:1100px;margin:0 auto;width:100%;padding:7rem 4rem 3rem;display:flex;flex-direction:column;justify-content:center;}
@@ -562,11 +564,16 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 .reports-note p{font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:300;color:rgba(240,236,226,.32);line-height:1.7;max-width:500px;}
 
 @media(max-width:900px){
-  .nav-pills{display:none;}
+  .nav{padding:.9rem 1rem .6rem;flex-direction:column;align-items:stretch;gap:.6rem;}
+  .nav-logo{font-size:1rem;align-self:flex-start;}
+  .nav-pills{display:flex;overflow-x:auto;overflow-y:hidden;gap:.35rem;padding:.45rem;border-radius:14px;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+  .nav-pills::-webkit-scrollbar{display:none;}
+  .nav-pills li{flex:0 0 auto;}
+  .nav-pills button{font-size:.64rem;padding:.52rem .8rem;}
   .page{touch-action:pan-y;}
   .p2-wrap,.p6-wrap,.p8-wrap{grid-template-columns:1fr;}
   .p2-photo,.p6-photos,.p8-photo{display:none;}
-  .p2-txt,.p3-wrap,.p4-wrap,.p5-wrap,.p7-wrap,.p8-left{padding:5rem 2rem 3rem;}
+  .p2-txt,.p3-wrap,.p4-wrap,.p5-wrap,.p7-wrap,.p8-left{padding:7.75rem 1.25rem 4.5rem;}
   .p2-txt,.p7-scroll,.p8-left,.chat-messages,.faq-cols,.reports-grid{overscroll-behavior:contain;-webkit-overflow-scrolling:touch;}
   .p2-txt{margin:0;background:none;border:none;box-shadow:none;}
   .p4-products{grid-template-columns:1fr;}
@@ -574,18 +581,25 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   .p5-grid{grid-template-columns:1fr 1fr;}
   .p5-cell:nth-child(1),.p5-cell:nth-child(2),.p5-cell:nth-child(3),.p5-cell:nth-child(4),.p5-cell:nth-child(5),.p5-cell:nth-child(6){grid-column:auto;transform:none;}
   .p6-txt{padding:5rem 2rem 3rem;}
-  .p1-content{padding:5.5rem 2rem 3rem;}
+  .p1-content{padding:8.75rem 1.25rem 7rem;}
   .p1-cover{grid-template-columns:1fr;gap:2rem;min-height:auto;align-items:start;}
   .p1-gallery{min-height:420px;}
   .p1-frame-a{top:0;right:4%;width:58%;height:46%;}
   .p1-frame-b{top:22%;left:0;width:46%;height:33%;}
   .p1-frame-c{right:0;bottom:2%;width:74%;height:40%;}
+  .p1-acts{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;}
+  .p1-acts .btn:last-child{grid-column:1 / -1;}
+  .mobile-home-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem;margin-top:1rem;}
+  .mobile-home-links button{background:rgba(17,26,13,.52);border:1px solid rgba(240,236,226,.08);padding:.8rem .65rem;color:var(--ivory);font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border-radius:10px;}
   .testi-strip{grid-template-columns:1fr;}
   .testi:nth-child(1),.testi:nth-child(2),.testi:nth-child(3){transform:none;}
   .tools-wrap{grid-template-columns:1fr;grid-template-rows:auto 1fr;}
   .tools-sidebar{border-right:none;border-bottom:1px solid rgba(240,236,226,.07);padding-right:0;padding-bottom:1.5rem;padding-top:0;}
   .tool-btns{flex-direction:row;flex-wrap:wrap;}
+  .tool-btn{flex:1 1 calc(50% - .5rem);min-width:140px;}
   .tool-btn-desc{display:none;}
+  .tools-note{display:none;}
+  .mobile-tools-help{display:block;font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:300;color:rgba(240,236,226,.56);margin:.25rem 0 1rem;}
   .card:nth-child(2),.card:nth-child(3){margin-left:0;max-width:none;}
   .bld-sec:nth-child(2),.bld-sec:nth-child(3){margin-left:0;margin-right:0;}
   .cases-grid,.reports-grid{grid-template-columns:1fr;}
@@ -594,6 +608,9 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   .report-card:nth-child(n){grid-column:auto;margin-top:0;min-height:unset;}
   .chat-panel{padding-left:0;padding-top:1.5rem;}
   .dots{display:none;}
+  .sticky-cta{right:1rem;left:1rem;bottom:1rem;align-items:stretch;}
+  .sticky-book{width:100%;}
+  .sticky-dismiss{text-align:center;}
 }
 </style>
 </head>
@@ -668,6 +685,14 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       <button class="btn btn-white" type="button" onclick="go(1)">Enter</button>
       <button class="btn btn-outline" type="button" onclick="go(7)">Connect</button>
       <button class="btn btn-outline" type="button" onclick="window.open('https://intake-form-code.vercel.app/','_blank','noopener')">Forgotten Code Intake</button>
+    </div>
+    <div class="mobile-home-links u4">
+      <button type="button" onclick="go(1)">About</button>
+      <button type="button" onclick="go(5)">Art</button>
+      <button type="button" onclick="go(8)">Tools</button>
+      <button type="button" onclick="go(3)">Shop</button>
+      <button type="button" onclick="go(11)">FAQ</button>
+      <button type="button" onclick="go(12)">Reports</button>
     </div>
   </div>
 </div>
@@ -964,6 +989,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
         <span class="lbl u1">AI Tools</span>
         <h2 class="tools-heading u2">The Forgotten Code Instruments</h2>
         <p class="tools-sub u3">Four live AI systems powered by your research. Each one uses a different lens.</p>
+        <p class="mobile-tools-help u3">Tap a tool name below, then use one of the starter prompts or type in the box and press send.</p>
       </div>
       <div class="tool-btns u3">
         <button class="tool-btn" type="button" data-tool="advisor" onclick="selectTool('advisor')" id="tb-advisor" style="border-color:rgba(200,120,152,.3);">
@@ -1358,6 +1384,7 @@ function setPage(n, syncHash = true) {
   const currentPage = document.getElementById(PGS[cur]);
   const nextPage = document.getElementById(PGS[next]);
   const dots = document.querySelectorAll('.dot');
+  const sticky = document.getElementById('sticky-cta');
 
   if (currentPage) currentPage.classList.remove('active');
   if (dots[cur]) dots[cur].classList.remove('on');
@@ -1377,6 +1404,10 @@ function setPage(n, syncHash = true) {
 
   if (syncHash) {
     history.replaceState(null, '', '#' + PGS[cur]);
+  }
+
+  if (sticky) {
+    sticky.style.display = next === 0 ? 'flex' : 'none';
   }
 }
 
