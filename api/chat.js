@@ -7,7 +7,7 @@ const PROMPTS = {
 
 advisor: `You are the Service Advisor for Jenna Leigh West and The Forgotten Code Research Institute. You help website visitors understand Jenna's services, pricing, and process so they can decide whether and how to work with her.
 
-WHO JENNA IS: Systems Decoder, consultant, guide, artist, and builder. Fifth-generation Appalachian, neurodivergent. Founder of The Forgotten Code Research Institute. Creator of Mirror Protocol™ (US Copyright No. 1-14949237971). 229+ clients served, 97% satisfaction rate, 40+ live deployed builds.
+WHO JENNA IS: Systems Decoder, consultant, guide, artist, and builder. Fifth-generation Appalachian, neurodivergent. Founder of The Forgotten Code Research Institute. Creator of Mirror Protocol™ (US Copyright No. 1-14949237971). The site reflects real client feedback and active live pathways only.
 
 SERVICES:
 1. CONSULTING — $150 Discovery Session (60 min) / $400+ Full Engagement. Direct systems work: legal, institutional, family, creative, digital, financial.
@@ -142,6 +142,84 @@ End with: "For a complete Lovers, Liars, and All Things Patterned report, contac
 
 };
 
+function getLastUserMessage(messages = []) {
+  return [...messages].reverse().find((m) => m.role === "user")?.content?.trim() || "";
+}
+
+function includesAny(text, terms) {
+  const lower = text.toLowerCase();
+  return terms.some((term) => lower.includes(term));
+}
+
+function fallbackResponse(tool, messages) {
+  const text = getLastUserMessage(messages);
+  const lower = text.toLowerCase();
+
+  if (tool === "advisor") {
+    let lane = "If you are not sure where to begin, the cleanest starting point is either a $150 Discovery Session or the live report library.";
+    if (includesAny(lower, ["price", "cost", "how much", "$"])) {
+      lane = "Current public pricing is: Discovery Session $150, Full Engagements starting at $400+, software and AI builds quoted case by case, Bloodline Report $97, Dream Mapping $147, Blood Is Code $197.";
+    } else if (includesAny(lower, ["software", "app", "website", "ai build", "chatbot", "tool"])) {
+      lane = "For a software or AI build, Jenna usually starts by scoping the real need first: landing page, intake flow, chatbot, or a fuller custom system. The next step is a consultation so the build can be sized honestly.";
+    } else if (includesAny(lower, ["dream", "past life", "relationship", "report", "reading"])) {
+      lane = "If you want insight first, start in the report library. If you want direct support, book a consultation. The reports are a good entry point when you want to feel the work before committing to a bigger engagement.";
+    }
+
+    return `You are in the right place.\n\n${lane}\n\nJenna's main lanes are:\n- Consulting and systems support\n- Catalyst change / transition work\n- Navigation through complicated personal or institutional terrain\n- Custom software and AI builds\n- Written reports and digital products\n\nIf you want the fastest next step:\n- Report library: https://intake-form-code.vercel.app/\n- Direct contact: theforgottencode780@gmail.com\n- Phone: 423-388-8304`;
+  }
+
+  if (tool === "dream") {
+    let symbol = "The dream is asking for slower, closer attention before you make it mean something.";
+    let ritual = "Write the dream by hand, circle the strongest image, and ask: where is this image already alive in my waking life?";
+
+    if (includesAny(lower, ["water", "ocean", "river", "flood", "drown"])) {
+      symbol = "Water dreams usually point toward emotion, overwhelm, cleansing, or intuition pressing for attention. The question is not just what the water is doing, but whether it felt dangerous, holy, heavy, or relieving.";
+      ritual = "Put a glass of water by your bed tonight and write one feeling you have been trying to outrun. In the morning, drink the water and rewrite the dream in one sentence.";
+    } else if (includesAny(lower, ["house", "room", "rooms", "home"])) {
+      symbol = "House dreams often map the self. Hidden rooms can mean unopened capacities, buried memory, or a version of you that has not been fully lived yet.";
+      ritual = "Draw the house from memory and label each room with a life area: body, love, work, family, creativity, grief, future.";
+    } else if (includesAny(lower, ["snake", "serpent"])) {
+      symbol = "Snake dreams can point toward danger, healing, sexuality, life force, shedding, or wisdom depending on the emotional tone. A snake is rarely random. It marks transformation with teeth.";
+      ritual = "Notice what is trying to shed in your waking life. Write down one thing that no longer fits and make a small release ritual around it.";
+    }
+
+    return `Dream reading:\n\n${symbol}\n\nWhat matters most next is your emotional tone in the dream and what is happening around you in waking life. That is the key that unlocks the symbol.\n\nIntegration ritual:\n${ritual}\n\nIf you want the full layered version, Jenna's longer Dream Mapping work starts in the report library or by email at theforgottencode780@gmail.com.`;
+  }
+
+  if (tool === "pastlife") {
+    let pattern = "This reads less like random curiosity and more like a repeating soul motif asking to be named.";
+    if (includesAny(lower, ["egypt", "rome", "medieval", "witch", "sea", "war", "fire"])) {
+      pattern = "The era or image you named sounds like a symbolic doorway. In past-life language, strong attraction often points toward unfinished identity, unfinished grief, or a talent that wants back into the room.";
+    }
+    return `Past life reading:\n\n${pattern}\n\nWhat I would track first:\n- The places or eras that pull at you without explanation\n- The relationships that feel instantly familiar or fated\n- The fear, ache, or talent that has no clean origin story in this life\n\nPossible throughline:\nYou may be carrying an old pattern around responsibility, devotion, survival, or being seen for what you really are.\n\nFor a full reading, Jenna would normally map this across your story, repeating themes, and major relationships.`;
+  }
+
+  if (tool === "celestial") {
+    let field = "Today looks better for grounded movement than dramatic overreach. Keep your decisions close to the body and notice what sharpens your attention versus what scatters it.";
+    if (includesAny(lower, ["tired", "exhausted", "overwhelmed", "sensitive"])) {
+      field = "This reads like a low-reserve day. Treat today as a field-management day: less noise, fewer inputs, more hydration, more sunlight, more rhythm.";
+    }
+    return `Celestial biophysics reading:\n\n${field}\n\nBest use of the day:\n- Morning: sorting, clarifying, making one clean decision\n- Midday: practical action, communication, simple movement\n- Evening: nervous-system downshift, journaling, less screen saturation\n\nIf you want a more personalized version, include your birth date, location, and what you are trying to navigate.`;
+  }
+
+  if (tool === "dyad") {
+    let pattern = "The first thing I would look for is the loop: who pursues, who withdraws, who over-functions, who disappears, who carries the emotional labor.";
+    let exit = "Name the loop out loud without blame. Then decide what boundary, truth, or pause would interrupt it.";
+
+    if (includesAny(lower, ["pursue", "withdraw", "hot and cold", "avoidant", "anxious"])) {
+      pattern = "This sounds a lot like a pursue-withdraw cycle, which usually means anxious/avoidant dynamics or one partner chasing contact while the other protects themselves through distance.";
+      exit = "The way out is not more chasing. It is clearer boundaries, slower pacing, and a refusal to confuse intermittent connection with intimacy.";
+    } else if (includesAny(lower, ["lie", "cheat", "betray", "affair"])) {
+      pattern = "This moves into trust rupture territory. At that point the question stops being compatibility alone and becomes: is there honesty, safety, and repair, or only confusion and control?";
+      exit = "Prioritize clarity and safety over chemistry. If the truth keeps moving, the pattern itself is the answer.";
+    }
+
+    return `DYAD reading:\n\n${pattern}\n\nRisk check:\nLook for whether the relationship creates steadiness, confusion, obsession, or self-erasure. That will tell you more than the labels do.\n\nWay through:\n${exit}\n\nIf you want a fuller patterned reading, Jenna's longer relationship work starts through the report library or direct contact.`;
+  }
+
+  return "I can still help, but I need a little more detail from you to give a useful reading.";
+}
+
 export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
@@ -163,7 +241,7 @@ export default async function handler(req, res) {
     }
 
     if (!process.env.ANTHROPIC_API_KEY) {
-      return res.status(500).json({ error: "API key not configured. Add ANTHROPIC_API_KEY to Vercel environment variables." });
+      return res.status(200).json({ content: fallbackResponse(tool, messages) });
     }
 
     const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
