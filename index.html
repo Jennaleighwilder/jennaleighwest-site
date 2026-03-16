@@ -966,23 +966,23 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
         <p class="tools-sub u3">Four live AI systems powered by your research. Each one uses a different lens.</p>
       </div>
       <div class="tool-btns u3">
-        <button class="tool-btn" onclick="selectTool('advisor')" id="tb-advisor" style="border-color:rgba(200,120,152,.3);">
+        <button class="tool-btn" type="button" data-tool="advisor" onclick="selectTool('advisor')" id="tb-advisor" style="border-color:rgba(200,120,152,.3);">
           <span class="tool-btn-name" style="color:var(--petal);">Service Advisor</span>
           <span class="tool-btn-desc">Ask anything about working with Jenna. Services, pricing, process, booking.</span>
         </button>
-        <button class="tool-btn active" onclick="selectTool('dream')" id="tb-dream">
+        <button class="tool-btn active" type="button" data-tool="dream" onclick="selectTool('dream')" id="tb-dream">
           <span class="tool-btn-name">Dream Decoder</span>
           <span class="tool-btn-desc">Cross-cultural dream symbol analysis. The Forbidden Library framework.</span>
         </button>
-        <button class="tool-btn" onclick="selectTool('pastlife')" id="tb-pastlife">
+        <button class="tool-btn" type="button" data-tool="pastlife" onclick="selectTool('pastlife')" id="tb-pastlife">
           <span class="tool-btn-name">Past Life Reader</span>
           <span class="tool-btn-desc">Soul cartography. Incarnation mapping. Karmic pattern analysis.</span>
         </button>
-        <button class="tool-btn" onclick="selectTool('celestial')" id="tb-celestial">
+        <button class="tool-btn" type="button" data-tool="celestial" onclick="selectTool('celestial')" id="tb-celestial">
           <span class="tool-btn-name">Celestial Biophysics</span>
           <span class="tool-btn-desc">Daily EM field forecast. UVRK-1 pattern engine. Schumann resonance.</span>
         </button>
-        <button class="tool-btn" onclick="selectTool('dyad')" id="tb-dyad">
+        <button class="tool-btn" type="button" data-tool="dyad" onclick="selectTool('dyad')" id="tb-dyad">
           <span class="tool-btn-name">DYAD Engine</span>
           <span class="tool-btn-desc">Relationship pattern forensics. Role locks. Attachment architecture.</span>
         </button>
@@ -1004,9 +1004,9 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
           <h3>Welcome to the Dream Decoder</h3>
           <p>Tell me about a dream that has stayed with you — recurring, vivid, or strange. Describe what you saw, what you felt, and what has been happening in your waking life.</p>
           <div class="chat-starters" id="chat-starters">
-            <button class="chat-starter" onclick="useStarter(this)">I keep dreaming about water — flooding, drowning, or being near the ocean</button>
-            <button class="chat-starter" onclick="useStarter(this)">I have a recurring dream about a house with rooms I have never seen before</button>
-            <button class="chat-starter" onclick="useStarter(this)">I dreamed about a snake and I cannot stop thinking about it</button>
+            <button class="chat-starter" type="button" onclick="useStarter(this)">I keep dreaming about water — flooding, drowning, or being near the ocean</button>
+            <button class="chat-starter" type="button" onclick="useStarter(this)">I have a recurring dream about a house with rooms I have never seen before</button>
+            <button class="chat-starter" type="button" onclick="useStarter(this)">I dreamed about a snake and I cannot stop thinking about it</button>
           </div>
         </div>
       </div>
@@ -1019,7 +1019,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 
       <div class="chat-input-row u5">
         <textarea class="chat-input" id="chat-input" placeholder="Describe your dream or ask a question..." rows="1" onkeydown="handleKey(event)"></textarea>
-        <button class="chat-send" id="chat-send" onclick="sendMessage()">Send</button>
+        <button class="chat-send" id="chat-send" type="button" onclick="sendMessage()">Send</button>
       </div>
       <p class="chat-disclaimer">For entertainment and educational purposes. Not a substitute for professional therapy or medical advice. Full written reports available at theforgottencode780@gmail.com</p>
     </div>
@@ -1640,6 +1640,28 @@ function toggleFAQ(el) {
   if (!isOpen) item.classList.add('open');
 }
 window.toggleFAQ = toggleFAQ;
+
+document.addEventListener('click', (event) => {
+  const toolBtn = event.target.closest('.tool-btn[data-tool]');
+  if (toolBtn) {
+    event.preventDefault();
+    selectTool(toolBtn.dataset.tool);
+    return;
+  }
+
+  const starterBtn = event.target.closest('.chat-starter');
+  if (starterBtn) {
+    event.preventDefault();
+    useStarter(starterBtn);
+    return;
+  }
+
+  const sendBtn = event.target.closest('#chat-send');
+  if (sendBtn) {
+    event.preventDefault();
+    sendMessage();
+  }
+});
 
 window.addEventListener('hashchange', () => {
   setPage(pageFromHash(), false);
