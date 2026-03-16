@@ -563,9 +563,11 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 
 @media(max-width:900px){
   .nav-pills{display:none;}
+  .page{touch-action:pan-y;}
   .p2-wrap,.p6-wrap,.p8-wrap{grid-template-columns:1fr;}
   .p2-photo,.p6-photos,.p8-photo{display:none;}
   .p2-txt,.p3-wrap,.p4-wrap,.p5-wrap,.p7-wrap,.p8-left{padding:5rem 2rem 3rem;}
+  .p2-txt,.p7-scroll,.p8-left,.chat-messages,.faq-cols,.reports-grid{overscroll-behavior:contain;-webkit-overflow-scrolling:touch;}
   .p2-txt{margin:0;background:none;border:none;box-shadow:none;}
   .p4-products{grid-template-columns:1fr;}
   .product:nth-child(1),.product:nth-child(2),.product:nth-child(3){grid-column:auto;margin-top:0;}
@@ -1425,12 +1427,16 @@ document.addEventListener('keydown', e => {
   if(e.key==='ArrowLeft' ||e.key==='ArrowUp')   go(Math.max(cur-1,0));
 });
 let tx=0,ty=0;
+function isMobileView() {
+  return window.matchMedia('(max-width: 900px)').matches;
+}
 document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
 document.addEventListener('touchend',e=>{
+  if (isMobileView()) return;
   const dy=ty-e.changedTouches[0].clientY,dx=tx-e.changedTouches[0].clientX;
   if(Math.abs(dy)>Math.abs(dx)){
-    if(dy>60)go(Math.min(cur+1,PGS.length-1));
-    if(dy<-60)go(Math.max(cur-1,0));
+    if(dy>120)go(Math.min(cur+1,PGS.length-1));
+    if(dy<-120)go(Math.max(cur-1,0));
   }
 },{passive:true});
 
