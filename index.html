@@ -229,16 +229,18 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 .p3-sub{font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:300;color:rgba(240,236,226,.42);line-height:1.78;max-width:290px;margin-bottom:2.5rem;}
 .cards{display:flex;flex-direction:column;gap:1rem;background:none;}
 .card{background:rgba(12,17,9,.55);backdrop-filter:blur(8px);border-left:2px solid transparent;transition:all .4s;box-shadow:0 20px 50px rgba(0,0,0,.18);}
-.card:hover{background:rgba(12,17,9,.8);border-left-color:var(--rose);}
+.card:hover,.card.open{background:rgba(12,17,9,.82);border-left-color:var(--rose);}
 .card-inner{display:grid;grid-template-columns:3.2rem 1fr;gap:1.3rem;padding:1.7rem 1.9rem;align-items:start;}
 .card:nth-child(2){margin-left:2.75rem;}
 .card:nth-child(3){margin-left:1.1rem;max-width:92%;}
 .card-num{font-family:'Playfair Display',serif;font-weight:400;font-size:2rem;color:rgba(240,236,226,.12);line-height:1;transition:color .3s;}
-.card:hover .card-num{color:var(--rose);}
+.card:hover .card-num,.card.open .card-num{color:var(--rose);}
 .card-name{font-family:'Playfair Display',serif;font-weight:500;font-size:1.38rem;color:var(--bone);line-height:1.15;margin-bottom:0;transition:color .3s;}
-.card:hover .card-name{color:var(--ivory);}
-.card-desc{font-family:'DM Sans',sans-serif;font-size:.83rem;font-weight:300;color:rgba(240,236,226,.42);line-height:1.78;max-height:0;overflow:hidden;transition:max-height .45s ease,margin .35s;}
-.card:hover .card-desc{max-height:90px;margin-top:.6rem;}
+.card:hover .card-name,.card.open .card-name{color:var(--ivory);}
+.card-desc{font-family:'DM Sans',sans-serif;font-size:.87rem;font-weight:300;color:rgba(240,236,226,.72);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .45s ease,margin .35s;}
+.card:hover .card-desc,.card.open .card-desc{max-height:320px;margin-top:.75rem;}
+.card-detail{display:block;margin-top:.55rem;color:rgba(240,236,226,.56);}
+.card-link{display:inline-flex;margin-top:.85rem;font-family:'DM Sans',sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-l);}
 
 /* ═══════════════════════════════
    P4 SHOP
@@ -248,25 +250,24 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 .p4-wrap{position:absolute;inset:0;z-index:2;max-width:1200px;margin:0 auto;width:100%;padding:7rem 4rem 3rem;display:flex;flex-direction:column;overflow-y:auto;}
 .p4-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2rem;flex-shrink:0;flex-wrap:wrap;gap:1rem;}
 .p4-title{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.8rem,5vw,4.5rem);line-height:.92;color:var(--ivory);}
-.p4-sub{font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:300;color:rgba(240,236,226,.38);line-height:1.75;max-width:280px;text-align:right;}
+.p4-sub{font-family:'DM Sans',sans-serif;font-size:.92rem;font-weight:300;color:rgba(240,236,226,.58);line-height:1.78;max-width:360px;text-align:right;}
 .p4-free{background:rgba(90,122,64,.18);border:1px solid rgba(90,122,64,.3);border-radius:4px;padding:1.2rem 1.8rem;display:flex;align-items:center;justify-content:space-between;margin-bottom:1.8rem;flex-shrink:0;gap:1.5rem;flex-wrap:wrap;}
 .p4-free strong{display:block;font-size:.95rem;font-weight:500;color:var(--mint);margin-bottom:.2rem;}
-.p4-free span{font-size:.82rem;font-weight:300;color:rgba(240,236,226,.45);}
+.p4-free span{font-size:.84rem;font-weight:300;color:rgba(240,236,226,.58);}
 .p4-products{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;background:none;flex:none;min-height:0;align-items:start;padding-bottom:2rem;}
 .product{background:rgba(17,26,13,.7);display:flex;flex-direction:column;transition:background .3s;border:1px solid rgba(240,236,226,.06);box-shadow:0 18px 42px rgba(0,0,0,.18);}
 .product:hover{background:rgba(26,48,20,.9);}
 .product:nth-child(1){grid-column:span 4;margin-top:2rem;}
 .product:nth-child(2){grid-column:span 4;}
 .product:nth-child(3){grid-column:span 4;margin-top:3.5rem;}
-.product:nth-child(4){grid-column:2 / span 5;margin-top:-.4rem;}
-.product:nth-child(5){grid-column:7 / span 5;margin-top:1.4rem;}
+.product:nth-child(4){grid-column:3 / span 8;margin-top:-.4rem;}
 .product-top{flex:1;padding:2rem 2rem 1.2rem;border-bottom:1px solid rgba(240,236,226,.05);}
 .product-badge{display:inline-block;font-family:'DM Sans',sans-serif;font-size:.55rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:.22rem .7rem;border-radius:100px;background:rgba(90,122,64,.2);color:var(--sage-l);border:1px solid rgba(90,122,64,.25);margin-bottom:1rem;}
 .product-badge.hot{background:rgba(168,72,104,.2);color:var(--petal);border-color:rgba(168,72,104,.25);}
 .product-name{font-family:'Playfair Display',serif;font-weight:500;font-size:1.45rem;color:var(--ivory);margin-bottom:.7rem;line-height:1.15;}
-.product-desc{font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:300;color:rgba(240,236,226,.42);line-height:1.78;margin-bottom:.8rem;}
+.product-desc{font-family:'DM Sans',sans-serif;font-size:.86rem;font-weight:300;color:rgba(240,236,226,.64);line-height:1.78;margin-bottom:.8rem;}
 .product-includes{list-style:none;}
-.product-includes li{font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:300;color:rgba(240,236,226,.35);line-height:1.6;padding-left:.85rem;position:relative;}
+.product-includes li{font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:300;color:rgba(240,236,226,.52);line-height:1.62;padding-left:.85rem;position:relative;}
 .product-includes li::before{content:'—';position:absolute;left:0;color:var(--sage);}
 .product-bottom{padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
 .product-price{font-family:'Playfair Display',serif;font-weight:600;font-size:1.8rem;color:var(--ivory);line-height:1;}
@@ -647,7 +648,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   .p2-txt,.p7-scroll,.p8-left,.chat-messages,.faq-cols,.reports-grid{overscroll-behavior:contain;-webkit-overflow-scrolling:touch;}
   .p2-txt{margin:0;background:none;border:none;box-shadow:none;}
   .p4-products{grid-template-columns:1fr;}
-  .product:nth-child(1),.product:nth-child(2),.product:nth-child(3),.product:nth-child(4),.product:nth-child(5){grid-column:auto;margin-top:0;}
+  .product:nth-child(1),.product:nth-child(2),.product:nth-child(3),.product:nth-child(4){grid-column:auto;margin-top:0;}
   .p5-grid{grid-template-columns:1fr 1fr;}
   .p5-cell:nth-child(1),.p5-cell:nth-child(2),.p5-cell:nth-child(3),.p5-cell:nth-child(4),.p5-cell:nth-child(5),.p5-cell:nth-child(6){grid-column:auto;transform:none;}
   .p6-wrap{display:flex;flex-direction:column;overflow-y:auto;}
@@ -682,6 +683,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   .tools-note{display:none;}
   .mobile-tools-help{display:block;font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:300;color:rgba(240,236,226,.56);margin:.25rem 0 1rem;}
   .card:nth-child(2),.card:nth-child(3){margin-left:0;max-width:none;}
+  .card-desc{max-height:320px;margin-top:.75rem;color:rgba(240,236,226,.78);}
   .bld-sec:nth-child(2),.bld-sec:nth-child(3){margin-left:0;margin-right:0;}
   .cases-grid,.reports-grid{grid-template-columns:1fr;}
   .cases-wrap,.std-wrap,.faq-wrap,.reports-wrap{overflow-y:auto;padding-bottom:8.5rem;}
@@ -840,9 +842,48 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       <div class="u5"><button class="btn-ghost" type="button" data-go="3" onclick="go(3)">The Store <span class="dash"></span><span class="tip"></span></button></div>
     </div>
     <div class="cards u3">
-      <div class="card"><div class="card-inner"><span class="card-num">01</span><div><h3 class="card-name">Consulting</h3><p class="card-desc">Direct, personalized consulting for women ready to move — through a transition, creative shift, new chapter, or system holding them back. Jenna meets you exactly where you are.</p></div></div></div>
-      <div class="card"><div class="card-inner"><span class="card-num">02</span><div><h3 class="card-name">Catalyst Change</h3><p class="card-desc">Not everyone needs a plan — some people need a spark. Jenna works as a catalyst, helping you break through stuck places and step into the version of yourself that has been waiting.</p></div></div></div>
-      <div class="card"><div class="card-inner"><span class="card-num">03</span><div><h3 class="card-name">Intake, Support and Navigation</h3><p class="card-desc">A guide for any and all systems you have to navigate — legal, creative, personal, institutional. Intake support, ongoing guidance, steady hands. No landscape too unfamiliar.</p></div></div></div>
+      <div class="card open" role="button" tabindex="0" onclick="toggleOffering(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleOffering(this);}">
+        <div class="card-inner">
+          <span class="card-num">01</span>
+          <div>
+            <h3 class="card-name">Consulting</h3>
+            <p class="card-desc">
+              Direct, personalized consulting for women ready to move through a transition, make a hard decision, or get clear inside a system that feels tangled.
+              <span class="card-detail">Good for: life pivots, relationship crossroads, personal systems, business direction, and truth-telling when you need someone to help you see the whole map.</span>
+              <span class="card-detail">Format: one-to-one sessions, scoped support, and practical next steps you can actually use.</span>
+              <span class="card-link">Tap to open or close</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card" role="button" tabindex="0" onclick="toggleOffering(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleOffering(this);}">
+        <div class="card-inner">
+          <span class="card-num">02</span>
+          <div>
+            <h3 class="card-name">Catalyst Change</h3>
+            <p class="card-desc">
+              This is for the season when you are not just gathering information. You are ready to break an old pattern, stop circling, and actually move.
+              <span class="card-detail">Good for: reinvention, identity shifts, leaving old roles, creative rebirth, and the moment when a spark matters more than another spreadsheet.</span>
+              <span class="card-detail">Format: catalytic conversations, pattern interruption, and support that helps momentum hold after the breakthrough.</span>
+              <span class="card-link">Tap to open or close</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card" role="button" tabindex="0" onclick="toggleOffering(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleOffering(this);}">
+        <div class="card-inner">
+          <span class="card-num">03</span>
+          <div>
+            <h3 class="card-name">Intake, Support and Navigation</h3>
+            <p class="card-desc">
+              A guide for any system you have to move through, especially when the rules are murky, the stakes are emotional, or the paperwork is only part of the story.
+              <span class="card-detail">Good for: institutional overwhelm, application paths, family systems, client onboarding, and any moment where you need steady hands and translation.</span>
+              <span class="card-detail">Format: intake review, guided next steps, and grounded support through the terrain itself.</span>
+              <span class="card-link">Tap to open or close</span>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -851,62 +892,47 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 <div class="page" id="p4">
   <div class="p4-wrap">
     <div class="p4-header u1">
-      <div><span class="lbl">Digital Products</span><h2 class="p4-title">The Shop</h2></div>
-      <p class="p4-sub">Instant download. Yours forever. Built from lived experience, not theory.</p>
+      <div><span class="lbl">Digital Products</span><h2 class="p4-title">The Intake Library</h2></div>
+      <p class="p4-sub">This page now points straight into the real live intake and payment flow, so there is one clean path instead of duplicate shop pages.</p>
     </div>
     <div class="p4-free u2">
-      <div><strong>Free Resource — The Systems Map</strong><span>A guide to identifying the invisible structures running your life.</span></div>
-      <button class="btn btn-moss" type="button" onclick="startInquiry('systems-map')" style="flex-shrink:0;">Download Free</button>
+      <div><strong>Start Here — Forgotten Code Reports Menu</strong><span>Open the real product hub, choose a report or mini reading, and use the payment flow that already lives there.</span></div>
+      <a class="btn btn-moss" href="https://intake-form-code.vercel.app/reports-menu.html" target="_blank" rel="noopener" style="flex-shrink:0;">Open Intake Library</a>
     </div>
     <div class="p4-products u3">
       <div class="product">
         <div class="product-top">
-          <span class="product-badge">Digital Guide</span>
+          <span class="product-badge">Live Report</span>
           <h3 class="product-name">Bloodline Report</h3>
-          <p class="product-desc">A deeply personalized exploration of your ancestral code — the patterns, gifts, and stories carried in your blood. Delivered as a bespoke written report.</p>
-          <ul class="product-includes"><li>Personalized 20-30 page written report</li><li>Bloodline pattern analysis</li><li>Ancestral gift mapping</li><li>Appalachian heritage connection</li></ul>
+          <p class="product-desc">A direct path into the real bloodline intake and payment flow. Start with the mini reading and move into the full report there.</p>
+          <ul class="product-includes"><li>Mini reading first</li><li>Full report path lives there</li><li>Bloodline pattern mapping</li><li>No duplicate checkout on this site</li></ul>
         </div>
         <div class="product-bottom">
-          <div class="product-price">$97<span>One-time</span></div>
-          <!-- REPLACE href with your Stripe Payment Link -->
-          <button class="btn btn-white" type="button" onclick="startInquiry('bloodline-report')">Buy Now</button>
+          <div class="product-price">Live<span>Intake path</span></div>
+          <a class="btn btn-white" href="https://intake-form-code.vercel.app/bloodline" target="_blank" rel="noopener">Open Report</a>
         </div>
       </div>
       <div class="product">
         <div class="product-top">
-          <span class="product-badge hot">Most Popular</span>
+          <span class="product-badge hot">Live Report</span>
           <h3 class="product-name">Dream Mapping Session</h3>
-          <p class="product-desc">Your dreams are not noise — they are a navigation system. Jenna works with your dream landscape to surface symbols, themes, and guidance.</p>
-          <ul class="product-includes"><li>Full dream interpretation report</li><li>Symbol and pattern analysis</li><li>Navigation guidance and next steps</li><li>60-day follow-up support</li></ul>
+          <p class="product-desc">Go straight to the dream intake, receive the mini read, and continue through the real payment hub from there.</p>
+          <ul class="product-includes"><li>Dream mini reading</li><li>Symbol and pattern intake</li><li>Full report path lives there</li><li>Cleanest entry point for dream work</li></ul>
         </div>
         <div class="product-bottom">
-          <div class="product-price">$147<span>One-time</span></div>
-          <!-- REPLACE href with your Stripe Payment Link -->
-          <button class="btn btn-white" type="button" onclick="startInquiry('dream-mapping')">Buy Now</button>
-        </div>
-      </div>
-      <div class="product">
-        <div class="product-top">
-          <span class="product-badge">Course</span>
-          <h3 class="product-name">Blood Is Code — Full Course</h3>
-          <p class="product-desc">The complete 25-module menstrual cycle course. Understanding your body as a living system — the code that runs beneath everything.</p>
-          <ul class="product-includes"><li>25 complete modules</li><li>Cycle tracking system</li><li>Pattern recognition tools</li><li>Community access</li></ul>
-        </div>
-        <div class="product-bottom">
-          <div class="product-price">$197<span>One-time</span></div>
-          <!-- REPLACE href with your Stripe Payment Link -->
-          <button class="btn btn-white" type="button" onclick="startInquiry('blood-is-code')">Buy Now</button>
+          <div class="product-price">Live<span>Intake path</span></div>
+          <a class="btn btn-white" href="https://intake-form-code.vercel.app/dream" target="_blank" rel="noopener">Open Report</a>
         </div>
       </div>
       <div class="product">
         <div class="product-top">
           <span class="product-badge">Live Report</span>
           <h3 class="product-name">Financial Identity Map</h3>
-          <p class="product-desc">A money-pattern reading rooted in lineage, self-worth, and the systems that shaped how you receive, hold, and move wealth.</p>
-          <ul class="product-includes"><li>Free mini intake available now</li><li>Wealth pattern and money-story mapping</li><li>Financial identity reflection</li><li>Opens in the live intake app</li></ul>
+          <p class="product-desc">Your money and lineage work already lives in the intake system, so this card now opens the real live route instead of sending you somewhere redundant.</p>
+          <ul class="product-includes"><li>Money-story intake</li><li>Wealth pattern mapping</li><li>Full report path lives there</li><li>Uses the existing payment hub</li></ul>
         </div>
         <div class="product-bottom">
-          <div class="product-price">Live<span>Report path</span></div>
+          <div class="product-price">Live<span>Intake path</span></div>
           <a class="btn btn-white" href="https://intake-form-code.vercel.app/funnels/financial-identity.html" target="_blank" rel="noopener">Open Report</a>
         </div>
       </div>
@@ -914,11 +940,11 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
         <div class="product-top">
           <span class="product-badge hot">Live Intake</span>
           <h3 class="product-name">Business &amp; Systems</h3>
-          <p class="product-desc">For the woman building something real. Decode the business beneath the business: pressure points, architecture, and where the leverage actually is.</p>
-          <ul class="product-includes"><li>Free mini intake available now</li><li>Business-system pattern read</li><li>Best for offers, structure, and next-step clarity</li><li>Opens in the live intake app</li></ul>
+          <p class="product-desc">For offers, business architecture, positioning, and system pressure points. This opens the real live intake where the business path already works.</p>
+          <ul class="product-includes"><li>Business-system pattern read</li><li>Mini reading first</li><li>Full report path lives there</li><li>No duplicate product shell here</li></ul>
         </div>
         <div class="product-bottom">
-          <div class="product-price">Live<span>Report path</span></div>
+          <div class="product-price">Live<span>Intake path</span></div>
           <a class="btn btn-white" href="https://intake-form-code.vercel.app/funnels/business-identity-map.html" target="_blank" rel="noopener">Open Report</a>
         </div>
       </div>
@@ -1791,6 +1817,15 @@ function handleLead(e) {
     });
 }
 window.handleLead = handleLead;
+
+function toggleOffering(el) {
+  const card = el.closest('.card');
+  if (!card) return;
+  const willOpen = !card.classList.contains('open');
+  document.querySelectorAll('#p3 .card.open').forEach((item) => item.classList.remove('open'));
+  if (willOpen) card.classList.add('open');
+}
+window.toggleOffering = toggleOffering;
 
 function toggleFAQ(el) {
   const item = el.closest('.faq-item');
