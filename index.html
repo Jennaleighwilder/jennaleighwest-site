@@ -515,7 +515,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 /* CASE STUDIES PAGE */
 #p11{background:var(--void);}
 #p11::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(26,44,20,.25) 0%,transparent 60%);}
-.cases-wrap{position:absolute;inset:0;z-index:2;max-width:1200px;margin:0 auto;width:100%;padding:7rem 4rem 3rem;display:flex;flex-direction:column;}
+.cases-wrap{position:absolute;inset:0;z-index:2;max-width:1200px;margin:0 auto;width:100%;padding:7rem 4rem 3rem;display:flex;flex-direction:column;overflow-y:auto;}
 .cases-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;background:none;flex:1;min-height:0;align-items:start;}
 .case-card{background:rgba(12,17,9,.8);padding:2.2rem 2rem;display:flex;flex-direction:column;transition:background .3s;border:1px solid rgba(240,236,226,.06);box-shadow:0 18px 46px rgba(0,0,0,.18);}
 .case-card:hover{background:rgba(17,30,12,.95);}
@@ -652,14 +652,18 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   .card:nth-child(2),.card:nth-child(3){margin-left:0;max-width:none;}
   .bld-sec:nth-child(2),.bld-sec:nth-child(3){margin-left:0;margin-right:0;}
   .cases-grid,.reports-grid{grid-template-columns:1fr;}
+  .cases-wrap,.std-wrap,.faq-wrap,.reports-wrap{overflow-y:auto;padding-bottom:8.5rem;}
   .p8-scheduler-grid{grid-template-columns:1fr;}
   .case-card:nth-child(1),.case-card:nth-child(2),.case-card:nth-child(3){grid-column:auto;margin-top:0;}
+  .case-card{padding:1.5rem 1.2rem;}
   .report-card:nth-child(n){grid-column:auto;margin-top:0;min-height:unset;}
   .chat-panel{padding-left:0;padding-top:1.5rem;}
   .dots{display:none;}
   .sticky-cta{right:1rem;left:1rem;bottom:1rem;align-items:stretch;}
   .sticky-book{width:100%;}
   .sticky-dismiss{text-align:center;}
+  #p11 .u4{display:grid !important;grid-template-columns:1fr;gap:.75rem;}
+  #p11 .u4 .btn,#p11 .u4 .btn-outline{width:100%;}
 }
 </style>
 </head>
