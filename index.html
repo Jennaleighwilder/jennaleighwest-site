@@ -197,7 +197,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 ═══════════════════════════════ */
 #p2{background:var(--deep);}
 .p2-wrap{position:absolute;inset:0;display:grid;grid-template-columns:52% 1fr;max-width:1280px;margin:0 auto;}
-.p2-photo{position:relative;overflow:hidden;background:#1a2c14 url('cea5aa6fa03ddbf53a14724455dc8c62.JPEG') center top/cover no-repeat;}
+.p2-photo{position:relative;overflow:hidden;background:#1a2c14;}
 .p2-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
 .p2-veil{position:absolute;inset:0;background:linear-gradient(to right,rgba(12,17,9,0) 55%,rgba(17,26,13,.9) 100%),linear-gradient(to bottom,rgba(12,17,9,.35) 0%,transparent 18%,transparent 78%,rgba(12,17,9,.65) 100%);}
 .p2-caption{position:absolute;bottom:3rem;left:2.5rem;right:2.5rem;z-index:2;}
@@ -215,7 +215,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
    P3 OFFERINGS
 ═══════════════════════════════ */
 #p3{background:var(--wine);}
-.p3-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:#3a0e1c url('RTCDE3221.JPG') center center/cover no-repeat;filter:saturate(.42) contrast(1.04) brightness(.52);}
+.p3-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:#3a0e1c;filter:saturate(.42) contrast(1.04) brightness(.52);}
 .p3-bg img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.42) contrast(1.04) brightness(.52);}
 .p3-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(58,14,28,.92) 0%,rgba(58,14,28,.72) 42%,rgba(36,59,26,.58) 100%);}
 .p3-wrap{position:absolute;inset:0;z-index:2;display:grid;grid-template-columns:minmax(250px,.85fr) minmax(0,1.55fr);max-width:1200px;margin:0 auto;width:100%;padding:7rem 4rem 4rem;gap:4rem;align-items:center;}
@@ -268,7 +268,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
    P5 CREDENTIAL
 ═══════════════════════════════ */
 #p5{background:var(--void);}
-.p5-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:#0c1109 url('QVZpclN1ZkVQZXRGM3hudXBoNXRoV2xM_Original.JPG') center/cover no-repeat;filter:saturate(.3) brightness(.38);}
+.p5-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:#0c1109;filter:saturate(.3) brightness(.38);}
 .p5-bg img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.3) brightness(.38);}
 .p5-wrap{position:absolute;inset:0;z-index:2;max-width:1100px;margin:0 auto;width:100%;padding:7rem 4rem 3rem;display:flex;flex-direction:column;justify-content:center;}
 .p5-title{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.2rem,3.8vw,3.8rem);line-height:1.08;color:var(--ivory);margin-bottom:.7rem;}
@@ -353,7 +353,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 .p8-link:hover{color:var(--ivory);}
 .p8-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2.5rem;}
 .p8-copy{font-family:'DM Sans',sans-serif;font-size:.7rem;font-weight:400;letter-spacing:.05em;text-transform:uppercase;color:rgba(240,236,226,.36);line-height:1.9;}
-.p8-photo{position:relative;overflow:hidden;background:#521430 url('NFBUE5731.JPG') center top/cover no-repeat;}
+.p8-photo{position:relative;overflow:hidden;background:#521430;}
 .p8-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
 .p8-photo-veil{position:absolute;inset:0;background:linear-gradient(to left,transparent 55%,rgba(82,20,48,.72) 100%);}
 
@@ -642,7 +642,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 
 <!-- ═══ P1 LANDING ═══ -->
 <div class="page active" id="p1">
-  <div class="p1-bg f1"><img src="2F3A8636-2141-4FD3-B1EC-829946AE2C87_1_201_a.jpeg" alt="" onerror="this.style.display='none'"></div>
+  <div class="p1-bg f1"><img src="2F3A8636-2141-4FD3-B1EC-829946AE2C87_1_201_a.jpeg" alt="" fetchpriority="high" decoding="async" onerror="this.style.display='none'"></div>
   <div class="p1-veil"></div>
   <div class="p1-portrait"></div>
   <div class="p1-content">
@@ -652,13 +652,13 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       </div>
       <div class="p1-gallery u2">
         <figure class="p1-frame p1-frame-a">
-          <img src="cea5aa6fa03ddbf53a14724455dc8c62.JPEG" alt="Black and white portrait of Jenna Leigh West" onerror="this.style.display='none'">
+          <img src="cea5aa6fa03ddbf53a14724455dc8c62.JPEG" alt="Black and white portrait of Jenna Leigh West" loading="lazy" decoding="async" onerror="this.style.display='none'">
         </figure>
         <figure class="p1-frame p1-frame-b">
-          <img src="IMG_1226.jpeg" alt="Portrait of Jenna Leigh West" onerror="this.style.display='none'">
+          <img src="IMG_1226.jpeg" alt="Portrait of Jenna Leigh West" loading="lazy" decoding="async" onerror="this.style.display='none'">
         </figure>
         <figure class="p1-frame p1-frame-c">
-          <img src="RTCDE3221.JPG" alt="Daisies and wildflowers" onerror="this.style.display='none'">
+          <img src="RTCDE3221.JPG" alt="Daisies and wildflowers" loading="lazy" decoding="async" onerror="this.style.display='none'">
         </figure>
       </div>
     </div>
@@ -674,7 +674,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 <div class="page" id="p2">
   <div class="p2-wrap">
     <div class="p2-photo f1">
-      <img src="cea5aa6fa03ddbf53a14724455dc8c62.JPEG" alt="Jenna Leigh West" onerror="this.style.display='none'">
+      <img src="cea5aa6fa03ddbf53a14724455dc8c62.JPEG" alt="Jenna Leigh West" loading="lazy" decoding="async" onerror="this.style.display='none'">
       <div class="p2-veil"></div>
       <div class="p2-caption">
         <p class="p2-caption-lbl">Fifth Generation Appalachian</p>
@@ -700,7 +700,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 
 <!-- ═══ P3 OFFERINGS ═══ -->
 <div class="page" id="p3">
-  <div class="p3-bg f1"><img src="RTCDE3221.JPG" alt="" onerror="this.style.display='none'"></div>
+  <div class="p3-bg f1"><img src="RTCDE3221.JPG" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'"></div>
   <div class="p3-veil"></div>
   <div class="p3-wrap">
     <div>
@@ -775,7 +775,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 
 <!-- ═══ P5 CREDENTIAL ═══ -->
 <div class="page" id="p5">
-  <div class="p5-bg f1"><img src="QVZpclN1ZkVQZXRGM3hudXBoNXRoV2xM_Original.JPG" alt="" onerror="this.style.display='none'"></div>
+  <div class="p5-bg f1"><img src="QVZpclN1ZkVQZXRGM3hudXBoNXRoV2xM_Original.JPG" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'"></div>
   <div class="p5-wrap">
     <div>
       <span class="lbl u1">The Credential</span>
@@ -808,12 +808,12 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       <div class="u5"><button class="btn-ghost" onclick="go(6)">Start Here <span class="dash"></span><span class="tip"></span></button></div>
     </div>
     <div class="p6-photos f1">
-      <div class="p6-ph ph1"><img src="23BEA359-7408-4B3A-9B7F-C4AB9AFA1E5B_1_105_c.jpeg" alt="" onerror="this.parentElement.style.background='#243b1a'"></div>
-      <div class="p6-ph ph2"><img src="EXNEE0144.JPG" alt="" onerror="this.parentElement.style.background='#1e3018'"></div>
-      <div class="p6-ph ph3"><img src="FNFZE3007.JPG" alt="" onerror="this.parentElement.style.background='#1a2c14'"></div>
-      <div class="p6-ph ph4"><img src="CGLYE7373.JPG" alt="" onerror="this.parentElement.style.background='#3a0e1c'"></div>
-      <div class="p6-ph ph5"><img src="A3ABB88C-9D9E-4748-9DD1-85D0CE4C93B2_1_105_c.jpeg" alt="" onerror="this.parentElement.style.background='#2e0a18'"></div>
-      <div class="p6-ph ph6"><img src="RTCDE3221.JPG" alt="" onerror="this.parentElement.style.background='#243b1a'"></div>
+      <div class="p6-ph ph1"><img src="23BEA359-7408-4B3A-9B7F-C4AB9AFA1E5B_1_105_c.jpeg" alt="" loading="lazy" decoding="async" onerror="this.parentElement.style.background='#243b1a'"></div>
+      <div class="p6-ph ph2"><img src="EXNEE0144.JPG" alt="" loading="lazy" decoding="async" onerror="this.parentElement.style.background='#1e3018'"></div>
+      <div class="p6-ph ph3"><img src="FNFZE3007.JPG" alt="" loading="lazy" decoding="async" onerror="this.parentElement.style.background='#1a2c14'"></div>
+      <div class="p6-ph ph4"><img src="CGLYE7373.JPG" alt="" loading="lazy" decoding="async" onerror="this.parentElement.style.background='#3a0e1c'"></div>
+      <div class="p6-ph ph5"><img src="A3ABB88C-9D9E-4748-9DD1-85D0CE4C93B2_1_105_c.jpeg" alt="" loading="lazy" decoding="async" onerror="this.parentElement.style.background='#2e0a18'"></div>
+      <div class="p6-ph ph6"><img src="RTCDE3221.JPG" alt="" loading="lazy" decoding="async" onerror="this.parentElement.style.background='#243b1a'"></div>
     </div>
   </div>
 </div>
@@ -946,7 +946,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       </div>
     </div>
     <div class="p8-photo f1">
-      <img src="NFBUE5731.JPG" alt="Jenna Leigh West" onerror="this.style.display='none'">
+      <img src="NFBUE5731.JPG" alt="Jenna Leigh West" loading="lazy" decoding="async" onerror="this.style.display='none'">
       <div class="p8-photo-veil"></div>
     </div>
   </div>
