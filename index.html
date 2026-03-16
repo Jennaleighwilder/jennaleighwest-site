@@ -727,7 +727,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
     </div>
     <div class="p4-free u2">
       <div><strong>Free Resource — The Systems Map</strong><span>A guide to identifying the invisible structures running your life.</span></div>
-      <a href="mailto:theforgottencode780@gmail.com?subject=Free Systems Map Request" class="btn btn-moss" style="flex-shrink:0;">Download Free</a>
+      <button class="btn btn-moss" type="button" onclick="startInquiry('systems-map')" style="flex-shrink:0;">Download Free</button>
     </div>
     <div class="p4-products u3">
       <div class="product">
@@ -740,7 +740,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
         <div class="product-bottom">
           <div class="product-price">$97<span>One-time</span></div>
           <!-- REPLACE href with your Stripe Payment Link -->
-          <a href="mailto:theforgottencode780@gmail.com?subject=Bloodline Report Purchase" class="btn btn-white">Buy Now</a>
+          <button class="btn btn-white" type="button" onclick="startInquiry('bloodline-report')">Buy Now</button>
         </div>
       </div>
       <div class="product">
@@ -753,7 +753,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
         <div class="product-bottom">
           <div class="product-price">$147<span>One-time</span></div>
           <!-- REPLACE href with your Stripe Payment Link -->
-          <a href="mailto:theforgottencode780@gmail.com?subject=Dream Mapping Purchase" class="btn btn-white">Buy Now</a>
+          <button class="btn btn-white" type="button" onclick="startInquiry('dream-mapping')">Buy Now</button>
         </div>
       </div>
       <div class="product">
@@ -766,7 +766,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
         <div class="product-bottom">
           <div class="product-price">$197<span>One-time</span></div>
           <!-- REPLACE href with your Stripe Payment Link -->
-          <a href="mailto:theforgottencode780@gmail.com?subject=Blood Is Code Purchase" class="btn btn-white">Buy Now</a>
+          <button class="btn btn-white" type="button" onclick="startInquiry('blood-is-code')">Buy Now</button>
         </div>
       </div>
     </div>
@@ -875,14 +875,17 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
           <div class="lead-form-row">
             <select class="lead-select" required>
               <option value="" disabled selected>What do you need?</option>
-              <option>Consulting — I need a guide through a system</option>
-              <option>Catalyst Change — I need a spark</option>
-              <option>Navigation Support — I need steady hands</option>
-              <option>Software / AI Development</option>
-              <option>Digital Product — Bloodline Report</option>
-              <option>Digital Product — Dream Mapping</option>
-              <option>Digital Product — Blood Is Code Course</option>
-              <option>Just exploring</option>
+              <option value="consulting">Consulting — I need a guide through a system</option>
+              <option value="catalyst-change">Catalyst Change — I need a spark</option>
+              <option value="navigation-support">Navigation Support — I need steady hands</option>
+              <option value="software-ai">Software / AI Development</option>
+              <option value="bloodline-report">Digital Product — Bloodline Report</option>
+              <option value="dream-mapping">Digital Product — Dream Mapping</option>
+              <option value="blood-is-code">Digital Product — Blood Is Code Course</option>
+              <option value="zoom-consultation">Zoom Consultation</option>
+              <option value="calendly-request">Calendly Booking Request</option>
+              <option value="systems-map">Free Systems Map</option>
+              <option value="just-exploring">Just exploring</option>
             </select>
             <select class="lead-select">
               <option value="" disabled selected>Timeline</option>
@@ -907,12 +910,12 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       <div class="p8-scheduler u4">
         <span class="email-form-lbl">Book or Begin</span>
         <div class="p8-scheduler-grid">
-          <a href="mailto:theforgottencode780@gmail.com?subject=Zoom Consultation Request" class="p8-schedule-card">
+          <a href="#" onclick="startInquiry('zoom-consultation');return false;" class="p8-schedule-card">
             <span class="p8-schedule-title">Zoom Consultation</span>
             <span class="p8-schedule-copy">Use this if you want a direct one-to-one conversation and want Jenna to reply with next steps.</span>
             <span class="p8-schedule-link">Request by email</span>
           </a>
-          <a href="mailto:theforgottencode780@gmail.com?subject=Calendly Booking Request" class="p8-schedule-card">
+          <a href="#" onclick="startInquiry('calendly-request');return false;" class="p8-schedule-card">
             <span class="p8-schedule-title">Calendly Slot</span>
             <span class="p8-schedule-copy">The real booking link can be dropped in here as soon as you send it. For now this opens a direct scheduling request.</span>
             <span class="p8-schedule-link">Request booking link</span>
@@ -932,7 +935,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
         <a href="https://substack.com/@wilderwanderings" class="p8-link" target="_blank" rel="noopener">Substack — Wilder Wanderings</a>
       </div>
       <div class="p8-actions u4">
-        <a href="mailto:theforgottencode780@gmail.com?subject=Consultation Request" class="btn btn-white">Request Consultation</a>
+        <button class="btn btn-white" type="button" onclick="startInquiry('consulting')">Request Consultation</button>
         <button class="btn btn-outline" onclick="go(8)">Try AI Tools</button>
       </div>
       <div class="p8-copy u5">
@@ -1086,7 +1089,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       </div>
     </div>
     <div style="display:flex;gap:.85rem;flex-wrap:wrap;margin-top:1.5rem;" class="u5">
-      <button class="btn btn-white" onclick="go(7)">Book a Session</button>
+      <button class="btn btn-white" type="button" onclick="startInquiry('consulting')">Book a Session</button>
       <button class="btn btn-outline" onclick="go(11)">Read the FAQ</button>
       <button class="btn-ghost" onclick="go(10)">How I Help <span class="dash"></span><span class="tip"></span></button>
     </div>
@@ -1135,7 +1138,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
     </div>
     <div style="display:flex;gap:.85rem;flex-wrap:wrap;padding-top:1.5rem;flex-shrink:0;" class="u4">
       <button class="btn btn-white" onclick="go(6)">Start Here</button>
-      <button class="btn btn-outline" onclick="go(7)">Start a Conversation</button>
+      <button class="btn btn-outline" type="button" onclick="startInquiry('just-exploring')">Start a Conversation</button>
     </div>
   </div>
 </div>
@@ -1203,7 +1206,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       </div>
     </div>
     <div style="padding-top:1.5rem;flex-shrink:0;" class="u5">
-      <button class="btn btn-white" onclick="go(7)">Still have questions — contact me</button>
+      <button class="btn btn-white" type="button" onclick="startInquiry('just-exploring')">Still have questions — contact me</button>
     </div>
   </div>
 </div>
@@ -1333,6 +1336,19 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 const PGS  = ['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10','p11','p12','p13'];
 const NAVS = ['','n1','n2','n3','n4','n5','n6','n7','n8','n9','n10','n11','n12'];
 let cur = 0;
+const INQUIRY_META = {
+  consulting: { label: 'Consulting', subject: 'Consulting Inquiry' },
+  'catalyst-change': { label: 'Catalyst Change', subject: 'Catalyst Change Inquiry' },
+  'navigation-support': { label: 'Navigation Support', subject: 'Navigation Support Inquiry' },
+  'software-ai': { label: 'Software / AI Development', subject: 'Software / AI Build Inquiry' },
+  'bloodline-report': { label: 'Bloodline Report', subject: 'Bloodline Report Request' },
+  'dream-mapping': { label: 'Dream Mapping', subject: 'Dream Mapping Request' },
+  'blood-is-code': { label: 'Blood Is Code Course', subject: 'Blood Is Code Course Request' },
+  'zoom-consultation': { label: 'Zoom Consultation', subject: 'Zoom Consultation Request' },
+  'calendly-request': { label: 'Calendly Booking Request', subject: 'Calendly Booking Request' },
+  'systems-map': { label: 'Free Systems Map', subject: 'Free Systems Map Request' },
+  'just-exploring': { label: 'Just exploring', subject: 'General Inquiry' }
+};
 
 function setPage(n, syncHash = true) {
   const next = Math.max(0, Math.min(Number(n) || 0, PGS.length - 1));
@@ -1372,6 +1388,37 @@ function pageFromHash() {
 }
 
 window.go = go;
+function startInquiry(kind) {
+  setPage(7, true);
+  requestAnimationFrame(() => {
+    const form = document.querySelector('#p8 .lead-form');
+    if (!form) return;
+    const needSelect = form.querySelectorAll('select')[0];
+    const messageBox = form.querySelector('textarea');
+    if (needSelect && INQUIRY_META[kind]) {
+      needSelect.value = kind;
+    }
+    if (messageBox && !messageBox.value.trim()) {
+      const starter = {
+        consulting: 'I would like to book a consultation and talk through what I need.',
+        'catalyst-change': 'I am interested in catalyst change work and want to understand next steps.',
+        'navigation-support': 'I need ongoing navigation support and want to explain what I am moving through.',
+        'software-ai': 'I have a software or AI idea and want to scope the build.',
+        'bloodline-report': 'I want to order the Bloodline Report.',
+        'dream-mapping': 'I want to book Dream Mapping.',
+        'blood-is-code': 'I want the Blood Is Code course.',
+        'zoom-consultation': 'I want to schedule a Zoom consultation.',
+        'calendly-request': 'Please send me the booking link for a consultation.',
+        'systems-map': 'I would love the free Systems Map.',
+        'just-exploring': 'I am reaching out to learn what would be the best fit.'
+      };
+      messageBox.value = starter[kind] || '';
+    }
+    const firstField = form.querySelector('input[type=text]');
+    if (firstField) firstField.focus();
+  });
+}
+window.startInquiry = startInquiry;
 document.addEventListener('keydown', e => {
   if(e.key==='ArrowRight'||e.key==='ArrowDown') go(Math.min(cur+1,PGS.length-1));
   if(e.key==='ArrowLeft' ||e.key==='ArrowUp')   go(Math.max(cur-1,0));
@@ -1524,7 +1571,18 @@ function handleLead(e) {
   const need = e.target.querySelectorAll('select')[0].value;
   const timeline = e.target.querySelectorAll('select')[1].value;
   const msg = e.target.querySelector('textarea').value;
-  window.location.href = 'mailto:theforgottencode780@gmail.com?subject=New Inquiry from ' + encodeURIComponent(name) + '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nNeeds: ' + need + '\nTimeline: ' + timeline + '\n\n' + msg);
+  const meta = INQUIRY_META[need] || { label: need || 'General inquiry', subject: 'General Inquiry' };
+  const subject = `${meta.subject} — ${name}`;
+  const body = [
+    `Inquiry Type: ${meta.label}`,
+    `Name: ${name}`,
+    `Email: ${email}`,
+    `Timeline: ${timeline || 'Not specified'}`,
+    '',
+    'Message:',
+    msg || '(No message provided)'
+  ].join('\n');
+  window.location.href = 'mailto:theforgottencode780@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
 }
 window.handleLead = handleLead;
 
