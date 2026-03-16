@@ -303,6 +303,8 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 .ph4{top:46%;left:7%;width:30%;height:46%;z-index:3;}
 .ph5{top:35%;left:33%;width:40%;height:53%;z-index:2;}
 .ph6{top:44%;left:68%;width:29%;height:44%;z-index:2;}
+.ph7{top:62%;left:44%;width:20%;height:24%;z-index:4;}
+.ph8{top:18%;left:78%;width:17%;height:20%;z-index:4;}
 
 /* ═══════════════════════════════
    P7 BUILDS
@@ -447,6 +449,46 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 .mobile-home-links{display:none;}
 .mobile-tools-help{display:none;}
 
+@media(min-width:1500px){
+  .nav{padding:1.35rem 3rem;}
+  .nav-logo{font-size:1.08rem;}
+  .nav-pills button{font-size:.78rem;padding:.58rem 1.05rem;}
+  .btn{font-size:.85rem;padding:1.08rem 2.15rem;}
+  .p1-content,.p2-wrap,.p3-wrap,.p4-wrap,.p5-wrap,.p7-wrap,.tools-wrap,.cases-wrap,.reports-wrap{max-width:1540px;}
+  .p1-content{padding:7.5rem 4vw 4.25rem;}
+  .p1-cover{grid-template-columns:minmax(360px,.92fr) minmax(420px,48%);gap:4rem;}
+  .p1-name{font-size:clamp(6rem,9vw,10.5rem);}
+  .p1-gallery{min-height:640px;}
+  .p2-wrap{grid-template-columns:50% 1fr;}
+  .p2-txt{padding:8rem 4.5rem 4rem 3.5rem;}
+  .p2-title,.p5-title,.reports-title{font-size:clamp(3rem,4.2vw,5rem);}
+  .p2-body,.p3-sub,.p4-sub,.p5-sub,.p6-body,.p8-sub,.process-desc,.case-row-val,.faq-a,.report-desc{font-size:1rem;line-height:1.85;}
+  .p3-wrap,.p4-wrap,.p5-wrap,.p7-wrap,.tools-wrap,.cases-wrap,.reports-wrap,.std-wrap,.std-scroll,.faq-wrap{padding-left:3rem;padding-right:3rem;}
+  .p3-title{font-size:clamp(3.3rem,4.5vw,5.2rem);}
+  .card-name,.product-name,.case-name,.report-name{font-size:1.6rem;}
+  .card-desc,.product-desc,.tools-sub,.tool-btn-desc,.chat-tool-tagline{font-size:.95rem;line-height:1.7;}
+  .tools-wrap{grid-template-columns:360px minmax(0,1fr);gap:2.75rem;padding-top:7.5rem;padding-bottom:2.5rem;}
+  .tools-sidebar{padding-right:2.5rem;}
+  .tools-heading{font-size:2.35rem;line-height:1.1;}
+  .tool-btn{padding:1.2rem 1.35rem;}
+  .tool-btn-name{font-size:1.42rem;}
+  .chat-panel{padding-left:0;}
+  .chat-header{padding-bottom:1.35rem;margin-bottom:1.35rem;}
+  .chat-tool-name{font-size:2.35rem;line-height:1.05;}
+  .chat-messages{gap:1.2rem;}
+  .chat-welcome{align-items:flex-start;justify-content:flex-start;text-align:left;padding:4rem 0 2rem;max-width:56rem;}
+  .chat-welcome h3{font-size:2.6rem;margin-bottom:1rem;}
+  .chat-welcome p{font-size:1rem;max-width:44rem;}
+  .chat-starters{max-width:52rem;gap:.75rem;}
+  .chat-starter{font-size:.96rem;padding:1rem 1.1rem;}
+  .msg{max-width:72%;}
+  .msg-bubble{font-size:1rem;padding:1rem 1.25rem;}
+  .chat-input{font-size:1rem;height:60px;padding:1rem 1.25rem;}
+  .chat-send{font-size:.86rem;height:60px;padding:0 1.85rem;}
+  .chat-disclaimer{font-size:.66rem;line-height:1.7;}
+  .sticky-book{font-size:.86rem;padding:1rem 1.8rem;}
+}
+
 /* ─── NEW PAGE STYLES ─── */
 .std-wrap{position:absolute;inset:0;z-index:2;max-width:1100px;margin:0 auto;width:100%;padding:7rem 4rem 3rem;display:flex;flex-direction:column;justify-content:center;}
 .std-scroll{position:absolute;inset:0;z-index:2;max-width:1100px;margin:0 auto;width:100%;padding:7rem 4rem 3rem;overflow-y:auto;}
@@ -565,14 +607,15 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 
 @media(max-width:900px){
   .nav{padding:.9rem 1rem .6rem;flex-direction:column;align-items:stretch;gap:.6rem;}
+  .page.active{overflow-y:auto;-webkit-overflow-scrolling:touch;}
   .nav-logo{font-size:1rem;align-self:flex-start;}
   .nav-pills{display:flex;overflow-x:auto;overflow-y:hidden;gap:.35rem;padding:.45rem;border-radius:14px;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
   .nav-pills::-webkit-scrollbar{display:none;}
   .nav-pills li{flex:0 0 auto;}
   .nav-pills button{font-size:.64rem;padding:.52rem .8rem;}
   .page{touch-action:pan-y;}
-  .p2-wrap,.p6-wrap,.p8-wrap{grid-template-columns:1fr;}
-  .p2-photo,.p6-photos,.p8-photo{display:none;}
+  .p2-wrap,.p8-wrap{grid-template-columns:1fr;}
+  .p2-photo,.p8-photo{display:none;}
   .p2-txt,.p3-wrap,.p4-wrap,.p5-wrap,.p7-wrap,.p8-left{padding:7.75rem 1.25rem 4.5rem;}
   .p2-txt,.p7-scroll,.p8-left,.chat-messages,.faq-cols,.reports-grid{overscroll-behavior:contain;-webkit-overflow-scrolling:touch;}
   .p2-txt{margin:0;background:none;border:none;box-shadow:none;}
@@ -580,13 +623,19 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   .product:nth-child(1),.product:nth-child(2),.product:nth-child(3){grid-column:auto;margin-top:0;}
   .p5-grid{grid-template-columns:1fr 1fr;}
   .p5-cell:nth-child(1),.p5-cell:nth-child(2),.p5-cell:nth-child(3),.p5-cell:nth-child(4),.p5-cell:nth-child(5),.p5-cell:nth-child(6){grid-column:auto;transform:none;}
-  .p6-txt{padding:5rem 2rem 3rem;}
-  .p1-content{padding:8.75rem 1.25rem 7rem;}
-  .p1-cover{grid-template-columns:1fr;gap:2rem;min-height:auto;align-items:start;}
-  .p1-gallery{min-height:420px;}
-  .p1-frame-a{top:0;right:4%;width:58%;height:46%;}
-  .p1-frame-b{top:22%;left:0;width:46%;height:33%;}
-  .p1-frame-c{right:0;bottom:2%;width:74%;height:40%;}
+  .p6-wrap{display:flex;flex-direction:column;overflow-y:auto;}
+  .p6-txt{padding:7.5rem 1.25rem 1.5rem;background:linear-gradient(180deg,rgba(17,26,13,.96),rgba(17,26,13,.82));}
+  .p6-body{max-width:none;margin-bottom:1.5rem;}
+  .p6-photos{display:grid;position:relative;grid-template-columns:1fr 1fr;gap:.75rem;padding:0 1.25rem 5.5rem;overflow:visible;min-height:0;}
+  .p6-ph{position:relative;top:auto;left:auto;width:100%;height:auto;min-height:170px;transform:none !important;}
+  .p6-ph img{aspect-ratio:4 / 5;}
+  .p1-content{padding:7.4rem 1.25rem 6.5rem;justify-content:flex-start;gap:1.2rem;overflow-y:auto;}
+  .p1-name{font-size:clamp(3.5rem,18vw,5.8rem);max-width:100%;}
+  .p1-cover{grid-template-columns:1fr;gap:1rem;min-height:auto;align-items:start;}
+  .p1-gallery{min-height:240px;}
+  .p1-frame-a{top:0;right:4%;width:56%;height:54%;}
+  .p1-frame-b{top:24%;left:0;width:42%;height:39%;}
+  .p1-frame-c{right:0;bottom:0;width:68%;height:48%;}
   .p1-acts{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;}
   .p1-acts .btn:last-child{grid-column:1 / -1;}
   .mobile-home-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem;margin-top:1rem;}
@@ -618,45 +667,45 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 
 <!-- NAV -->
 <nav class="nav">
-  <button class="nav-logo" onclick="go(0)">Jenna Leigh West</button>
+  <button class="nav-logo" type="button" data-go="0" onclick="go(0)">Jenna Leigh West</button>
   <ul class="nav-pills">
-    <li><button id="n1" onclick="go(1)">About</button></li>
-    <li><button id="n2" onclick="go(2)">Offerings</button></li>
-    <li><button id="n3" onclick="go(3)">Shop</button></li>
-    <li><button id="n4" onclick="go(4)">Credential</button></li>
-    <li><button id="n5" onclick="go(5)">Art</button></li>
-    <li><button id="n6" onclick="go(6)">Start Here</button></li>
-    <li><button id="n7" onclick="go(7)">Connect</button></li>
-    <li><button id="n8" onclick="go(8)" class="nav-tools-btn">Tools</button></li>
-    <li><button id="n9" onclick="go(9)">Process</button></li>
-    <li><button id="n10" onclick="go(10)">How I Help</button></li>
-    <li><button id="n11" onclick="go(11)">FAQ</button></li>
-    <li><button id="n12" onclick="go(12)" style="color:var(--mint)!important;">Reports</button></li>
+    <li><button id="n1" type="button" data-go="1" onclick="go(1)">About</button></li>
+    <li><button id="n2" type="button" data-go="2" onclick="go(2)">Offerings</button></li>
+    <li><button id="n3" type="button" data-go="3" onclick="go(3)">Shop</button></li>
+    <li><button id="n4" type="button" data-go="4" onclick="go(4)">Credential</button></li>
+    <li><button id="n5" type="button" data-go="5" onclick="go(5)">Art</button></li>
+    <li><button id="n6" type="button" data-go="6" onclick="go(6)">Start Here</button></li>
+    <li><button id="n7" type="button" data-go="7" onclick="go(7)">Connect</button></li>
+    <li><button id="n8" type="button" data-go="8" onclick="go(8)" class="nav-tools-btn">Tools</button></li>
+    <li><button id="n9" type="button" data-go="9" onclick="go(9)">Process</button></li>
+    <li><button id="n10" type="button" data-go="10" onclick="go(10)">How I Help</button></li>
+    <li><button id="n11" type="button" data-go="11" onclick="go(11)">FAQ</button></li>
+    <li><button id="n12" type="button" data-go="12" onclick="go(12)" style="color:var(--mint)!important;">Reports</button></li>
   </ul>
 </nav>
 
 <!-- DOTS -->
 <div class="dots">
-  <button class="dot on" onclick="go(0)"></button>
-  <button class="dot" onclick="go(1)"></button>
-  <button class="dot" onclick="go(2)"></button>
-  <button class="dot" onclick="go(3)"></button>
-  <button class="dot" onclick="go(4)"></button>
-  <button class="dot" onclick="go(5)"></button>
-  <button class="dot" onclick="go(6)"></button>
-  <button class="dot" onclick="go(7)"></button>
-  <button class="dot" onclick="go(8)"></button>
-  <button class="dot" onclick="go(9)"></button>
-  <button class="dot" onclick="go(10)"></button>
-  <button class="dot" onclick="go(11)"></button>
-  <button class="dot" onclick="go(12)"></button>
+  <button class="dot on" type="button" data-go="0" onclick="go(0)"></button>
+  <button class="dot" type="button" data-go="1" onclick="go(1)"></button>
+  <button class="dot" type="button" data-go="2" onclick="go(2)"></button>
+  <button class="dot" type="button" data-go="3" onclick="go(3)"></button>
+  <button class="dot" type="button" data-go="4" onclick="go(4)"></button>
+  <button class="dot" type="button" data-go="5" onclick="go(5)"></button>
+  <button class="dot" type="button" data-go="6" onclick="go(6)"></button>
+  <button class="dot" type="button" data-go="7" onclick="go(7)"></button>
+  <button class="dot" type="button" data-go="8" onclick="go(8)"></button>
+  <button class="dot" type="button" data-go="9" onclick="go(9)"></button>
+  <button class="dot" type="button" data-go="10" onclick="go(10)"></button>
+  <button class="dot" type="button" data-go="11" onclick="go(11)"></button>
+  <button class="dot" type="button" data-go="12" onclick="go(12)"></button>
 </div>
 
 <!-- STICKY CTA -->
 <div class="sticky-cta" id="sticky-cta">
-  <button class="sticky-book" onclick="go(7);document.getElementById('sticky-cta').style.display='none'">Book a Consultation</button>
-  <button class="sticky-book" onclick="window.open('https://intake-form-code.vercel.app/','_blank','noopener');document.getElementById('sticky-cta').style.display='none'" style="background:var(--leaf);">Open Forgotten Code Intake</button>
-  <button class="sticky-dismiss" onclick="document.getElementById('sticky-cta').style.display='none'">dismiss</button>
+  <button class="sticky-book" type="button" data-go="7" data-hide-sticky="true" onclick="go(7);document.getElementById('sticky-cta').style.display='none'">Book a Consultation</button>
+  <button class="sticky-book" type="button" data-open="https://intake-form-code.vercel.app/" data-hide-sticky="true" onclick="window.open('https://intake-form-code.vercel.app/','_blank','noopener');document.getElementById('sticky-cta').style.display='none'" style="background:var(--leaf);">Open Forgotten Code Intake</button>
+  <button class="sticky-dismiss" type="button" data-dismiss-sticky="true" onclick="document.getElementById('sticky-cta').style.display='none'">dismiss</button>
 </div>
 
 <!-- ═══ P1 LANDING ═══ -->
@@ -682,17 +731,17 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       </div>
     </div>
     <div class="p1-acts u3">
-      <button class="btn btn-white" type="button" onclick="go(1)">Enter</button>
-      <button class="btn btn-outline" type="button" onclick="go(7)">Connect</button>
-      <button class="btn btn-outline" type="button" onclick="window.open('https://intake-form-code.vercel.app/','_blank','noopener')">Forgotten Code Intake</button>
+      <button class="btn btn-white" type="button" data-go="1" onclick="go(1)">Enter</button>
+      <button class="btn btn-outline" type="button" data-go="7" onclick="go(7)">Connect</button>
+      <button class="btn btn-outline" type="button" data-open="https://intake-form-code.vercel.app/" onclick="window.open('https://intake-form-code.vercel.app/','_blank','noopener')">Forgotten Code Intake</button>
     </div>
     <div class="mobile-home-links u4">
-      <button type="button" onclick="go(1)">About</button>
-      <button type="button" onclick="go(5)">Art</button>
-      <button type="button" onclick="go(8)">Tools</button>
-      <button type="button" onclick="go(3)">Shop</button>
-      <button type="button" onclick="go(11)">FAQ</button>
-      <button type="button" onclick="go(12)">Reports</button>
+      <button type="button" data-go="1" onclick="go(1)">About</button>
+      <button type="button" data-go="5" onclick="go(5)">Art</button>
+      <button type="button" data-go="8" onclick="go(8)">Tools</button>
+      <button type="button" data-go="3" onclick="go(3)">Shop</button>
+      <button type="button" data-go="11" onclick="go(11)">FAQ</button>
+      <button type="button" data-go="12" onclick="go(12)">Reports</button>
     </div>
   </div>
 </div>
@@ -720,7 +769,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
         <span class="p2-tag">Botanical Practice</span><span class="p2-tag">Dream Work</span>
         <span class="p2-tag">The West Method</span><span class="p2-tag">Forgotten Code Research Institute</span>
       </div>
-      <div class="u5"><button class="btn-ghost" onclick="go(2)">Offerings <span class="dash"></span><span class="tip"></span></button></div>
+      <div class="u5"><button class="btn-ghost" type="button" data-go="2" onclick="go(2)">Offerings <span class="dash"></span><span class="tip"></span></button></div>
     </div>
   </div>
 </div>
@@ -734,8 +783,8 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       <span class="lbl u1" style="color:var(--petal);">The Work</span>
       <h2 class="p3-title u2">Offerings for the Woman in Transition</h2>
       <p class="p3-sub u3">Hover each offering to read more. No two engagements are the same.</p>
-      <div class="u4" style="margin-bottom:1.5rem;"><button class="btn btn-rose" onclick="go(3)">Shop Digital Products</button></div>
-      <div class="u5"><button class="btn-ghost" onclick="go(3)">The Store <span class="dash"></span><span class="tip"></span></button></div>
+      <div class="u4" style="margin-bottom:1.5rem;"><button class="btn btn-rose" type="button" data-go="3" onclick="go(3)">Shop Digital Products</button></div>
+      <div class="u5"><button class="btn-ghost" type="button" data-go="3" onclick="go(3)">The Store <span class="dash"></span><span class="tip"></span></button></div>
     </div>
     <div class="cards u3">
       <div class="card"><div class="card-inner"><span class="card-num">01</span><div><h3 class="card-name">Consulting</h3><p class="card-desc">Direct, personalized consulting for women ready to move — through a transition, creative shift, new chapter, or system holding them back. Jenna meets you exactly where you are.</p></div></div></div>
@@ -831,8 +880,8 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       <span class="lbl u1">Art and Vision</span>
       <h2 class="p6-title u2">Made by Hand. By Heart.</h2>
       <p class="p6-body u3">Acrylic, watercolor, found materials. The studio is where she thinks. The paintings are how she speaks.</p>
-      <div class="u4" style="margin-bottom:1.2rem;"><button class="btn btn-outline" onclick="go(6)">See Where to Start</button></div>
-      <div class="u5"><button class="btn-ghost" onclick="go(6)">Start Here <span class="dash"></span><span class="tip"></span></button></div>
+      <div class="u4" style="margin-bottom:1.2rem;"><button class="btn btn-outline" type="button" data-go="6" onclick="go(6)">See Where to Start</button></div>
+      <div class="u5"><button class="btn-ghost" type="button" data-go="6" onclick="go(6)">Start Here <span class="dash"></span><span class="tip"></span></button></div>
     </div>
     <div class="p6-photos f1">
       <div class="p6-ph ph1"><img src="23BEA359-7408-4B3A-9B7F-C4AB9AFA1E5B_1_105_c.jpeg" alt="" loading="lazy" decoding="async" onerror="this.parentElement.style.background='#243b1a'"></div>
@@ -841,6 +890,8 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       <div class="p6-ph ph4"><img src="CGLYE7373.JPG" alt="" loading="lazy" decoding="async" onerror="this.parentElement.style.background='#3a0e1c'"></div>
       <div class="p6-ph ph5"><img src="A3ABB88C-9D9E-4748-9DD1-85D0CE4C93B2_1_105_c.jpeg" alt="" loading="lazy" decoding="async" onerror="this.parentElement.style.background='#2e0a18'"></div>
       <div class="p6-ph ph6"><img src="RTCDE3221.JPG" alt="" loading="lazy" decoding="async" onerror="this.parentElement.style.background='#243b1a'"></div>
+      <div class="p6-ph ph7"><img src="QKFCE3041.JPG" alt="" loading="lazy" decoding="async" onerror="this.parentElement.style.background='#3a5828'"></div>
+      <div class="p6-ph ph8"><img src="IMG_3397.JPG" alt="" loading="lazy" decoding="async" onerror="this.parentElement.style.background='#72365f'"></div>
     </div>
   </div>
 </div>
@@ -865,23 +916,23 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       <div class="bld-sec">
         <p class="bld-sec-lbl">Ways to Work With Me</p>
         <div class="bld-grid">
-          <div class="bld"><p class="bld-name">Book a Consultation</p><a href="#" onclick="go(7);return false;">Open the contact page</a></div>
-          <div class="bld"><p class="bld-name">Use the AI Tools</p><a href="#" onclick="go(8);return false;">Try the live tools here</a></div>
-          <div class="bld"><p class="bld-name">Shop Digital Products</p><a href="#" onclick="go(3);return false;">See reports, guides, and courses</a></div>
-          <div class="bld"><p class="bld-name">Read the Process</p><a href="#" onclick="go(9);return false;">How sessions and builds work</a></div>
+          <div class="bld"><p class="bld-name">Book a Consultation</p><a href="#p8" onclick="go(7);return false;">Open the contact page</a></div>
+          <div class="bld"><p class="bld-name">Use the AI Tools</p><a href="#p9" onclick="go(8);return false;">Try the live tools here</a></div>
+          <div class="bld"><p class="bld-name">Shop Digital Products</p><a href="#p4" onclick="go(3);return false;">See reports, guides, and courses</a></div>
+          <div class="bld"><p class="bld-name">Read the Process</p><a href="#p10" onclick="go(9);return false;">How sessions and builds work</a></div>
         </div>
       </div>
       <div class="bld-sec">
         <p class="bld-sec-lbl">Inside This Site</p>
         <div class="bld-grid">
-          <div class="bld"><p class="bld-name">About</p><a href="#" onclick="go(1);return false;">Read the story behind the work</a></div>
-          <div class="bld"><p class="bld-name">Art + Vision</p><a href="#" onclick="go(5);return false;">See the visual world</a></div>
-          <div class="bld"><p class="bld-name">FAQ</p><a href="#" onclick="go(11);return false;">Get the practical answers</a></div>
-          <div class="bld"><p class="bld-name">Connect</p><a href="#" onclick="go(7);return false;">Reach out directly</a></div>
+          <div class="bld"><p class="bld-name">About</p><a href="#p2" onclick="go(1);return false;">Read the story behind the work</a></div>
+          <div class="bld"><p class="bld-name">Art + Vision</p><a href="#p6" onclick="go(5);return false;">See the visual world</a></div>
+          <div class="bld"><p class="bld-name">FAQ</p><a href="#p12" onclick="go(11);return false;">Get the practical answers</a></div>
+          <div class="bld"><p class="bld-name">Connect</p><a href="#p8" onclick="go(7);return false;">Reach out directly</a></div>
         </div>
       </div>
     </div>
-    <div class="p7-foot u3"><button class="btn-ghost" onclick="go(7)">Connect <span class="dash"></span><span class="tip"></span></button></div>
+    <div class="p7-foot u3"><button class="btn-ghost" type="button" data-go="7" onclick="go(7)">Connect <span class="dash"></span><span class="tip"></span></button></div>
   </div>
 </div>
 
@@ -938,12 +989,12 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       <div class="p8-scheduler u4">
         <span class="email-form-lbl">Book or Begin</span>
         <div class="p8-scheduler-grid">
-          <a href="#" onclick="startInquiry('zoom-consultation');return false;" class="p8-schedule-card">
+          <a href="#p8" data-inquiry="zoom-consultation" onclick="startInquiry('zoom-consultation');return false;" class="p8-schedule-card">
             <span class="p8-schedule-title">Zoom Consultation</span>
             <span class="p8-schedule-copy">Use this if you want a direct one-to-one conversation and want Jenna to reply with next steps.</span>
             <span class="p8-schedule-link">Request by email</span>
           </a>
-          <a href="#" onclick="startInquiry('calendly-request');return false;" class="p8-schedule-card">
+          <a href="#p8" data-inquiry="calendly-request" onclick="startInquiry('calendly-request');return false;" class="p8-schedule-card">
             <span class="p8-schedule-title">Calendly Slot</span>
             <span class="p8-schedule-copy">The real booking link can be dropped in here as soon as you send it. For now this opens a direct scheduling request.</span>
             <span class="p8-schedule-link">Request booking link</span>
@@ -963,8 +1014,8 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
         <a href="https://substack.com/@wilderwanderings" class="p8-link" target="_blank" rel="noopener">Substack — Wilder Wanderings</a>
       </div>
       <div class="p8-actions u4">
-        <button class="btn btn-white" type="button" onclick="startInquiry('consulting')">Request Consultation</button>
-        <button class="btn btn-outline" onclick="go(8)">Try AI Tools</button>
+        <button class="btn btn-white" type="button" data-inquiry="consulting" onclick="startInquiry('consulting')">Request Consultation</button>
+        <button class="btn btn-outline" type="button" data-go="8" onclick="go(8)">Try AI Tools</button>
       </div>
       <div class="p8-copy u5">
         © 2026 Jennifer Leigh West &nbsp;·&nbsp; The Forgotten Code Research Institute<br>
@@ -988,7 +1039,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       <div class="tools-sidebar-lbl">
         <span class="lbl u1">AI Tools</span>
         <h2 class="tools-heading u2">The Forgotten Code Instruments</h2>
-        <p class="tools-sub u3">Four live AI systems powered by your research. Each one uses a different lens.</p>
+        <p class="tools-sub u3">Five live AI systems powered by your research. Each one uses a different lens.</p>
         <p class="mobile-tools-help u3">Tap a tool name below, then use one of the starter prompts or type in the box and press send.</p>
       </div>
       <div class="tool-btns u3">
@@ -1672,27 +1723,80 @@ function toggleFAQ(el) {
 }
 window.toggleFAQ = toggleFAQ;
 
-document.addEventListener('click', (event) => {
+function hideStickyCta() {
+  const sticky = document.getElementById('sticky-cta');
+  if (sticky) sticky.style.display = 'none';
+}
+
+function handleInteractiveAction(event) {
+  const actionEl = event.target.closest('[data-go],[data-inquiry],[data-open],[data-dismiss-sticky],[data-tool],.chat-starter,#chat-send');
+  if (!actionEl) return false;
+
+  if (actionEl.dataset.dismissSticky !== undefined) {
+    event.preventDefault();
+    hideStickyCta();
+    return true;
+  }
+
+  if (actionEl.dataset.go !== undefined) {
+    event.preventDefault();
+    go(Number(actionEl.dataset.go));
+    if (actionEl.dataset.hideSticky !== undefined) hideStickyCta();
+    return true;
+  }
+
+  if (actionEl.dataset.inquiry) {
+    event.preventDefault();
+    startInquiry(actionEl.dataset.inquiry);
+    return true;
+  }
+
+  if (actionEl.dataset.open) {
+    event.preventDefault();
+    window.open(actionEl.dataset.open, '_blank', 'noopener');
+    if (actionEl.dataset.hideSticky !== undefined) hideStickyCta();
+    return true;
+  }
+
   const toolBtn = event.target.closest('.tool-btn[data-tool]');
   if (toolBtn) {
     event.preventDefault();
     selectTool(toolBtn.dataset.tool);
-    return;
+    return true;
   }
 
   const starterBtn = event.target.closest('.chat-starter');
   if (starterBtn) {
     event.preventDefault();
     useStarter(starterBtn);
-    return;
+    return true;
   }
 
   const sendBtn = event.target.closest('#chat-send');
   if (sendBtn) {
     event.preventDefault();
     sendMessage();
+    return true;
   }
+
+  return false;
+}
+
+let lastTouchActivationAt = 0;
+
+document.addEventListener('click', (event) => {
+  if (Date.now() - lastTouchActivationAt < 700) {
+    event.preventDefault();
+    return;
+  }
+  handleInteractiveAction(event);
 });
+
+document.addEventListener('touchend', (event) => {
+  if (handleInteractiveAction(event)) {
+    lastTouchActivationAt = Date.now();
+  }
+}, { passive: false });
 
 window.addEventListener('hashchange', () => {
   setPage(pageFromHash(), false);
