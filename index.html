@@ -457,7 +457,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 .sticky-dismiss:hover{color:rgba(240,236,226,.6);}
 .chat-launcher{
   position:fixed;left:1.5rem;bottom:1.5rem;z-index:790;
-  display:flex;flex-direction:column;gap:.35rem;max-width:260px;
+  display:none;flex-direction:column;gap:.35rem;max-width:260px;
 }
 .chat-launcher-btn{
   background:linear-gradient(180deg,rgba(90,122,64,.92),rgba(58,88,40,.92));
@@ -664,8 +664,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   .p1-frame-a{top:0;right:4%;width:56%;height:54%;}
   .p1-frame-b{top:24%;left:0;width:42%;height:39%;}
   .p1-frame-c{right:0;bottom:0;width:68%;height:48%;}
-  .p1-acts{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;}
-  .p1-acts .btn:last-child{grid-column:1 / -1;}
+  .p1-acts{display:none;}
   .p1-guide{max-width:none;padding:.95rem 1rem;}
   .p1-guide-title{font-size:1.08rem;}
   .p1-guide-copy{font-size:.75rem;}
@@ -696,7 +695,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   .sticky-cta{right:1rem;left:1rem;bottom:1rem;align-items:stretch;}
   .sticky-book{width:100%;}
   .sticky-dismiss{text-align:center;}
-  .chat-launcher{left:auto;right:1rem;bottom:7.8rem;max-width:none;align-items:flex-end;}
+  .chat-launcher{display:flex;left:auto;right:1rem;bottom:7.8rem;max-width:none;align-items:flex-end;}
   .chat-launcher-btn{width:58px;height:58px;padding:0;border-radius:50%;text-align:center;justify-content:center;font-size:1.05rem;letter-spacing:0;}
   .chat-launcher-note{display:none;}
   #p11 .u4{display:grid !important;grid-template-columns:1fr;gap:.75rem;}
@@ -720,8 +719,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   .btn{width:100%;padding:.95rem 1rem;font-size:.68rem;letter-spacing:.11em;}
   .p1-content,.p2-txt,.p3-wrap,.p4-wrap,.p5-wrap,.p7-wrap,.p8-left,.tools-wrap,.cases-wrap,.std-wrap,.faq-wrap,.reports-wrap,.std-scroll{padding-left:1rem;padding-right:1rem;}
   .p1-content{padding-top:7.1rem;padding-bottom:8.8rem;}
-  .p1-acts,.mobile-home-links{grid-template-columns:1fr;}
-  .p1-acts .btn:last-child{grid-column:auto;}
+  .mobile-home-links{grid-template-columns:1fr;}
   .p1-guide-actions .btn{font-size:.66rem;}
   .mobile-home-links button{font-size:.64rem;padding:.78rem .7rem;}
   .p5-grid{grid-template-columns:1fr;}
@@ -808,7 +806,6 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       </div>
     </div>
     <div class="p1-acts u3">
-      <button class="btn btn-white" type="button" data-go="1" onclick="go(1)">Enter</button>
       <button class="btn btn-outline" type="button" data-go="7" onclick="go(7)">Connect</button>
       <button class="btn btn-outline" type="button" data-open="https://intake-form-code.vercel.app/" onclick="window.open('https://intake-form-code.vercel.app/','_blank','noopener')">Forgotten Code Intake</button>
     </div>
@@ -818,7 +815,6 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       <p class="p1-guide-copy">Open the Tools page if you want help choosing between sessions, reports, digital products, or the Forgotten Code intake.</p>
       <div class="p1-guide-actions">
         <button class="btn btn-moss" type="button" data-go="8" onclick="go(8)">Open AI Tools</button>
-        <button class="btn btn-outline" type="button" data-open="https://intake-form-code.vercel.app/reports-menu.html" onclick="window.open('https://intake-form-code.vercel.app/reports-menu.html','_blank','noopener')">Browse Reports</button>
       </div>
     </div>
     <div class="mobile-home-links u4">
@@ -1537,7 +1533,6 @@ function setPage(n, syncHash = true) {
   const currentPage = document.getElementById(PGS[cur]);
   const nextPage = document.getElementById(PGS[next]);
   const dots = document.querySelectorAll('.dot');
-  const sticky = document.getElementById('sticky-cta');
 
   if (currentPage) currentPage.classList.remove('active');
   if (dots[cur]) dots[cur].classList.remove('on');
@@ -1559,9 +1554,7 @@ function setPage(n, syncHash = true) {
     history.replaceState(null, '', '#' + PGS[cur]);
   }
 
-  if (sticky) {
-    sticky.style.display = next === 0 ? 'flex' : 'none';
-  }
+  updateFloatingCtas();
 }
 
 function go(n) {
@@ -1614,6 +1607,15 @@ let tx=0,ty=0;
 function isMobileView() {
   return window.matchMedia('(max-width: 900px)').matches;
 }
+
+function updateFloatingCtas() {
+  const sticky = document.getElementById('sticky-cta');
+  const launcher = document.getElementById('chat-launcher');
+  const showMobileCtas = cur === 0 && isMobileView();
+  if (sticky) sticky.style.display = showMobileCtas ? 'flex' : 'none';
+  if (launcher) launcher.style.display = showMobileCtas ? 'flex' : 'none';
+}
+
 document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
 document.addEventListener('touchend',e=>{
   if (isMobileView()) return;
@@ -1916,6 +1918,8 @@ window.addEventListener('hashchange', () => {
 window.addEventListener('load', () => {
   setPage(pageFromHash(), false);
 });
+
+window.addEventListener('resize', updateFloatingCtas);
 </script>
 </body>
 </html>
