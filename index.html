@@ -126,12 +126,12 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 
 /* ─── NAV ─── */
 .nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 2.5rem;}
-.nav-logo{font-family:'Playfair Display',serif;font-weight:500;font-size:0.95rem;letter-spacing:0.04em;color:rgba(240,236,226,.5);background:none;border:none;cursor:pointer;transition:color .3s;padding:0;}
-.nav-logo:hover{color:var(--ivory);}
-.nav-pills{display:flex;gap:.25rem;list-style:none;background:linear-gradient(180deg,rgba(12,17,9,.72),rgba(12,17,9,.45));backdrop-filter:blur(14px);padding:.45rem .55rem;border-radius:16px;border:1px solid rgba(240,236,226,.07);box-shadow:0 18px 40px rgba(0,0,0,.18);}
-.nav-pills button{background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,236,226,.62);transition:all .25s;padding:.48rem .95rem;border-radius:6px;}
-.nav-pills button:hover{color:var(--ivory);background:rgba(240,236,226,.05);}
-.nav-pills button.on{color:var(--ivory);background:rgba(240,236,226,.09);}
+.nav-logo{font-family:'Playfair Display',serif;font-weight:500;font-size:0.95rem;letter-spacing:0.04em;color:rgba(240,236,226,.82);background:none;border:none;cursor:pointer;transition:color .3s;padding:0;text-shadow:0 2px 10px rgba(0,0,0,.32);}
+.nav-logo:hover{color:var(--bone);}
+.nav-pills{display:flex;gap:.25rem;list-style:none;background:linear-gradient(180deg,rgba(12,17,9,.88),rgba(12,17,9,.68));backdrop-filter:blur(16px);padding:.45rem .55rem;border-radius:16px;border:1px solid rgba(240,236,226,.16);box-shadow:0 18px 40px rgba(0,0,0,.24);}
+.nav-pills button{background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,236,226,.88);transition:all .25s;padding:.48rem .95rem;border-radius:6px;text-shadow:0 1px 8px rgba(0,0,0,.24);}
+.nav-pills button:hover{color:var(--ivory);background:rgba(240,236,226,.08);}
+.nav-pills button.on{color:var(--ivory);background:rgba(240,236,226,.14);}
 .nav-tools-btn{color:var(--petal)!important;}
 
 /* ─── DOTS ─── */
@@ -664,13 +664,12 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   .p1-frame-a{top:0;right:4%;width:56%;height:54%;}
   .p1-frame-b{top:24%;left:0;width:42%;height:39%;}
   .p1-frame-c{right:0;bottom:0;width:68%;height:48%;}
-  .p1-acts{display:none;}
+  .p1-acts{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;}
   .p1-guide{max-width:none;padding:.95rem 1rem;}
   .p1-guide-title{font-size:1.08rem;}
   .p1-guide-copy{font-size:.75rem;}
-  .p1-guide-actions{display:grid;grid-template-columns:1fr;gap:.5rem;}
-  .p1-guide-actions .btn{width:100%;}
-  .mobile-home-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem;margin-top:1rem;}
+  .p1-guide-actions{display:none;}
+  .mobile-home-links{display:none;}
   .mobile-home-links button{background:rgba(17,26,13,.52);border:1px solid rgba(240,236,226,.08);padding:.8rem .65rem;color:var(--ivory);font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border-radius:10px;}
   .testi-strip{grid-template-columns:1fr;}
   .testi:nth-child(1),.testi:nth-child(2),.testi:nth-child(3){transform:none;}
@@ -692,10 +691,10 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   .report-card:nth-child(n){grid-column:auto;margin-top:0;min-height:unset;}
   .chat-panel{padding-left:0;padding-top:1.5rem;}
   .dots{display:none;}
-  .sticky-cta{right:1rem;left:1rem;bottom:1rem;align-items:stretch;}
+  .sticky-cta{display:none !important;right:1rem;left:1rem;bottom:1rem;align-items:stretch;}
   .sticky-book{width:100%;}
   .sticky-dismiss{text-align:center;}
-  .chat-launcher{display:flex;left:auto;right:1rem;bottom:7.8rem;max-width:none;align-items:flex-end;}
+  .chat-launcher{display:none !important;left:auto;right:1rem;bottom:7.8rem;max-width:none;align-items:flex-end;}
   .chat-launcher-btn{width:58px;height:58px;padding:0;border-radius:50%;text-align:center;justify-content:center;font-size:1.05rem;letter-spacing:0;}
   .chat-launcher-note{display:none;}
   #p11 .u4{display:grid !important;grid-template-columns:1fr;gap:.75rem;}
@@ -719,9 +718,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   .btn{width:100%;padding:.95rem 1rem;font-size:.68rem;letter-spacing:.11em;}
   .p1-content,.p2-txt,.p3-wrap,.p4-wrap,.p5-wrap,.p7-wrap,.p8-left,.tools-wrap,.cases-wrap,.std-wrap,.faq-wrap,.reports-wrap,.std-scroll{padding-left:1rem;padding-right:1rem;}
   .p1-content{padding-top:7.1rem;padding-bottom:8.8rem;}
-  .mobile-home-links{grid-template-columns:1fr;}
-  .p1-guide-actions .btn{font-size:.66rem;}
-  .mobile-home-links button{font-size:.64rem;padding:.78rem .7rem;}
+  .p1-acts{grid-template-columns:1fr;}
   .p5-grid{grid-template-columns:1fr;}
   .p6-photos{grid-template-columns:1fr;padding:0 1rem 8rem;}
   .tool-btns{flex-direction:column;}
@@ -806,16 +803,13 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       </div>
     </div>
     <div class="p1-acts u3">
-      <button class="btn btn-outline" type="button" data-go="7" onclick="go(7)">Connect</button>
-      <button class="btn btn-outline" type="button" data-open="https://intake-form-code.vercel.app/" onclick="window.open('https://intake-form-code.vercel.app/','_blank','noopener')">Forgotten Code Intake</button>
+      <button class="btn btn-rose" type="button" data-go="7" onclick="go(7)">Book a Consultation</button>
+      <button class="btn btn-white" type="button" data-go="1" onclick="go(1)">Enter</button>
     </div>
     <div class="p1-guide u4">
       <p class="p1-guide-kicker">Site Guide</p>
       <h2 class="p1-guide-title">The Tools page can help you choose where to begin.</h2>
       <p class="p1-guide-copy">Open the Tools page if you want help choosing between sessions, reports, digital products, or the Forgotten Code intake.</p>
-      <div class="p1-guide-actions">
-        <button class="btn btn-moss" type="button" data-go="8" onclick="go(8)">Open AI Tools</button>
-      </div>
     </div>
     <div class="mobile-home-links u4">
       <button type="button" data-go="1" onclick="go(1)">About</button>
@@ -1611,9 +1605,8 @@ function isMobileView() {
 function updateFloatingCtas() {
   const sticky = document.getElementById('sticky-cta');
   const launcher = document.getElementById('chat-launcher');
-  const showMobileCtas = cur === 0 && isMobileView();
-  if (sticky) sticky.style.display = showMobileCtas ? 'flex' : 'none';
-  if (launcher) launcher.style.display = showMobileCtas ? 'flex' : 'none';
+  if (sticky) sticky.style.display = 'none';
+  if (launcher) launcher.style.display = 'none';
 }
 
 document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
