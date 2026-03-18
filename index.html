@@ -696,9 +696,9 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   .sticky-cta{right:1rem;left:1rem;bottom:1rem;align-items:stretch;}
   .sticky-book{width:100%;}
   .sticky-dismiss{text-align:center;}
-  .chat-launcher{left:1rem;right:1rem;bottom:7.8rem;max-width:none;}
-  .chat-launcher-btn{text-align:center;}
-  .chat-launcher-note{text-align:center;padding-left:0;}
+  .chat-launcher{left:auto;right:1rem;bottom:7.8rem;max-width:none;align-items:flex-end;}
+  .chat-launcher-btn{width:58px;height:58px;padding:0;border-radius:50%;text-align:center;justify-content:center;font-size:1.05rem;letter-spacing:0;}
+  .chat-launcher-note{display:none;}
   #p11 .u4{display:grid !important;grid-template-columns:1fr;gap:.75rem;}
   #p11 .u4 .btn,#p11 .u4 .btn-outline{width:100%;}
   .btn,.sticky-book,.chat-launcher-btn,.email-submit,.chat-send{white-space:normal;line-height:1.35;text-align:center;}
@@ -729,9 +729,9 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   .tool-btns{flex-direction:column;}
   .tool-btn{flex:1 1 100%;min-width:0;}
   .sticky-cta{left:.8rem;right:.8rem;bottom:.8rem;}
-  .chat-launcher{left:.8rem;right:.8rem;bottom:11.4rem;}
+  .chat-launcher{left:auto;right:.8rem;bottom:11.4rem;}
   .sticky-book{padding:.9rem 1rem;font-size:.68rem;}
-  .chat-launcher-btn{padding:.9rem 1rem;font-size:.68rem;}
+  .chat-launcher-btn{width:54px;height:54px;font-size:.98rem;}
 }
 </style>
 </head>
@@ -781,8 +781,8 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 </div>
 
 <div class="chat-launcher" id="chat-launcher">
-  <button class="chat-launcher-btn" type="button" data-go="8" onclick="go(8)">Ask the Service Advisor</button>
-  <p class="chat-launcher-note">Need help choosing an offer, report, or next step? The chatbot lives on the Tools page.</p>
+  <button class="chat-launcher-btn" type="button" aria-label="Open AI tools" title="Open AI tools" data-go="8" onclick="go(8)">AI</button>
+  <p class="chat-launcher-note">Open the AI tools page.</p>
 </div>
 
 <!-- ═══ P1 LANDING ═══ -->
@@ -814,10 +814,10 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
     </div>
     <div class="p1-guide u4">
       <p class="p1-guide-kicker">Site Guide</p>
-      <h2 class="p1-guide-title">A live chatbot is here to help you find the right offer or report.</h2>
-      <p class="p1-guide-copy">Start with the Service Advisor if you want help choosing between sessions, reports, digital products, or the Forgotten Code intake.</p>
+      <h2 class="p1-guide-title">The Tools page can help you choose where to begin.</h2>
+      <p class="p1-guide-copy">Open the Tools page if you want help choosing between sessions, reports, digital products, or the Forgotten Code intake.</p>
       <div class="p1-guide-actions">
-        <button class="btn btn-moss" type="button" data-go="8" onclick="go(8)">Open the Chatbot</button>
+        <button class="btn btn-moss" type="button" data-go="8" onclick="go(8)">Open AI Tools</button>
         <button class="btn btn-outline" type="button" data-open="https://intake-form-code.vercel.app/reports-menu.html" onclick="window.open('https://intake-form-code.vercel.app/reports-menu.html','_blank','noopener')">Browse Reports</button>
       </div>
     </div>
@@ -1313,7 +1313,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
         <div class="case-row"><span class="case-row-lbl">For</span><span class="case-row-val">Founders, practitioners, and small businesses who need a tool, intake flow, or simple AI layer that actually fits the work.</span></div>
         <div class="case-row"><span class="case-row-lbl">How it works</span><span class="case-row-val">We scope the need first, then decide whether the right answer is a landing page, intake system, chatbot, or a fuller custom build.</span></div>
         <div class="case-row"><span class="case-row-lbl">Best fit</span><span class="case-row-val">Service businesses, report workflows, client onboarding, and experimental AI-powered experiences.</span></div>
-        <div class="case-result"><p class="case-result-lbl">Start point</p><p class="case-result-val">Use the Service Advisor or reach out directly if you want help defining the build.</p></div>
+        <div class="case-result"><p class="case-result-lbl">Start point</p><p class="case-result-val">Open the Tools page or reach out directly if you want help defining the build.</p></div>
         <a href="#" onclick="go(8);return false;" class="case-link">Open the tools</a>
       </div>
 
@@ -1383,7 +1383,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
         </div>
         <div class="faq-item" onclick="toggleFAQ(this)">
           <p class="faq-q">How do I get started?</p>
-          <p class="faq-a">Fill out the contact form on the Connect page, or email theforgottencode780@gmail.com directly. Tell me your name, what you are trying to move through or build, and your timeline. I will respond within 24 hours with next steps. If you are not sure what you need, the AI Tools page has a Service Advisor that can help you figure it out.</p>
+          <p class="faq-a">Fill out the contact form on the Connect page, or email theforgottencode780@gmail.com directly. Tell me your name, what you are trying to move through or build, and your timeline. I will respond within 24 hours with next steps. If you are not sure what you need, the AI Tools page can help you figure out where to begin.</p>
         </div>
       </div>
     </div>
