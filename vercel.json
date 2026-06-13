@@ -7,6 +7,8 @@
     { "source": "/3fa2a6d54505190283db469c6114d41fa624d1ff91a4059384fece3bfb98f250.txt", "destination": "/3fa2a6d54505190283db469c6114d41fa624d1ff91a4059384fece3bfb98f250.txt" },
     { "source": "/googlefd6f4695ff1eb41d.html", "destination": "/googlefd6f4695ff1eb41d.html" },
     { "source": "/BingSiteAuth.xml", "destination": "/BingSiteAuth.xml" },
+    { "source": "/links", "destination": "/links.html" },
+    { "source": "/links.html", "destination": "/links.html" },
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
