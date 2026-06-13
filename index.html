@@ -93,11 +93,11 @@
 -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jenna Leigh West — Systems Decoder</title>
-<meta name="description" content="Jenna Leigh West — Systems Decoder, consulting, coaching, and AI development. Appalachian roots. Neurodivergent wisdom. Guide for creative women in transition.">
-<meta name="keywords" content="systems decoder, consulting, coaching, AI development, neurodivergent, Appalachian, dream mapping, past life, women in transition">
-<meta property="og:title" content="Jenna Leigh West — Systems Decoder">
-<meta property="og:description" content="Consulting, coaching, AI tools, and digital products for creative women in transition.">
+<title>Jennifer Leigh West — Founder & Lead Engineer, WRENTECH</title>
+<meta name="description" content="Jennifer Leigh West is the founder and lead engineer behind WRENTECH: custom software, AI systems, websites, automations, and practical tools for businesses that need the work to actually run.">
+<meta name="keywords" content="WRENTECH, Jennifer Leigh West, custom software, AI systems, automation, websites, systems architecture, Appalachian founder, lead engineer">
+<meta property="og:title" content="Jennifer Leigh West — Founder & Lead Engineer, WRENTECH">
+<meta property="og:description" content="Custom software, AI systems, websites, and business tools built by Jennifer Leigh West, founder of WRENTECH.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -639,6 +639,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   .nav-logo{font-size:1rem;align-self:flex-start;}
   .nav-pills{display:flex;overflow-x:auto;overflow-y:hidden;gap:.35rem;padding:.45rem;border-radius:14px;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
   .nav-pills::-webkit-scrollbar{display:none;}
+  .nav-optional{display:none;}
   .nav-pills li{flex:0 0 auto;}
   .nav-pills button{font-size:.64rem;padding:.52rem .8rem;}
   .page{touch-action:pan-y;}
@@ -734,20 +735,15 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 
 <!-- NAV -->
 <nav class="nav">
-  <button class="nav-logo" type="button" data-go="0" onclick="go(0)">Jenna Leigh West</button>
+  <button class="nav-logo" type="button" data-go="0" onclick="go(0)">Jennifer Leigh West</button>
   <ul class="nav-pills">
     <li><button id="n1" type="button" data-go="1" onclick="go(1)">About</button></li>
-    <li><button id="n2" type="button" data-go="2" onclick="go(2)">Offerings</button></li>
-    <li><button id="n3" type="button" data-go="3" onclick="go(3)">Shop</button></li>
-    <li><button id="n4" type="button" data-go="4" onclick="go(4)">Credential</button></li>
-    <li><button id="n5" type="button" data-go="5" onclick="go(5)">Art</button></li>
-    <li><button id="n6" type="button" data-go="6" onclick="go(6)">Start Here</button></li>
-    <li><button id="n7" type="button" data-go="7" onclick="go(7)">Connect</button></li>
-    <li><button id="n8" type="button" data-go="8" onclick="go(8)" class="nav-tools-btn">Tools</button></li>
-    <li><button id="n9" type="button" data-go="9" onclick="go(9)">Process</button></li>
-    <li><button id="n10" type="button" data-go="10" onclick="go(10)">How I Help</button></li>
-    <li><button id="n11" type="button" data-go="11" onclick="go(11)">FAQ</button></li>
-    <li><button id="n12" type="button" data-go="12" onclick="go(12)" style="color:var(--mint)!important;">Reports</button></li>
+    <li><button id="n2" type="button" data-go="2" onclick="go(2)">Services</button></li>
+    <li class="nav-optional"><button id="n4" type="button" data-go="4" onclick="go(4)">Proof</button></li>
+    <li class="nav-optional"><button id="n6" type="button" data-go="6" onclick="go(6)">Start</button></li>
+    <li><button id="n7" type="button" data-go="7" onclick="go(7)">Contact</button></li>
+    <li class="nav-optional"><button id="n8" type="button" data-go="8" onclick="go(8)" class="nav-tools-btn">Tools</button></li>
+    <li><button type="button" data-open="https://wrentech.net" onclick="window.open('https://wrentech.net','_blank','noopener')" style="color:var(--mint)!important;">WRENTECH</button></li>
   </ul>
 </nav>
 
@@ -770,8 +766,8 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 
 <!-- STICKY CTA -->
 <div class="sticky-cta" id="sticky-cta">
-  <button class="sticky-book" type="button" data-go="7" data-hide-sticky="true" onclick="go(7);document.getElementById('sticky-cta').style.display='none'">Book a Consultation</button>
-  <button class="sticky-book" type="button" data-open="https://intake-form-code.vercel.app/" data-hide-sticky="true" onclick="window.open('https://intake-form-code.vercel.app/','_blank','noopener');document.getElementById('sticky-cta').style.display='none'" style="background:var(--leaf);">Open Forgotten Code Intake</button>
+  <button class="sticky-book" type="button" data-go="7" data-hide-sticky="true" onclick="go(7);document.getElementById('sticky-cta').style.display='none'">Start a Build Conversation</button>
+  <button class="sticky-book" type="button" data-open="https://wrentech.net" data-hide-sticky="true" onclick="window.open('https://wrentech.net','_blank','noopener');document.getElementById('sticky-cta').style.display='none'" style="background:var(--leaf);">Visit WRENTECH</button>
   <button class="sticky-dismiss" type="button" data-dismiss-sticky="true" onclick="document.getElementById('sticky-cta').style.display='none'">dismiss</button>
 </div>
 
@@ -788,14 +784,14 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   <div class="p1-content">
     <div class="p1-cover">
       <div>
-        <h1 class="p1-name u1">Jenna<span>Leigh West</span></h1>
+        <h1 class="p1-name u1">Jennifer<span>Leigh West</span></h1>
       </div>
       <div class="p1-gallery u2">
         <figure class="p1-frame p1-frame-a">
-          <img src="cea5aa6fa03ddbf53a14724455dc8c62.JPEG" alt="Black and white portrait of Jenna Leigh West" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          <img src="cea5aa6fa03ddbf53a14724455dc8c62.JPEG" alt="Black and white portrait of Jennifer Leigh West" loading="lazy" decoding="async" onerror="this.style.display='none'">
         </figure>
         <figure class="p1-frame p1-frame-b">
-          <img src="IMG_1226.jpeg" alt="Portrait of Jenna Leigh West" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          <img src="IMG_1226.jpeg" alt="Portrait of Jennifer Leigh West" loading="lazy" decoding="async" onerror="this.style.display='none'">
         </figure>
         <figure class="p1-frame p1-frame-c">
           <img src="RTCDE3221.JPG" alt="Daisies and wildflowers" loading="lazy" decoding="async" onerror="this.style.display='none'">
@@ -803,21 +799,21 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       </div>
     </div>
     <div class="p1-acts u3">
-      <button class="btn btn-rose" type="button" data-go="7" onclick="go(7)">Book a Consultation</button>
-      <button class="btn btn-white" type="button" data-go="1" onclick="go(1)">Enter</button>
+      <button class="btn btn-rose" type="button" data-go="7" onclick="go(7)">Start a Build</button>
+      <button class="btn btn-white" type="button" data-go="1" onclick="go(1)">Who I Am</button>
     </div>
     <div class="p1-guide u4">
       <p class="p1-guide-kicker">Site Guide</p>
-      <h2 class="p1-guide-title">The Tools page can help you choose where to begin.</h2>
-      <p class="p1-guide-copy">Open the Tools page if you want help choosing between sessions, reports, digital products, or the Forgotten Code intake.</p>
+      <h2 class="p1-guide-title">Here for the software work? Start with WRENTECH.</h2>
+      <p class="p1-guide-copy">This site keeps the art and story. The professional lane is custom software, AI systems, websites, automation, and tools that make business operations easier to run.</p>
     </div>
     <div class="mobile-home-links u4">
       <button type="button" data-go="1" onclick="go(1)">About</button>
-      <button type="button" data-go="5" onclick="go(5)">Art</button>
-      <button type="button" data-go="8" onclick="go(8)">Tools</button>
-      <button type="button" data-go="3" onclick="go(3)">Shop</button>
-      <button type="button" data-go="11" onclick="go(11)">FAQ</button>
-      <button type="button" data-go="12" onclick="go(12)">Reports</button>
+      <button type="button" data-go="2" onclick="go(2)">Services</button>
+      <button type="button" data-go="4" onclick="go(4)">Proof</button>
+      <button type="button" data-go="7" onclick="go(7)">Contact</button>
+      <button type="button" data-go="8" onclick="go(8)">AI Help</button>
+      <button type="button" data-open="https://wrentech.net" onclick="window.open('https://wrentech.net','_blank','noopener')">WRENTECH</button>
     </div>
   </div>
 </div>
@@ -826,26 +822,26 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 <div class="page" id="p2">
   <div class="p2-wrap">
     <div class="p2-photo f1">
-      <img src="cea5aa6fa03ddbf53a14724455dc8c62.JPEG" alt="Jenna Leigh West" loading="lazy" decoding="async" onerror="this.style.display='none'">
+      <img src="cea5aa6fa03ddbf53a14724455dc8c62.JPEG" alt="Jennifer Leigh West" loading="lazy" decoding="async" onerror="this.style.display='none'">
       <div class="p2-veil"></div>
       <div class="p2-caption">
         <p class="p2-caption-lbl">Fifth Generation Appalachian</p>
-        <p class="p2-caption-line">Where ancient knowing meets the modern edge</p>
+        <p class="p2-caption-line">Appalachian roots. Practical systems. Tools that work.</p>
       </div>
     </div>
     <div class="p2-txt">
       <span class="lbl u1">About</span>
-      <h2 class="p2-title u2">Guide. Decoder. Maker.</h2>
+      <h2 class="p2-title u2">Founder. Lead Engineer. Systems Architect.</h2>
       <div class="p2-rule u2"></div>
-      <p class="p2-body u3">Jenna Leigh West is a guide for creative women in transition — weaving neurodivergent wisdom and deep Appalachian roots into transformative consulting experiences.</p>
-      <div class="p2-pull u3">Her approach blends ancient tradition with modern technique, resulting in consulting experiences that are unlike anything else.</div>
-      <p class="p2-body u4">Founder of The Forgotten Code Research Institute. Builder of The West Method: Complete Cognitive Framework Collection (case no. 1-14953838171). Self-taught herbalist and systems decoder across every landscape — prep schools, public systems, high rises, off-grid homesteads.</p>
+      <p class="p2-body u3">Jennifer Leigh West is the founder and lead engineer behind WRENTECH, a custom systems and software studio building websites, AI tools, automations, intake flows, dashboards, and business infrastructure.</p>
+      <div class="p2-pull u3">The work is simple: find the bottleneck, build the tool, make the system easier to run.</div>
+      <p class="p2-body u4">She came to technology through necessity, pattern recognition, and a refusal to accept broken systems as permanent. Her background spans early childhood education, anthropology, sociology, private childcare, legal and real-estate support networks, AI research, and full-stack build work.</p>
       <div class="p2-tags u4">
-        <span class="p2-tag">Appalachian Heritage</span><span class="p2-tag">Neurodivergent Wisdom</span>
-        <span class="p2-tag">Botanical Practice</span><span class="p2-tag">Dream Work</span>
-        <span class="p2-tag">The West Method</span><span class="p2-tag">Forgotten Code Research Institute</span>
+        <span class="p2-tag">Appalachian Founder</span><span class="p2-tag">Neurodivergent Systems Design</span>
+        <span class="p2-tag">Custom Software</span><span class="p2-tag">AI Automation</span>
+        <span class="p2-tag">WRENTECH</span><span class="p2-tag">The West Method</span>
       </div>
-      <div class="u5"><button class="btn-ghost" type="button" data-go="2" onclick="go(2)">Offerings <span class="dash"></span><span class="tip"></span></button></div>
+      <div class="u5"><button class="btn-ghost" type="button" data-go="2" onclick="go(2)">Services <span class="dash"></span><span class="tip"></span></button></div>
     </div>
   </div>
 </div>
@@ -856,22 +852,22 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   <div class="p3-veil"></div>
   <div class="p3-wrap">
     <div>
-      <span class="lbl u1" style="color:var(--petal);">The Work</span>
-      <h2 class="p3-title u2">Offerings for the Woman in Transition</h2>
-      <p class="p3-sub u3">Hover each offering to read more. No two engagements are the same.</p>
-      <div class="u4" style="margin-bottom:1.5rem;"><button class="btn btn-rose" type="button" data-go="3" onclick="go(3)">See What's Coming</button></div>
-      <div class="u5"><button class="btn-ghost" type="button" data-go="3" onclick="go(3)">Coming Soon <span class="dash"></span><span class="tip"></span></button></div>
+      <span class="lbl u1" style="color:var(--petal);">Services</span>
+      <h2 class="p3-title u2">Software, systems, and the tools behind the work.</h2>
+      <p class="p3-sub u3">Hover each service to read more. Every project starts with the business problem, not a template.</p>
+      <div class="u4" style="margin-bottom:1.5rem;"><button class="btn btn-rose" type="button" data-go="7" onclick="go(7)">Request a Scope</button></div>
+      <div class="u5"><button class="btn-ghost" type="button" data-go="10" onclick="go(10)">See build lanes <span class="dash"></span><span class="tip"></span></button></div>
     </div>
     <div class="cards u3">
       <div class="card open" role="button" tabindex="0" onclick="toggleOffering(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleOffering(this);}">
         <div class="card-inner">
           <span class="card-num">01</span>
           <div>
-            <h3 class="card-name">Consulting</h3>
+            <h3 class="card-name">Custom Software Builds</h3>
             <p class="card-desc">
-              Direct, personalized consulting for women ready to move through a transition, make a hard decision, or get clear inside a system that feels tangled.
-              <span class="card-detail">Good for: life pivots, relationship crossroads, personal systems, business direction, and truth-telling when you need someone to help you see the whole map.</span>
-              <span class="card-detail">Format: one-to-one sessions, scoped support, and practical next steps you can actually use.</span>
+              Websites, client portals, intake systems, dashboards, internal tools, and AI-powered workflows built around the way the business actually runs.
+              <span class="card-detail">Good for: service businesses, creators, founders, local operators, and teams tired of stitching everything together by hand.</span>
+              <span class="card-detail">Format: scoped build, flat quote, launch support, and practical documentation.</span>
               <span class="card-link">Tap to open or close</span>
             </p>
           </div>
@@ -881,11 +877,11 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
         <div class="card-inner">
           <span class="card-num">02</span>
           <div>
-            <h3 class="card-name">Catalyst Change</h3>
+            <h3 class="card-name">AI & Automation Strategy</h3>
             <p class="card-desc">
-              This is for the season when you are not just gathering information. You are ready to break an old pattern, stop circling, and actually move.
-              <span class="card-detail">Good for: reinvention, identity shifts, leaving old roles, creative rebirth, and the moment when a spark matters more than another spreadsheet.</span>
-              <span class="card-detail">Format: catalytic conversations, pattern interruption, and support that helps momentum hold after the breakthrough.</span>
+              A practical map for where AI belongs, where it does not, and which automations will save real time instead of adding another dashboard to ignore.
+              <span class="card-detail">Good for: lead handling, document triage, content workflows, CRM cleanup, research, customer support, and operations compression.</span>
+              <span class="card-detail">Format: audit, architecture, prototype, or full implementation.</span>
               <span class="card-link">Tap to open or close</span>
             </p>
           </div>
@@ -895,11 +891,11 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
         <div class="card-inner">
           <span class="card-num">03</span>
           <div>
-            <h3 class="card-name">Intake, Support and Navigation</h3>
+            <h3 class="card-name">Technical Translation</h3>
             <p class="card-desc">
-              A guide for any system you have to move through, especially when the rules are murky, the stakes are emotional, or the paperwork is only part of the story.
-              <span class="card-detail">Good for: institutional overwhelm, application paths, family systems, client onboarding, and any moment where you need steady hands and translation.</span>
-              <span class="card-detail">Format: intake review, guided next steps, and grounded support through the terrain itself.</span>
+              If the system is confusing, slow, or scattered across forms, files, platforms, and people, Jennifer turns it into a map and then a working tool.
+              <span class="card-detail">Good for: messy documents, operational handoffs, client onboarding, compliance flows, and business processes nobody has written down.</span>
+              <span class="card-detail">Format: diagnostic, workflow map, plain-language brief, and build plan.</span>
               <span class="card-link">Tap to open or close</span>
             </p>
           </div>
@@ -913,28 +909,28 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 <div class="page" id="p4">
   <div class="p4-wrap">
     <div class="p4-header u1">
-      <div><span class="lbl">Digital Products</span><h2 class="p4-title">Coming Soon</h2></div>
-      <p class="p4-sub">New digital products are being built. For now, the live report and payment paths stay inside the Forgotten Code intake library.</p>
+      <div><span class="lbl">Business Assets</span><h2 class="p4-title">Public Proof</h2></div>
+      <p class="p4-sub">The clean professional path is WRENTECH: services, pricing, portfolio, affiliate flow, and direct contact.</p>
     </div>
     <div class="p4-free u2">
-      <div><strong>The standalone shop is on pause.</strong><span>Use the live intake library for reports right now. New products, bundles, and downloads will land here next.</span></div>
-      <a class="btn btn-moss" href="https://intake-form-code.vercel.app/reports-menu.html" target="_blank" rel="noopener" style="flex-shrink:0;">Open Report Library</a>
+      <div><strong>For new business, start at WRENTECH.</strong><span>This personal site now supports the professional story instead of splitting traffic into old product paths.</span></div>
+      <a class="btn btn-moss" href="https://wrentech.net" target="_blank" rel="noopener" style="flex-shrink:0;">Open WRENTECH</a>
     </div>
     <div class="p4-products u3">
       <div class="product" style="grid-column:3 / span 8;margin-top:1rem;">
         <div class="product-top">
-          <span class="product-badge hot">In Progress</span>
-          <h3 class="product-name">Fresh digital products are coming here soon.</h3>
-          <p class="product-desc">This page will hold the next round of guides, downloads, bundles, and paid product paths once they are ready. Until then, the cleanest place to start is the Forgotten Code report library.</p>
+          <span class="product-badge hot">Sunday Ready</span>
+          <h3 class="product-name">One clean public lane: build the thing that works.</h3>
+          <p class="product-desc">New visitors, referrals, and business inquiries should land on the same promise: Jennifer builds practical software and AI systems through WRENTECH.</p>
           <ul class="product-includes">
-            <li>Reports stay in the intake app for now</li>
-            <li>No duplicate checkout paths on this page</li>
-            <li>New products can be added here cleanly when you are ready</li>
+            <li>Custom websites and lead conversion systems</li>
+            <li>AI assistants, automations, and internal tools</li>
+            <li>Business process maps, audits, and build scopes</li>
           </ul>
         </div>
         <div class="product-bottom">
-          <div class="product-price">Soon<span>New releases</span></div>
-          <a class="btn btn-white" href="https://intake-form-code.vercel.app/reports-menu.html" target="_blank" rel="noopener">Browse Reports Instead</a>
+          <div class="product-price">WRENTECH<span>Custom Systems</span></div>
+          <a class="btn btn-white" href="https://wrentech.net/portfolio-services#portfolio" target="_blank" rel="noopener">View Portfolio</a>
         </div>
       </div>
     </div>
@@ -946,20 +942,20 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   <div class="p5-bg f1"><img src="QVZpclN1ZkVQZXRGM3hudXBoNXRoV2xM_Original.JPG" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'"></div>
   <div class="p5-wrap">
     <div>
-      <span class="lbl u1">The Credential</span>
-      <h2 class="p5-title u2">Not a Degree. A Life Lived Across Every Landscape.</h2>
-      <p class="p5-sub u2">From elite prep schools to public high rises to off-grid homesteads. She has learned to read every room she has ever walked into.</p>
+      <span class="lbl u1">The Proof</span>
+      <h2 class="p5-title u2">No conventional ladder. A real build record.</h2>
+      <p class="p5-sub u2">From classrooms and court-adjacent networks to rural operations and AI systems, she learned to read the room, map the pressure, and build the tool.</p>
     </div>
     <div class="p5-grid u3">
-      <div class="p5-cell"><p class="p5-cname">Herbalism</p><p class="p5-ctxt">Appalachian folk tradition. Preparation, formulation, the living knowledge of plants in body and home.</p></div>
-      <div class="p5-cell"><p class="p5-cname">Botany and Biology</p><p class="p5-ctxt">Working knowledge of plant science and biological systems — how things function, interact, respond.</p></div>
+      <div class="p5-cell"><p class="p5-cname">Pattern Literacy</p><p class="p5-ctxt">Fast recognition of what is broken, what is missing, and what the system is really doing.</p></div>
+      <div class="p5-cell"><p class="p5-cname">Systems Thinking</p><p class="p5-ctxt">Working knowledge across human, technical, operational, and biological systems: how things function, interact, and respond.</p></div>
       <div class="p5-cell"><p class="p5-cname">Art and Making</p><p class="p5-ctxt">Painter, sewer, maker across acrylic, watercolor, fabric, found materials. How she thinks and transmits.</p></div>
       <div class="p5-cell"><p class="p5-cname">Systems Decoding</p><p class="p5-ctxt">Any system — legal, institutional, family, creative, digital — read its structure, find the leverage points.</p></div>
-      <div class="p5-cell"><p class="p5-cname">Sewing and Textile</p><p class="p5-ctxt">Garment construction, mending, textile as living practice. The precision of sewing shaped how she thinks.</p></div>
-      <div class="p5-cell" style="border-right:none;"><p class="p5-cname">Technical and Adaptive</p><p class="p5-ctxt">Self-taught across AI, digital tools, research. Prep schools to off-grid homesteads. Fluent everywhere.</p></div>
+      <div class="p5-cell"><p class="p5-cname">Operations Experience</p><p class="p5-ctxt">Private childcare, professional networks, real-estate paperwork, client communication, and the messy middle where tools need to work.</p></div>
+      <div class="p5-cell" style="border-right:none;"><p class="p5-cname">Technical and Adaptive</p><p class="p5-ctxt">Self-taught across AI, digital tools, research, deployment, automation, and practical software architecture.</p></div>
     </div>
     <div class="p5-quote u4">
-      <p>"I have traveled across prep schools, public systems, high rises, and off-grid homesteads. I decode systems — whatever system you are standing inside of. That is what I do."</p>
+      <p>"I decode systems - legal, institutional, business, creative, digital - and then I build the part that should have existed already."</p>
       <button class="btn-ghost" onclick="go(5)" style="flex-shrink:0;">Art and Work <span class="dash"></span><span class="tip"></span></button>
     </div>
   </div>
@@ -993,25 +989,25 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   <div class="p7-wrap">
     <div class="p7-top u1">
       <div><span class="lbl">Start Here</span><div class="p7-big">4<span class="p7-big-lbl">Ways In</span></div></div>
-      <p class="p7-note">No inflated portfolio wall. Just the live places you can actually go right now.</p>
+      <p class="p7-note">Four practical paths for referrals, business owners, and visitors who want the work, not the lore.</p>
     </div>
     <div class="p7-scroll u2">
       <div class="bld-sec">
-        <p class="bld-sec-lbl">Forgotten Code Intake</p>
+        <p class="bld-sec-lbl">For Software + WRENTECH</p>
         <div class="bld-grid">
-          <div class="bld"><p class="bld-name">Report Library</p><a href="https://intake-form-code.vercel.app/" target="_blank" rel="noopener">Open the Forgotten Code intake app</a></div>
-          <div class="bld"><p class="bld-name">Dream Mapping Mini</p><a href="https://intake-form-code.vercel.app/dream" target="_blank" rel="noopener">Start the dream intake</a></div>
-          <div class="bld"><p class="bld-name">Lovers, Liars &amp; All Things Patterned</p><a href="https://intake-form-code.vercel.app/lovers" target="_blank" rel="noopener">Start the relationship intake</a></div>
-          <div class="bld"><p class="bld-name">Business &amp; Systems Mini</p><a href="https://intake-form-code.vercel.app/funnels/business-identity-map.html" target="_blank" rel="noopener">Start the business intake</a></div>
+          <div class="bld"><p class="bld-name">WRENTECH</p><a href="https://wrentech.net" target="_blank" rel="noopener">Open the business site</a></div>
+          <div class="bld"><p class="bld-name">Portfolio</p><a href="https://wrentech.net/portfolio-services#portfolio" target="_blank" rel="noopener">See public work</a></div>
+          <div class="bld"><p class="bld-name">Email a Build Brief</p><a href="mailto:wren@wrentech.net?subject=Build%20Inquiry">Send the problem</a></div>
+          <div class="bld"><p class="bld-name">GitHub</p><a href="https://github.com/Jennaleighwilder" target="_blank" rel="noopener">See code profile</a></div>
         </div>
       </div>
       <div class="bld-sec">
         <p class="bld-sec-lbl">Ways to Work With Me</p>
         <div class="bld-grid">
-          <div class="bld"><p class="bld-name">Book a Consultation</p><a href="#p8" onclick="go(7);return false;">Open the contact page</a></div>
-          <div class="bld"><p class="bld-name">Use the AI Tools</p><a href="#p9" onclick="go(8);return false;">Try the live tools here</a></div>
-          <div class="bld"><p class="bld-name">Digital Shop</p><a href="#p4" onclick="go(3);return false;">See what is coming soon</a></div>
-          <div class="bld"><p class="bld-name">Read the Process</p><a href="#p10" onclick="go(9);return false;">How sessions and builds work</a></div>
+          <div class="bld"><p class="bld-name">Diagnostic</p><a href="#p8" onclick="go(7);return false;">Start a build conversation</a></div>
+          <div class="bld"><p class="bld-name">Use the AI Helper</p><a href="#p9" onclick="go(8);return false;">Clarify the build lane</a></div>
+          <div class="bld"><p class="bld-name">Business Assets</p><a href="#p4" onclick="go(3);return false;">See the public lane</a></div>
+          <div class="bld"><p class="bld-name">Read the Process</p><a href="#p10" onclick="go(9);return false;">How builds work</a></div>
         </div>
       </div>
       <div class="bld-sec">
@@ -1033,10 +1029,10 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   <div class="p8-wrap">
     <div class="p8-left">
       <span class="lbl u1" style="color:var(--petal);">Begin Here</span>
-      <h2 class="p8-title u2">Ready to Decode Your Next Chapter?</h2>
-      <p class="p8-sub u3">Whether you need consulting, catalyst work, or a guide through any system — every journey begins with one message.</p>
+      <h2 class="p8-title u2">Need a tool, system, or software build?</h2>
+      <p class="p8-sub u3">Send the bottleneck. Jennifer will route it to the right WRENTECH lane: site, app, AI workflow, automation, audit, or technical translation.</p>
       <div class="u3">
-        <span class="email-form-lbl">Tell me what you need — I will respond within 24 hours</span>
+        <span class="email-form-lbl">Tell me what you need - I will respond within 24 hours</span>
         <form class="lead-form" onsubmit="handleLead(event)">
           <div class="lead-form-row">
             <input type="text" class="lead-input" placeholder="Your name" required>
@@ -1045,16 +1041,14 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
           <div class="lead-form-row">
             <select class="lead-select" required>
               <option value="" disabled selected>What do you need?</option>
-              <option value="consulting">Consulting — I need a guide through a system</option>
-              <option value="catalyst-change">Catalyst Change — I need a spark</option>
-              <option value="navigation-support">Navigation Support — I need steady hands</option>
-              <option value="software-ai">Software / AI Development</option>
-              <option value="bloodline-report">Digital Product — Bloodline Report</option>
-              <option value="dream-mapping">Digital Product — Dream Mapping</option>
-              <option value="blood-is-code">Digital Product — Blood Is Code Course</option>
-              <option value="zoom-consultation">Zoom Consultation</option>
-              <option value="calendly-request">Calendly Booking Request</option>
-              <option value="systems-map">Free Systems Map</option>
+              <option value="software-ai">Custom software / AI build</option>
+              <option value="rapid-site">Website / landing page</option>
+              <option value="automation">Automation or internal workflow</option>
+              <option value="audit">Site, AI, or operations audit</option>
+              <option value="document-decoding">Document / system decoding</option>
+              <option value="portfolio-media">Portfolio, media kit, or launch assets</option>
+              <option value="consulting">Strategy call / technical consultation</option>
+              <option value="calendly-request">Booking request</option>
               <option value="just-exploring">Just exploring</option>
             </select>
             <select class="lead-select">
@@ -1065,13 +1059,13 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
               <option>Just researching</option>
             </select>
           </div>
-          <textarea class="lead-textarea" placeholder="Briefly describe what you are trying to move through or build..."></textarea>
+          <textarea class="lead-textarea" placeholder="Briefly describe what you are trying to build, fix, automate, or make easier to run..."></textarea>
           <button type="submit" class="btn btn-white">Send Message</button>
           <p class="email-note lead-status" id="lead-status">This form sends the right inquiry type with your message.</p>
         </form>
       </div>
       <div class="u3">
-        <span class="email-form-lbl">Join the List — Dispatches from the Field</span>
+        <span class="email-form-lbl">Join the List - Build notes and WRENTECH updates</span>
         <form class="email-row" onsubmit="handleEmail(event)">
           <input type="email" class="email-input" placeholder="your@email.com" required>
           <button type="submit" class="email-submit">Subscribe</button>
@@ -1082,41 +1076,41 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
         <span class="email-form-lbl">Book or Begin</span>
         <div class="p8-scheduler-grid">
           <a href="#p8" data-inquiry="zoom-consultation" onclick="startInquiry('zoom-consultation');return false;" class="p8-schedule-card">
-            <span class="p8-schedule-title">Zoom Consultation</span>
-            <span class="p8-schedule-copy">Use this if you want a direct one-to-one conversation and want Jenna to reply with next steps.</span>
-            <span class="p8-schedule-link">Request by email</span>
+            <span class="p8-schedule-title">Diagnostic Call</span>
+            <span class="p8-schedule-copy">Use this if you want to talk through a build, audit, automation, or technical problem.</span>
+            <span class="p8-schedule-link">Request a scope</span>
           </a>
           <a href="#p8" data-inquiry="calendly-request" onclick="startInquiry('calendly-request');return false;" class="p8-schedule-card">
-            <span class="p8-schedule-title">Calendly Slot</span>
-            <span class="p8-schedule-copy">The real booking link can be dropped in here as soon as you send it. For now this opens a direct scheduling request.</span>
+            <span class="p8-schedule-title">Booking Request</span>
+            <span class="p8-schedule-copy">Ask for the next available time or request an async quote path if you do not want a call.</span>
             <span class="p8-schedule-link">Request booking link</span>
           </a>
-          <a href="https://intake-form-code.vercel.app/" target="_blank" rel="noopener" class="p8-schedule-card">
-            <span class="p8-schedule-title">Intake Forms</span>
-            <span class="p8-schedule-copy">Start with the Forgotten Code intake app and choose from the 12 live report and mini-reading paths.</span>
-            <span class="p8-schedule-link">Open the intake app</span>
+          <a href="https://wrentech.net" target="_blank" rel="noopener" class="p8-schedule-card">
+            <span class="p8-schedule-title">WRENTECH</span>
+            <span class="p8-schedule-copy">Open the business site for services, pricing, portfolio, and the current public offer.</span>
+            <span class="p8-schedule-link">Visit WRENTECH</span>
           </a>
         </div>
       </div>
       <span class="p8-contact-lbl u4">Direct Contact</span>
       <div class="p8-links u4">
-        <a href="mailto:theforgottencode780@gmail.com" class="p8-link">theforgottencode780@gmail.com</a>
+        <a href="mailto:wren@wrentech.net" class="p8-link">wren@wrentech.net</a>
         <a href="tel:4233888304" class="p8-link">423-388-8304</a>
-        <a href="https://jennaleighwilder.github.io/AI-Consulting-/" class="p8-link" target="_blank" rel="noopener">GitHub Portfolio</a>
-        <a href="https://substack.com/@wilderwanderings" class="p8-link" target="_blank" rel="noopener">Substack — Wilder Wanderings</a>
+        <a href="https://wrentech.net" class="p8-link" target="_blank" rel="noopener">WRENTECH</a>
+        <a href="https://github.com/Jennaleighwilder" class="p8-link" target="_blank" rel="noopener">GitHub</a>
       </div>
       <div class="p8-actions u4">
-        <button class="btn btn-white" type="button" data-inquiry="consulting" onclick="startInquiry('consulting')">Request Consultation</button>
-        <button class="btn btn-outline" type="button" data-go="8" onclick="go(8)">Try AI Tools</button>
+        <button class="btn btn-white" type="button" data-inquiry="software-ai" onclick="startInquiry('software-ai')">Request a Build Scope</button>
+        <button class="btn btn-outline" type="button" data-go="8" onclick="go(8)">Try AI Helper</button>
       </div>
       <div class="p8-copy u5">
-        © 2026 Jennifer Leigh West &nbsp;·&nbsp; The Forgotten Code Research Institute<br>
+        © 2026 Jennifer Leigh West &nbsp;·&nbsp; WRENTECH LLC<br>
         The West Method: Complete Cognitive Framework Collection &nbsp;·&nbsp; Case No. 1-14953838171<br>
-        Tennessee &nbsp;·&nbsp; Available Remotely &nbsp;·&nbsp; Real reviews available on request
+        Tennessee &nbsp;·&nbsp; Available Remotely &nbsp;·&nbsp; Custom software, AI systems, and business tools
       </div>
     </div>
     <div class="p8-photo f1">
-      <img src="NFBUE5731.JPG" alt="Jenna Leigh West" loading="lazy" decoding="async" onerror="this.style.display='none'">
+      <img src="NFBUE5731.JPG" alt="Jennifer Leigh West" loading="lazy" decoding="async" onerror="this.style.display='none'">
       <div class="p8-photo-veil"></div>
     </div>
   </div>
@@ -1130,34 +1124,34 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
     <div class="tools-sidebar">
       <div class="tools-sidebar-lbl">
         <span class="lbl u1">AI Tools</span>
-        <h2 class="tools-heading u2">The Forgotten Code Instruments</h2>
-        <p class="tools-sub u3">Five live AI systems powered by your research. Each one uses a different lens.</p>
+        <h2 class="tools-heading u2">WRENTECH Build Helper</h2>
+        <p class="tools-sub u3">Five practical helpers for scoping sites, software, AI workflows, and operations problems.</p>
         <p class="mobile-tools-help u3">Tap a tool name below, then use one of the starter prompts or type in the box and press send.</p>
       </div>
       <div class="tool-btns u3">
         <button class="tool-btn active" type="button" data-tool="advisor" onclick="selectTool('advisor')" id="tb-advisor" style="border-color:rgba(200,120,152,.3);">
           <span class="tool-btn-name" style="color:var(--petal);">Service Advisor</span>
-          <span class="tool-btn-desc">Ask anything about working with Jenna. Services, pricing, process, booking.</span>
+          <span class="tool-btn-desc">Ask about WRENTECH services, pricing, process, and booking.</span>
         </button>
-        <button class="tool-btn" type="button" data-tool="dream" onclick="selectTool('dream')" id="tb-dream">
-          <span class="tool-btn-name">Dream Decoder</span>
-          <span class="tool-btn-desc">Cross-cultural dream symbol analysis. The Forbidden Library framework.</span>
+        <button class="tool-btn" type="button" data-tool="scope" onclick="selectTool('scope')" id="tb-scope">
+          <span class="tool-btn-name">Build Scoper</span>
+          <span class="tool-btn-desc">Turn a rough idea into a practical build lane and next questions.</span>
         </button>
-        <button class="tool-btn" type="button" data-tool="pastlife" onclick="selectTool('pastlife')" id="tb-pastlife">
-          <span class="tool-btn-name">Past Life Reader</span>
-          <span class="tool-btn-desc">Soul cartography. Incarnation mapping. Karmic pattern analysis.</span>
+        <button class="tool-btn" type="button" data-tool="siteaudit" onclick="selectTool('siteaudit')" id="tb-siteaudit">
+          <span class="tool-btn-name">Site Audit</span>
+          <span class="tool-btn-desc">Check whether a site is clear, credible, findable, and conversion-ready.</span>
         </button>
-        <button class="tool-btn" type="button" data-tool="celestial" onclick="selectTool('celestial')" id="tb-celestial">
-          <span class="tool-btn-name">Celestial Biophysics</span>
-          <span class="tool-btn-desc">Daily EM field forecast. UVRK-1 pattern engine. Schumann resonance.</span>
+        <button class="tool-btn" type="button" data-tool="automation" onclick="selectTool('automation')" id="tb-automation">
+          <span class="tool-btn-name">Automation Mapper</span>
+          <span class="tool-btn-desc">Find repetitive work, handoff gaps, and AI workflow opportunities.</span>
         </button>
-        <button class="tool-btn" type="button" data-tool="dyad" onclick="selectTool('dyad')" id="tb-dyad">
-          <span class="tool-btn-name">DYAD Engine</span>
-          <span class="tool-btn-desc">Relationship pattern forensics. Role locks. Attachment architecture.</span>
+        <button class="tool-btn" type="button" data-tool="readiness" onclick="selectTool('readiness')" id="tb-readiness">
+          <span class="tool-btn-name">AI Readiness</span>
+          <span class="tool-btn-desc">Decide where AI belongs and what needs governance before launch.</span>
         </button>
       </div>
       <div class="tools-note u4">
-        <p>These tools use Jenna's West Method-style pattern prompts and run on Claude. For full written reports, book a session at theforgottencode780@gmail.com</p>
+        <p>These helpers use Jennifer's build-scoping prompts. For a real quote, send the problem to wren@wrentech.net.</p>
       </div>
     </div>
 
@@ -1165,17 +1159,17 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
     <div class="chat-panel">
       <div class="chat-header u1">
         <div class="chat-tool-name" id="chat-tool-name">Service Advisor</div>
-        <div class="chat-tool-tagline" id="chat-tool-tagline">Ask anything about working with Jenna — services, pricing, process, booking</div>
+        <div class="chat-tool-tagline" id="chat-tool-tagline">Ask anything about WRENTECH services, pricing, process, and booking</div>
       </div>
 
       <div class="chat-messages" id="chat-messages">
         <div class="chat-welcome" id="chat-welcome">
           <h3>Welcome to the Service Advisor</h3>
-          <p>I can help you find the right place to start: a consultation, a report, the intake app, or one of Jenna's digital products.</p>
+        <p>I can help you decide whether this is a website, audit, AI workflow, automation, or custom software build.</p>
           <div class="chat-starters" id="chat-starters">
-            <button class="chat-starter" type="button" onclick="useStarter(this)">What services do you offer and which is right for me?</button>
-            <button class="chat-starter" type="button" onclick="useStarter(this)">How much does a consulting session cost?</button>
-            <button class="chat-starter" type="button" onclick="useStarter(this)">I have an idea for a software build — can you scope it with me?</button>
+            <button class="chat-starter" type="button" onclick="useStarter(this)">What does WRENTECH build?</button>
+            <button class="chat-starter" type="button" onclick="useStarter(this)">How much does a website or AI build cost?</button>
+            <button class="chat-starter" type="button" onclick="useStarter(this)">I have an idea for a software build - can you scope it with me?</button>
           </div>
         </div>
       </div>
@@ -1187,10 +1181,10 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       </div>
 
       <div class="chat-input-row u5">
-        <textarea class="chat-input" id="chat-input" placeholder="Ask what Jenna offers or describe what you need..." rows="1" onkeydown="handleKey(event)"></textarea>
+        <textarea class="chat-input" id="chat-input" placeholder="Ask about WRENTECH services, pricing, process, or your build idea..." rows="1" onkeydown="handleKey(event)"></textarea>
         <button class="chat-send" id="chat-send" type="button" onclick="sendMessage()">Send</button>
       </div>
-      <p class="chat-disclaimer">For entertainment and educational purposes. Not a substitute for professional therapy or medical advice. Full written reports available at theforgottencode780@gmail.com</p>
+      <p class="chat-disclaimer">This helper is for rough scoping only. Real quotes, timelines, and architecture decisions come from WRENTECH after review.</p>
     </div>
 
   </div>
@@ -1202,68 +1196,68 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   <div class="std-wrap">
     <div>
       <span class="lbl u1">How I Work</span>
-      <h2 style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.4rem,4vw,3.8rem);line-height:1.08;color:var(--ivory);margin-bottom:.6rem;" class="u2">The Process. The Philosophy. The Method.</h2>
-      <p style="font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:300;color:rgba(240,236,226,.4);max-width:520px;line-height:1.78;margin-bottom:0;" class="u2">Every engagement moves through the same architecture — whether it is a consulting session, a navigation intake, or a full software build. This is how the work happens.</p>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.4rem,4vw,3.8rem);line-height:1.08;color:var(--ivory);margin-bottom:.6rem;" class="u2">How a WRENTECH build moves.</h2>
+      <p style="font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:300;color:rgba(240,236,226,.4);max-width:520px;line-height:1.78;margin-bottom:0;" class="u2">Every engagement starts with the business problem. Then we scope the tool, quote the work, build the smallest useful version, and support the launch.</p>
     </div>
     <div class="process-grid u3">
       <div class="process-step">
         <div class="process-num">01</div>
-        <p class="process-name">Discovery</p>
-        <p class="process-desc">We map the landscape you are standing in — the visible and the invisible systems at play. No assumptions. Just careful looking.</p>
-        <ul class="process-delivs"><li>Intake conversation</li><li>Pattern identification</li><li>System mapping</li><li>Clarity on the real problem</li></ul>
+        <p class="process-name">Diagnostic</p>
+        <p class="process-desc">We identify the bottleneck, the audience, the workflow, and the money/time leak before naming a build.</p>
+        <ul class="process-delivs"><li>Problem brief</li><li>Current-state map</li><li>Risk and dependency check</li><li>Recommended build lane</li></ul>
       </div>
       <div class="process-step">
         <div class="process-num">02</div>
-        <p class="process-name">Strategy</p>
-        <p class="process-desc">We build the plan. Not generic advice — a specific, personalized path that accounts for your actual constraints, gifts, and terrain.</p>
-        <ul class="process-delivs"><li>Roadmap development</li><li>Leverage point identification</li><li>Decision framework</li><li>Next-step clarity</li></ul>
+        <p class="process-name">Scope</p>
+        <p class="process-desc">You get a fixed direction: what we are building, what it must do, what is out of scope, and what it should cost.</p>
+        <ul class="process-delivs"><li>Build requirements</li><li>Content and data needs</li><li>Timeline</li><li>Flat quote</li></ul>
       </div>
       <div class="process-step">
         <div class="process-num">03</div>
-        <p class="process-name">Build or Navigate</p>
-        <p class="process-desc">For software: we build it. For systems work: we move through it together. For catalyst work: we ignite it. The form changes. The precision does not.</p>
-        <ul class="process-delivs"><li>Hands-on implementation</li><li>Guided navigation</li><li>Real-time adjustment</li><li>Documentation</li></ul>
+        <p class="process-name">Build</p>
+        <p class="process-desc">Jennifer builds the site, tool, automation, AI layer, intake flow, dashboard, or technical map.</p>
+        <ul class="process-delivs"><li>Implementation</li><li>Responsive polish</li><li>Forms and integrations</li><li>Working prototype or live build</li></ul>
       </div>
       <div class="process-step">
         <div class="process-num">04</div>
-        <p class="process-name">Integration</p>
-        <p class="process-desc">The work has to land in your real life. We make sure what was built or cleared actually holds — in your body, your workflow, your world.</p>
-        <ul class="process-delivs"><li>Activation protocols</li><li>Sustainability check</li><li>Pattern reinforcement</li><li>Follow-up support</li></ul>
+        <p class="process-name">Review</p>
+        <p class="process-desc">We test the public path, contact path, mobile experience, copy, and any backend handoffs before launch.</p>
+        <ul class="process-delivs"><li>QA pass</li><li>Revision round</li><li>Accessibility and speed check</li><li>Launch checklist</li></ul>
       </div>
       <div class="process-step">
         <div class="process-num">05</div>
         <p class="process-name">Launch</p>
-        <p class="process-desc">Whether it is a product going live, a new chapter beginning, or a system finally working — we get it out into the world. Completely.</p>
-        <ul class="process-delivs"><li>Deployment support</li><li>Launch checklist</li><li>First-response handling</li><li>Go-live confirmation</li></ul>
+        <p class="process-desc">The build goes live, DNS and deployment are checked, and the first-response path is confirmed.</p>
+        <ul class="process-delivs"><li>Deployment support</li><li>Domain check</li><li>Contact test</li><li>Go-live confirmation</li></ul>
       </div>
       <div class="process-step">
         <div class="process-num">06</div>
-        <p class="process-name">Scale or Sustain</p>
-        <p class="process-desc">What was built must be able to grow. What was cleared must stay clear. We design for durability, not just the moment of breakthrough.</p>
-        <ul class="process-delivs"><li>Growth architecture</li><li>Maintenance planning</li><li>Ongoing advisory</li><li>System monitoring</li></ul>
+        <p class="process-name">Support</p>
+        <p class="process-desc">The work can stay simple or grow into maintenance, marketing ops, new automations, or a larger software system.</p>
+        <ul class="process-delivs"><li>30-day support</li><li>Maintenance options</li><li>Retainer path</li><li>Next build map</li></ul>
       </div>
     </div>
     <div class="pricing-strip u4">
       <div class="price-tier">
-        <p class="price-name">Discovery Session</p>
-        <p class="price-val">$150</p>
-        <p class="price-note">60 min · single session · intake + map</p>
+        <p class="price-name">Diagnostic / Audit</p>
+        <p class="price-val">$497+</p>
+        <p class="price-note">Site, AI, or operations review with written recommendations</p>
       </div>
       <div class="price-tier">
-        <p class="price-name">Full Engagement</p>
-        <p class="price-val">$400+</p>
-        <p class="price-note">Multi-session · strategy through integration</p>
+        <p class="price-name">Rapid Web Build</p>
+        <p class="price-val">$1.5K+</p>
+        <p class="price-note">Fast, mobile-first web presence and lead path</p>
       </div>
       <div class="price-tier">
         <p class="price-name">Software / AI Build</p>
         <p class="price-val">Custom</p>
-        <p class="price-note">Scoped per project · contact for estimate</p>
+        <p class="price-note">Scoped per project after diagnostic review</p>
       </div>
     </div>
     <div style="display:flex;gap:.85rem;flex-wrap:wrap;margin-top:1.5rem;" class="u5">
-      <button class="btn btn-white" type="button" onclick="startInquiry('consulting')">Book a Session</button>
+      <button class="btn btn-white" type="button" onclick="startInquiry('software-ai')">Request a Scope</button>
       <button class="btn btn-outline" onclick="go(11)">Read the FAQ</button>
-      <button class="btn-ghost" onclick="go(10)">How I Help <span class="dash"></span><span class="tip"></span></button>
+      <button class="btn-ghost" onclick="go(10)">Build lanes <span class="dash"></span><span class="tip"></span></button>
     </div>
   </div>
 </div>
@@ -1272,45 +1266,45 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
 <div class="page" id="p11">
   <div class="cases-wrap">
     <div style="flex-shrink:0;margin-bottom:2rem;">
-      <span class="lbl u1">The Work</span>
-      <h2 style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.4rem,4vw,3.8rem);line-height:1.05;color:var(--ivory);" class="u2">Three honest ways I help.</h2>
+      <span class="lbl u1">Build Lanes</span>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.4rem,4vw,3.8rem);line-height:1.05;color:var(--ivory);" class="u2">Three practical ways to work with me.</h2>
     </div>
     <div class="cases-grid u3">
 
       <div class="case-card">
-        <span class="case-tag ai">Reports + Readings</span>
-        <h3 class="case-name">Mini Intakes and Written Reports</h3>
-        <div class="case-row"><span class="case-row-lbl">For</span><span class="case-row-val">People who want insight before they commit to a full session.</span></div>
-        <div class="case-row"><span class="case-row-lbl">How it works</span><span class="case-row-val">You start with a short intake, receive a mini reading instantly, and can then choose whether to order the full written report.</span></div>
-        <div class="case-row"><span class="case-row-lbl">Best fit</span><span class="case-row-val">Dream work, bloodline patterns, relationship loops, calling, desire, and business systems.</span></div>
-        <div class="case-result"><p class="case-result-lbl">Start point</p><p class="case-result-val">The report library is live now inside the Forgotten Code intake app.</p></div>
-        <a href="https://intake-form-code.vercel.app/" target="_blank" rel="noopener" class="case-link">Open the Forgotten Code intake app</a>
+        <span class="case-tag ai">Software + AI Builds</span>
+        <h3 class="case-name">Custom Digital Tools</h3>
+        <div class="case-row"><span class="case-row-lbl">For</span><span class="case-row-val">Founders, service businesses, creators, and operators who need a working tool instead of another SaaS workaround.</span></div>
+        <div class="case-row"><span class="case-row-lbl">How it works</span><span class="case-row-val">We scope the need, choose the right stack, build the simplest useful version, and launch it with support.</span></div>
+        <div class="case-row"><span class="case-row-lbl">Best fit</span><span class="case-row-val">Websites, client portals, intake systems, dashboards, AI helpers, automations, and internal operations tools.</span></div>
+        <div class="case-result"><p class="case-result-lbl">Start point</p><p class="case-result-val">Send the bottleneck and ask for a WRENTECH scope.</p></div>
+        <a href="https://wrentech.net" target="_blank" rel="noopener" class="case-link">Open WRENTECH</a>
       </div>
 
       <div class="case-card">
-        <span class="case-tag software">Consulting + Navigation</span>
-        <h3 class="case-name">Systems Support for Real Life</h3>
-        <div class="case-row"><span class="case-row-lbl">For</span><span class="case-row-val">People moving through a hard transition, a confusing system, or a season where everything feels tangled.</span></div>
-        <div class="case-row"><span class="case-row-lbl">How it works</span><span class="case-row-val">We map what is actually happening, identify pressure points, and create a way through that matches your life instead of a template.</span></div>
-        <div class="case-row"><span class="case-row-lbl">Best fit</span><span class="case-row-val">Personal crossroads, institutional navigation, creative direction, and support for neurodivergent clients.</span></div>
-        <div class="case-result"><p class="case-result-lbl">Start point</p><p class="case-result-val">Use the contact page if you want direct support and a scoped next step.</p></div>
+        <span class="case-tag software">Technical Strategy</span>
+        <h3 class="case-name">Audits, Scopes, and Translation</h3>
+        <div class="case-row"><span class="case-row-lbl">For</span><span class="case-row-val">Businesses that know something is inefficient but need help naming what to build first.</span></div>
+        <div class="case-row"><span class="case-row-lbl">How it works</span><span class="case-row-val">I map your current site, workflow, documents, tools, and handoffs, then turn the mess into a build plan.</span></div>
+        <div class="case-row"><span class="case-row-lbl">Best fit</span><span class="case-row-val">AI readiness, GEO visibility, document-heavy processes, CRM gaps, lead leaks, and unclear technical decisions.</span></div>
+        <div class="case-result"><p class="case-result-lbl">Start point</p><p class="case-result-val">Use the contact page if you want a diagnostic or written recommendations.</p></div>
         <a href="#" onclick="go(7);return false;" class="case-link">Go to Connect</a>
       </div>
 
       <div class="case-card">
-        <span class="case-tag research">Software + AI Builds</span>
-        <h3 class="case-name">Custom Digital Tools</h3>
-        <div class="case-row"><span class="case-row-lbl">For</span><span class="case-row-val">Founders, practitioners, and small businesses who need a tool, intake flow, or simple AI layer that actually fits the work.</span></div>
-        <div class="case-row"><span class="case-row-lbl">How it works</span><span class="case-row-val">We scope the need first, then decide whether the right answer is a landing page, intake system, chatbot, or a fuller custom build.</span></div>
-        <div class="case-row"><span class="case-row-lbl">Best fit</span><span class="case-row-val">Service businesses, report workflows, client onboarding, and experimental AI-powered experiences.</span></div>
-        <div class="case-result"><p class="case-result-lbl">Start point</p><p class="case-result-val">Open the Tools page or reach out directly if you want help defining the build.</p></div>
-        <a href="#" onclick="go(8);return false;" class="case-link">Open the tools</a>
+        <span class="case-tag research">Public Story + Assets</span>
+        <h3 class="case-name">Portfolio, Media, and Launch Systems</h3>
+        <div class="case-row"><span class="case-row-lbl">For</span><span class="case-row-val">People or brands that need the public-facing story, proof, and contact path cleaned up fast.</span></div>
+        <div class="case-row"><span class="case-row-lbl">How it works</span><span class="case-row-val">We align the site, bio, assets, social handles, and call-to-action so traffic has one clear next step.</span></div>
+        <div class="case-row"><span class="case-row-lbl">Best fit</span><span class="case-row-val">Launches, client case studies, founder profiles, and relationship-led brands.</span></div>
+        <div class="case-result"><p class="case-result-lbl">Start point</p><p class="case-result-val">Open the helper or reach out directly if you want the launch path tightened.</p></div>
+        <a href="#" onclick="go(8);return false;" class="case-link">Open the helper</a>
       </div>
 
     </div>
     <div style="display:flex;gap:.85rem;flex-wrap:wrap;padding-top:1.5rem;flex-shrink:0;" class="u4">
       <button class="btn btn-white" onclick="go(6)">Start Here</button>
-      <button class="btn btn-outline" type="button" onclick="startInquiry('just-exploring')">Start a Conversation</button>
+      <button class="btn btn-outline" type="button" onclick="startInquiry('software-ai')">Start a Build Conversation</button>
     </div>
   </div>
 </div>
@@ -1326,24 +1320,24 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
     <div class="faq-cols u3">
       <div>
         <div class="faq-item" onclick="toggleFAQ(this)">
-          <p class="faq-q">What kind of consulting do you offer?</p>
-          <p class="faq-a">I offer direct systems consulting — meaning I help you map, understand, and navigate whatever system you are stuck inside. That could be a legal system, a family system, a business system, a creative block, or an institutional process. I also offer software and AI development consulting for founders and builders.</p>
+          <p class="faq-q">What do you actually build?</p>
+          <p class="faq-a">Websites, landing pages, intake systems, client portals, dashboards, AI helpers, automations, document workflows, and custom software tools. The common thread is practical infrastructure for businesses that need the work to move faster.</p>
         </div>
         <div class="faq-item" onclick="toggleFAQ(this)">
           <p class="faq-q">How long does a software build take?</p>
-          <p class="faq-a">Simple landing pages and intake tools can move quickly. More custom software or AI builds take longer and depend on scope, revisions, and integrations. Every build starts with a scoping conversation so we can decide what is actually needed before naming a timeline.</p>
+          <p class="faq-a">Rapid sites and intake tools can move in days. More custom software or AI builds depend on scope, integrations, data, revisions, and whether the business already has usable content. Every build starts with a diagnostic so the timeline is honest.</p>
         </div>
         <div class="faq-item" onclick="toggleFAQ(this)">
-          <p class="faq-q">How much does consulting cost?</p>
-          <p class="faq-a">A single Discovery Session is $150 for 60 minutes and gives you a full map with next steps. Full engagements start at $400 and are scoped to your situation. Software builds are quoted per project after an initial conversation. The live reports are in the Reports page and intake library. The standalone digital shop page is being rebuilt.</p>
+          <p class="faq-q">How much does it cost?</p>
+          <p class="faq-a">WRENTECH publishes flat-fee lanes: diagnostic/audit work starts around $497, rapid sites start around $1,500, business builds commonly land in the $3,500-$8,000 range, and larger software or AI systems are scoped per project.</p>
         </div>
         <div class="faq-item" onclick="toggleFAQ(this)">
           <p class="faq-q">Do you work with neurodivergent clients?</p>
-          <p class="faq-a">Yes — intentionally and specifically. I am neurodivergent myself. I work in a way that honors non-linear thinking, pattern recognition, and the kind of knowing that does not fit standard frameworks. If you have been told your mind works wrong, it probably works differently. That is not the same thing.</p>
+          <p class="faq-a">Yes. Neurodivergent clarity is part of the build philosophy: plain language, clear hierarchy, less noise, predictable flows, and systems designed for how real people actually think under pressure.</p>
         </div>
         <div class="faq-item" onclick="toggleFAQ(this)">
           <p class="faq-q">What is The West Method?</p>
-          <p class="faq-a">The West Method: Complete Cognitive Framework Collection is the name I use for my pattern-reading framework. It shapes how I ask questions, track repeating themes, and build reflective tools that help people see themselves more clearly. On this site, it shows up most directly in the AI tools and in the way I structure reports.</p>
+          <p class="faq-a">The West Method is Jennifer's pattern-recognition and systems-mapping framework. In the WRENTECH lane, it shows up as fast diagnosis, careful question design, workflow mapping, AI prompt architecture, and tools built around human behavior instead of generic templates.</p>
         </div>
         <div class="faq-item" onclick="toggleFAQ(this)">
           <p class="faq-q">Do you sign NDAs?</p>
@@ -1352,12 +1346,12 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
       </div>
       <div>
         <div class="faq-item" onclick="toggleFAQ(this)">
-          <p class="faq-q">What does the Bloodline Report include?</p>
-          <p class="faq-a">A personalized 20-30 page written report exploring your ancestral patterns — the gifts, wounds, and recurring themes carried in your bloodline. I draw from Appalachian heritage wisdom, cross-cultural tradition, and your intake answers. It is specific to you, not a template. Delivered within 7-10 days of your intake form submission.</p>
+          <p class="faq-q">Can you audit what I already have?</p>
+          <p class="faq-a">Yes. A diagnostic can review your current site, SEO/GEO visibility, customer path, lead capture, forms, CRM handoff, AI readiness, content structure, and where the operation is losing time or revenue.</p>
         </div>
         <div class="faq-item" onclick="toggleFAQ(this)">
           <p class="faq-q">Can you build AI-powered applications?</p>
-          <p class="faq-a">Yes — AI integration is a core part of my software work. I have built systems powered by Claude, OpenAI, and custom prompt architectures. From simple chatbots to complex multi-modal research engines, I build AI tools that actually do something specific rather than just existing.</p>
+          <p class="faq-a">Yes. AI integration is a core part of the work: custom assistants, intake analysis, document processing, research tools, governed workflows, prompt architecture, and practical automations that do a specific job.</p>
         </div>
         <div class="faq-item" onclick="toggleFAQ(this)">
           <p class="faq-q">Do you offer ongoing support after a project?</p>
@@ -1365,20 +1359,20 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
         </div>
         <div class="faq-item" onclick="toggleFAQ(this)">
           <p class="faq-q">Where are you based? Do you work remotely?</p>
-          <p class="faq-a">I am based in rural Tennessee — fifth generation Appalachian. I work entirely remotely and serve clients across the US and internationally. Time zones are not a barrier. I respond within 24 hours on business days.</p>
+          <p class="faq-a">I am based in rural Tennessee and work entirely remotely with clients across the US and internationally. Time zones are not a barrier. I respond within 24 hours on business days.</p>
         </div>
         <div class="faq-item" onclick="toggleFAQ(this)">
           <p class="faq-q">What systems do you decode — what does that mean exactly?</p>
-          <p class="faq-a">Any system — legal, medical, educational, financial, family, institutional, creative, spiritual, digital. A system is any set of rules, relationships, and pressures that shapes what you can and cannot do. I have traveled across prep schools, public housing, off-grid homesteads, and corporate institutions. I know how to read a room — and a system is just a room with rules written in invisible ink.</p>
+          <p class="faq-a">Business, legal, medical, educational, financial, institutional, creative, and digital systems. A system is any set of rules, relationships, tools, documents, and handoffs that shapes what people can or cannot do. I read the structure, find the leverage, then build or explain the next move.</p>
         </div>
         <div class="faq-item" onclick="toggleFAQ(this)">
           <p class="faq-q">How do I get started?</p>
-          <p class="faq-a">Fill out the contact form on the Connect page, or email theforgottencode780@gmail.com directly. Tell me your name, what you are trying to move through or build, and your timeline. I will respond within 24 hours with next steps. If you are not sure what you need, the AI Tools page can help you figure out where to begin.</p>
+          <p class="faq-a">Fill out the contact form, email wren@wrentech.net, or start at wrentech.net. Tell me what you are trying to build, fix, automate, or make easier to run, plus your timeline. I will respond with the next practical step.</p>
         </div>
       </div>
     </div>
     <div style="padding-top:1.5rem;flex-shrink:0;" class="u5">
-      <button class="btn btn-white" type="button" onclick="startInquiry('just-exploring')">Still have questions — contact me</button>
+      <button class="btn btn-white" type="button" onclick="startInquiry('just-exploring')">Still have questions - contact me</button>
     </div>
   </div>
 </div>
@@ -1389,115 +1383,43 @@ body{font-family:'DM Sans',sans-serif;color:var(--ivory);}
   <div class="reports-wrap">
     <div class="reports-header u1">
       <div>
-        <span class="lbl">Forgotten Code Intake + Free Reports</span>
-        <h2 class="reports-title">The Report Library</h2>
+        <span class="lbl">Current Path</span>
+        <h2 class="reports-title">Start with WRENTECH.</h2>
       </div>
-      <p class="reports-sub">Each card opens the Forgotten Code intake app for a free mini reading. The intake build stays separate on purpose, and every link below takes you there directly.</p>
+      <p class="reports-sub">New traffic should land on the software, AI, websites, automation, and business systems work.</p>
     </div>
     <div class="reports-grid u2">
 
-      <a href="https://intake-form-code.vercel.app/bloodline" target="_blank" rel="noopener" class="report-card">
-        <div class="report-icon">✦</div>
-        <p class="report-name">Bloodline</p>
-        <p class="report-desc">Map the patterns, gifts, and wounds carried in your ancestral line. Who were they? What did they leave you?</p>
-        <p class="report-price">$97</p>
-        <p class="report-free">Free mini · 5 questions</p>
+      <a href="https://wrentech.net" target="_blank" rel="noopener" class="report-card">
+        <div class="report-icon">WT</div>
+        <p class="report-name">WRENTECH</p>
+        <p class="report-desc">Custom systems, software, websites, AI workflows, and business tools built by Jennifer Leigh West.</p>
+        <p class="report-price">Start here</p>
+        <p class="report-free">Services · Pricing · Contact</p>
       </a>
 
-      <a href="https://intake-form-code.vercel.app/dream" target="_blank" rel="noopener" class="report-card">
-        <div class="report-icon">☽</div>
-        <p class="report-name">Dream Mapping</p>
-        <p class="report-desc">Your dream language decoded. Symbols, themes, and the message your unconscious has been trying to send.</p>
-        <p class="report-price">$147</p>
-        <p class="report-free">Free mini · 5 questions</p>
+      <a href="https://wrentech.net/portfolio-services#portfolio" target="_blank" rel="noopener" class="report-card">
+        <div class="report-icon">01</div>
+        <p class="report-name">Portfolio</p>
+        <p class="report-desc">See public-facing work, build lanes, and examples of how strategy, site, and systems fit together.</p>
+        <p class="report-price">Proof</p>
+        <p class="report-free">Web · AI · Systems</p>
       </a>
 
-      <a href="https://intake-form-code.vercel.app/lovers" target="_blank" rel="noopener" class="report-card">
-        <div class="report-icon">⚭</div>
-        <p class="report-name">Lovers, Liars &amp; All Things Patterned</p>
-        <p class="report-desc">Forensic-level relationship pattern analysis. Role locks, attachment architecture, and the loop you keep running.</p>
-        <p class="report-price">$127</p>
-        <p class="report-free">Free mini · 6 questions</p>
-      </a>
-
-      <a href="https://intake-form-code.vercel.app/funnels/attachment-bonds.html" target="_blank" rel="noopener" class="report-card">
-        <div class="report-icon">⛓</div>
-        <p class="report-name">Attachment Bonds</p>
-        <p class="report-desc">How you attach, why you chose them, and what the bond is actually built on beneath what you can see.</p>
-        <p class="report-price">$97</p>
-        <p class="report-free">Free mini · 5 questions</p>
-      </a>
-
-      <a href="https://intake-form-code.vercel.app/funnels/financial-identity.html" target="_blank" rel="noopener" class="report-card">
-        <div class="report-icon">◈</div>
-        <p class="report-name">Financial Identity Map</p>
-        <p class="report-desc">The story your money tells about you. Wealth patterns across your lineage and what they predict about your future.</p>
-        <p class="report-price">$127</p>
-        <p class="report-free">Free mini · 5 questions</p>
-      </a>
-
-      <a href="https://intake-form-code.vercel.app/funnels/past-lives.html" target="_blank" rel="noopener" class="report-card">
-        <div class="report-icon">◉</div>
-        <p class="report-name">Soul Map of Past Lives</p>
-        <p class="report-desc">5-7 detailed past life incarnations. Who you were, what you carried forward, and what karma remains unfinished.</p>
-        <p class="report-price">$197</p>
-        <p class="report-free">Free mini · 7 questions</p>
-      </a>
-
-      <a href="https://intake-form-code.vercel.app/funnels/the-calling.html" target="_blank" rel="noopener" class="report-card">
-        <div class="report-icon">⬡</div>
-        <p class="report-name">The Calling</p>
-        <p class="report-desc">What you were built for. The work that lights you up and why you keep moving away from it.</p>
-        <p class="report-price">$97</p>
-        <p class="report-free">Free mini · 5 questions</p>
-      </a>
-
-      <a href="https://intake-form-code.vercel.app/funnels/business-identity-map.html" target="_blank" rel="noopener" class="report-card">
-        <div class="report-icon">▲</div>
-        <p class="report-name">Business &amp; Systems</p>
-        <p class="report-desc">Your business decoded as a living system. What is running beneath the surface and where the leverage is.</p>
-        <p class="report-price">$147</p>
-        <p class="report-free">Free mini · 6 questions</p>
-      </a>
-
-      <a href="https://intake-form-code.vercel.app/funnels/identity-desire.html" target="_blank" rel="noopener" class="report-card">
-        <div class="report-icon">❧</div>
-        <p class="report-name">Desire</p>
-        <p class="report-desc">What you actually want — beneath the versions you perform. Your desire map and what it says about your soul.</p>
-        <p class="report-price">$97</p>
-        <p class="report-free">Free mini · 5 questions</p>
-      </a>
-
-      <a href="https://intake-form-code.vercel.app/funnels/rage.html" target="_blank" rel="noopener" class="report-card">
-        <div class="report-icon">◭</div>
-        <p class="report-name">Rage</p>
-        <p class="report-desc">The anger you carry and what it is protecting. Rage decoded as sacred information — not pathology.</p>
-        <p class="report-price">$97</p>
-        <p class="report-free">Free mini · 5 questions</p>
-      </a>
-
-      <a href="https://intake-form-code.vercel.app/funnels/sirens-call.html" target="_blank" rel="noopener" class="report-card">
-        <div class="report-icon">☊</div>
-        <p class="report-name">Siren's Call</p>
-        <p class="report-desc">The pattern of seduction and self-sabotage. What draws you in, what you destroy, and why it keeps happening.</p>
-        <p class="report-price">$127</p>
-        <p class="report-free">Free mini · 6 questions</p>
-      </a>
-
-      <a href="https://intake-form-code.vercel.app/funnels/spiritual-entrepreneur.html" target="_blank" rel="noopener" class="report-card">
-        <div class="report-icon">✧</div>
-        <p class="report-name">Spiritual Entrepreneur</p>
-        <p class="report-desc">For the builder who cannot separate their calling from their commerce. Your sacred business architecture.</p>
-        <p class="report-price">$147</p>
-        <p class="report-free">Free mini · 6 questions</p>
+      <a href="mailto:wren@wrentech.net?subject=Build%20Inquiry" class="report-card">
+        <div class="report-icon">-></div>
+        <p class="report-name">Build Inquiry</p>
+        <p class="report-desc">Send the problem, the deadline, and the current system. Jennifer will reply with the practical next step.</p>
+        <p class="report-price">Email</p>
+        <p class="report-free">wren@wrentech.net</p>
       </a>
 
     </div>
     <div class="reports-note u3">
-      <p>Every report begins with a free 5-7 question intake. You receive an AI-generated mini reading instantly. Unlock the full written report — delivered personally by Jenna within 7-10 days.</p>
+      <p>This page now routes referral and business traffic toward the current offer: WRENTECH services, public proof, and a direct build inquiry.</p>
       <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
-        <a href="https://intake-form-code.vercel.app/" target="_blank" rel="noopener" class="btn btn-white">Open the Forgotten Code Intake →</a>
-        <button class="btn btn-outline" onclick="go(3)">See Coming Soon</button>
+        <a href="https://wrentech.net" target="_blank" rel="noopener" class="btn btn-white">Open WRENTECH</a>
+        <button class="btn btn-outline" onclick="go(7)">Contact Jennifer</button>
       </div>
     </div>
   </div>
@@ -1509,16 +1431,15 @@ const PGS  = ['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10','p11','p12','p1
 const NAVS = ['','n1','n2','n3','n4','n5','n6','n7','n8','n9','n10','n11','n12'];
 let cur = 0;
 const INQUIRY_META = {
-  consulting: { label: 'Consulting', subject: 'Consulting Inquiry' },
-  'catalyst-change': { label: 'Catalyst Change', subject: 'Catalyst Change Inquiry' },
-  'navigation-support': { label: 'Navigation Support', subject: 'Navigation Support Inquiry' },
-  'software-ai': { label: 'Software / AI Development', subject: 'Software / AI Build Inquiry' },
-  'bloodline-report': { label: 'Bloodline Report', subject: 'Bloodline Report Request' },
-  'dream-mapping': { label: 'Dream Mapping', subject: 'Dream Mapping Request' },
-  'blood-is-code': { label: 'Blood Is Code Course', subject: 'Blood Is Code Course Request' },
-  'zoom-consultation': { label: 'Zoom Consultation', subject: 'Zoom Consultation Request' },
-  'calendly-request': { label: 'Calendly Booking Request', subject: 'Calendly Booking Request' },
-  'systems-map': { label: 'Free Systems Map', subject: 'Free Systems Map Request' },
+  consulting: { label: 'Strategy Call / Technical Consultation', subject: 'Strategy Call Inquiry' },
+  'software-ai': { label: 'Custom Software / AI Build', subject: 'Software or AI Build Inquiry' },
+  'rapid-site': { label: 'Website / Landing Page', subject: 'Rapid Site Inquiry' },
+  automation: { label: 'Automation or Internal Workflow', subject: 'Automation Inquiry' },
+  audit: { label: 'Site, AI, or Operations Audit', subject: 'Audit Inquiry' },
+  'document-decoding': { label: 'Document / System Decoding', subject: 'Document or System Decoding Inquiry' },
+  'portfolio-media': { label: 'Portfolio, Media Kit, or Launch Assets', subject: 'Portfolio or Launch Asset Inquiry' },
+  'zoom-consultation': { label: 'Diagnostic Call', subject: 'Diagnostic Call Request' },
+  'calendly-request': { label: 'Booking Request', subject: 'Booking Request' },
   'just-exploring': { label: 'Just exploring', subject: 'General Inquiry' }
 };
 
@@ -1574,16 +1495,15 @@ function startInquiry(kind) {
     }
     if (messageBox && !messageBox.value.trim()) {
       const starter = {
-        consulting: 'I would like to book a consultation and talk through what I need.',
-        'catalyst-change': 'I am interested in catalyst change work and want to understand next steps.',
-        'navigation-support': 'I need ongoing navigation support and want to explain what I am moving through.',
+        consulting: 'I want to talk through a technical or business systems problem.',
         'software-ai': 'I have a software or AI idea and want to scope the build.',
-        'bloodline-report': 'I want to order the Bloodline Report.',
-        'dream-mapping': 'I want to book Dream Mapping.',
-        'blood-is-code': 'I want the Blood Is Code course.',
-        'zoom-consultation': 'I want to schedule a Zoom consultation.',
-        'calendly-request': 'Please send me the booking link for a consultation.',
-        'systems-map': 'I would love the free Systems Map.',
+        'rapid-site': 'I need a website or landing page that can convert traffic quickly.',
+        automation: 'I have repetitive work or handoffs that need automation.',
+        audit: 'I want a site, AI, or operations audit with practical recommendations.',
+        'document-decoding': 'I need a document-heavy or confusing system translated into action steps.',
+        'portfolio-media': 'I need my public story, portfolio, media kit, or launch path cleaned up.',
+        'zoom-consultation': 'I want to schedule a diagnostic call.',
+        'calendly-request': 'Please send me the next available booking options.',
         'just-exploring': 'I am reaching out to learn what would be the best fit.'
       };
       messageBox.value = starter[kind] || '';
@@ -1623,22 +1543,27 @@ document.addEventListener('touchend',e=>{
 function handleEmail(e) {
   e.preventDefault();
   const email = e.target.querySelector('input').value;
-  window.location.href = 'mailto:theforgottencode780@gmail.com?subject=Subscribe: ' + email;
+  window.location.href = 'mailto:wren@wrentech.net?subject=WRENTECH updates subscribe: ' + email;
 }
 window.handleEmail = handleEmail;
 
 /* ─── CHATBOT ─── */
 const TOOL_META = {
-  advisor: { name: 'Service Advisor',     tagline: 'Ask anything about working with Jenna — services, pricing, process, booking',
-             starters: ['What services do you offer and which is right for me?', 'How much does a consulting session cost?', 'I have an idea for a software build — can you scope it with me?'] },
-  dream:     { name: 'Dream Decoder',       tagline: 'The Forbidden Library — cross-cultural dream symbol analysis',
-               starters: ['I keep dreaming about water — flooding, drowning, or being near the ocean', 'I have a recurring dream about a house with rooms I have never seen before', 'I dreamed about a snake and I cannot stop thinking about it'] },
-  pastlife:  { name: 'Past Life Reader',    tagline: 'Soul cartography — incarnation mapping and karmic pattern analysis',
-               starters: ['I feel a strong pull toward ancient Egypt and do not know why', 'I have an unexplained fear of fire that has been with me my whole life', 'I want to understand my relationship with a person who feels like I have known them forever'] },
-  celestial: { name: 'Celestial Biophysics',tagline: 'Daily electromagnetic field forecast powered by the UVRK-1 engine',
-               starters: ['I want my daily celestial forecast — my birthday is March 15, 1983', 'I am highly sensitive to full moons and want to understand why', 'What are today\'s electromagnetic conditions and how do they affect focus?'] },
-  dyad:      { name: 'DYAD Engine',         tagline: 'Relationship pattern forensics — role locks, attachment, karmic architecture',
-               starters: ['My partner and I keep having the same fight over and over — I pursue, they withdraw', 'I fall in love fast and then the person becomes distant — why does this keep happening?', 'I want to understand the pattern in my relationship — I will describe it to you'] }
+  advisor: { name: 'Service Advisor', tagline: 'Ask anything about WRENTECH services, pricing, process, and booking',
+             intro: 'I can help you decide whether this is a website, audit, AI workflow, automation, or custom software build.',
+             starters: ['What does WRENTECH build?', 'How much does a website or AI build cost?', 'I have an idea for a software build - can you scope it with me?'] },
+  scope: { name: 'Build Scoper', tagline: 'Turn a rough idea into a practical build lane and next questions',
+           intro: 'Describe the tool, workflow, or business problem. I will help identify the likely build lane and missing requirements.',
+           starters: ['I need a client portal but only have a rough idea.', 'I want to automate intake and follow-up.', 'I need to turn a messy process into a working tool.'] },
+  siteaudit: { name: 'Site Audit', tagline: 'Check whether a site is clear, credible, findable, and conversion-ready',
+               intro: 'Paste a URL or describe the current site. I will look for clarity, conversion, credibility, and AI-search readiness issues.',
+               starters: ['What should my homepage say first?', 'How do I make my site ready for new traffic?', 'What does AI-search readiness mean for my business?'] },
+  automation: { name: 'Automation Mapper', tagline: 'Find repetitive work, handoff gaps, and AI workflow opportunities',
+                intro: 'Describe what you do manually, what repeats, and what keeps falling through the cracks.',
+                starters: ['I keep copying the same client info across tools.', 'I need leads to route to the right next step.', 'I have documents that need to become action items.'] },
+  readiness: { name: 'AI Readiness', tagline: 'Decide where AI belongs and what needs governance before launch',
+               intro: 'Tell me what you want AI to do. I will help separate useful automation from risky or unnecessary complexity.',
+               starters: ['Should I add a chatbot to my site?', 'What data would an AI assistant need?', 'How do I keep an AI workflow from going off track?'] }
 };
 
 let activeTool = 'advisor';
@@ -1667,7 +1592,7 @@ function rebuildMessages() {
     container.innerHTML = `
       <div class="chat-welcome" id="chat-welcome">
         <h3>Welcome to the ${meta.name}</h3>
-        <p>${meta.name === 'Dream Decoder' ? 'Tell me about a dream that has stayed with you.' : meta.name === 'Past Life Reader' ? 'Tell me your name, birth date, and what keeps recurring in your life.' : meta.name === 'Celestial Biophysics' ? 'Share your birth date and location for a personalized forecast.' : 'Describe your relationship pattern and I will map the architecture.'}</p>
+        <p>${meta.intro}</p>
         <div class="chat-starters">${meta.starters.map(s => `<button class="chat-starter" onclick="useStarter(this)">${s}</button>`).join('')}</div>
       </div>`;
   } else {
@@ -1773,13 +1698,13 @@ function handleLead(e) {
   ].join('\n');
 
   const fallbackToMail = () => {
-    window.location.href = 'mailto:theforgottencode780@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    window.location.href = 'mailto:wren@wrentech.net?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   };
 
   status.textContent = 'Sending your inquiry...';
   submitBtn.disabled = true;
 
-  fetch('https://formsubmit.co/ajax/theforgottencode780@gmail.com', {
+  fetch('https://formsubmit.co/ajax/wren@wrentech.net', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -1799,7 +1724,7 @@ function handleLead(e) {
       if (!res.ok || data.success === 'false') {
         throw new Error(data.message || 'Submission failed');
       }
-      status.textContent = 'Message sent. Jenna will get the right inquiry details in email.';
+      status.textContent = 'Message sent. Jennifer will get the right inquiry details in email.';
       form.reset();
     })
     .catch(() => {
